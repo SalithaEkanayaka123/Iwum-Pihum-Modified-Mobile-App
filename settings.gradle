@@ -1,0 +1,2 @@
+rootProject.name = "uee-recipe-management"
+include ':app'
