@@ -13,10 +13,10 @@ public class MainActivity extends AppCompatActivity {
     private ActionBar actionBar;
 
     //Registering UI Views
-    private ViewPager viewPage;
+    private ViewPager viewPage1;
 
     private ArrayList<MyModel> modelArrayList;
-    private MyAdapter myAdapter;
+    private MyAdapter myAdapter1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
 
         //init UI views
-        viewPage = findViewById(R.id.viewPager);
+        viewPage1 = findViewById(R.id.viewPager);
         loadCards();
 
         //Set ViewPager Change Listener
-        viewPage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPage1.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 String title = modelArrayList.get(position).getTitle();
-//                actionBar.setTitle(title);
+                //actionBar.setTitle(title);
             }
 
             @Override
@@ -60,11 +60,12 @@ public class MainActivity extends AppCompatActivity {
         modelArrayList.add(new MyModel("Fifth Image", "Description 01", "3/8/2020",R.drawable.image5));
 
         //Setting the adapter
-        myAdapter = new MyAdapter(this, modelArrayList);
+        myAdapter1 = new MyAdapter(this, modelArrayList);
         //Set adapter to view page.
-        viewPage.setAdapter(myAdapter);
+        viewPage1.setAdapter(myAdapter1);
+
         //Set Default padding from left/ right
-        viewPage.setPadding(100, 0, 100, 0);
+        viewPage1.setPadding(100, 0, 100, 0);
 
     }
 
