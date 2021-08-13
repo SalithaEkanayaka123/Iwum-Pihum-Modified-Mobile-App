@@ -6,6 +6,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.uee_recipe_management.category.CustomArrayList.CustomArrayList;
+
 import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadCards() {
         //init list
+        CustomArrayList array = CustomArrayList.getInstance();
+
+        //Custom ArrayList
         modelArrayList = new ArrayList<>();
         modelArrayList.add(new MyModel("Android Image", "Description 01", "3/8/2020", R.drawable.image1));
         modelArrayList.add(new MyModel("Second Image", "Description 01", "3/8/2020",R.drawable.image2));
