@@ -5,11 +5,13 @@ public class CategoryItem {
      * Model class for the nested recycle view adapter.
      * **/
     private String name;
-    private String image;
+    private Integer image;
     private String description;
 
-    public CategoryItem(String name) {
+    public CategoryItem(String name, int image, String description) {
         this.name = name;
+        this.image = image;
+        this.description = description;
     }
 
     public String getName() {
@@ -20,11 +22,11 @@ public class CategoryItem {
         this.name = name;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 

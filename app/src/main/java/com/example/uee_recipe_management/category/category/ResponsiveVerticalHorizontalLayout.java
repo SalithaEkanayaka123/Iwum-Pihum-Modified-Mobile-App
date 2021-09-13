@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import com.example.uee_recipe_management.category.R;
 import com.example.uee_recipe_management.category.category.adapter.CategoriesRecyclerAdapter;
 import com.example.uee_recipe_management.category.category.model.AllCategories;
+import com.example.uee_recipe_management.category.category.model.CategoryItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,14 +27,21 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_responsive_vertical_horizontal_layout);
 
+        //Add items to the category item model class.
+        List<CategoryItem> categoryItems = new ArrayList<>();
+        categoryItems.add(new CategoryItem("Name", R.drawable.image1, "This is sample description"));
+        categoryItems.add(new CategoryItem("Name", R.drawable.image2, "This is sample description"));
+        categoryItems.add(new CategoryItem("Name", R.drawable.image3, "This is sample description"));
+        categoryItems.add(new CategoryItem("Name", R.drawable.image4, "This is sample description"));
+        categoryItems.add(new CategoryItem("Name", R.drawable.image5, "This is sample description"));
+
         //Dummy data to the model class.
         List<AllCategories> allCategories  = new ArrayList<>();
-        allCategories.add(new AllCategories("Cool Drinks"));
-        allCategories.add(new AllCategories("Main courses"));
-        allCategories.add(new AllCategories("Short Eats"));
-        allCategories.add(new AllCategories("Candies"));
-        allCategories.add(new AllCategories("Steak"));
-
+        allCategories.add(new AllCategories("Cool Drinks", categoryItems));
+        allCategories.add(new AllCategories("Main courses",categoryItems));
+        allCategories.add(new AllCategories("Short Eats",categoryItems));
+        allCategories.add(new AllCategories("Candies",categoryItems));
+        allCategories.add(new AllCategories("Steak",categoryItems));
         setMainCategoryRecycler(allCategories);
     }
 

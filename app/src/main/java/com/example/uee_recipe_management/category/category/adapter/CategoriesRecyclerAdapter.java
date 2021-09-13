@@ -7,10 +7,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uee_recipe_management.category.R;
 import com.example.uee_recipe_management.category.category.model.AllCategories;
+import com.example.uee_recipe_management.category.category.model.CategoryItem;
 
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
     @Override
     public void onBindViewHolder(@NonNull  CategoriesRecyclerAdapter.MainViewHolder holder, int position) {
         holder.categoryName.setText(allCategoriesList.get(position).getCategoryName());
-
+        setCategoryItemRecycler(holder.itemRecycleView, allCategoriesList.get(position).getCategoryItems());
     }
 
     @Override
@@ -43,10 +45,18 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
     public static final class MainViewHolder extends RecyclerView.ViewHolder {
 
         TextView categoryName;
+        RecyclerView itemRecycleView;
 
         public MainViewHolder(View itemView){
             super(itemView);
             categoryName = itemView.findViewById(R.id.category_section_header);
+            itemRecycleView = itemView.findViewById(R.id.category_section_scroll);
         }
+    }
+
+    private void setCategoryItemRecycler(RecyclerView recyclerView, List<CategoryItem> categoryItems){
+        CategoryItemAdapter itemRecyclerAdapter = new CategoryItemAdapter(context, categoryItems);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+        recyclerView.setAdapter(itemRecyclerAdapter);
     }
 }
