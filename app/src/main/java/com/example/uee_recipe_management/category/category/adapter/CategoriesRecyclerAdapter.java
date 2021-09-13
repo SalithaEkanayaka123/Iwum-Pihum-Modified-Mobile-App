@@ -31,6 +31,7 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
 
     @Override
     public void onBindViewHolder(@NonNull  CategoriesRecyclerAdapter.MainViewHolder holder, int position) {
+        holder.categoryName.setText(allCategoriesList.get(position).getCategoryName());
 
     }
 
@@ -41,10 +42,11 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
 
     public static final class MainViewHolder extends RecyclerView.ViewHolder {
 
-        TextView categoryTitle;
+        TextView categoryName;
 
         public MainViewHolder(View itemView){
             super(itemView);
+            categoryName = itemView.findViewById(R.id.category_section_header);
         }
     }
 }
