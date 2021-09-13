@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".category.ResponsiveVerticalHorizontalLayout"
+    android:background="#FFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/category_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#9F897D"
+            android:fontFamily="@font/raleway_bold"
+            android:padding="5dp"
+            android:text="Categories"
+            android:textSize="15dp"
+            android:elevation="8dp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/category_header"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            >
+            <LinearLayout
+                android:id="@+id/vertical_linear_1"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:layout_width="377dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway"
+                    android:paddingStart="10dp"
+                    android:text="Search Category..."
+                    android:textColor="#9F9F9F"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:width="10dp"
+                    android:height="10dp"
+                    android:src="@drawable/search_icon" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="#9F9F9F" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/parent_recycler"
+                android:layout_below="@id/vertical_linear_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
