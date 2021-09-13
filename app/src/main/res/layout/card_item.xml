@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_vertical"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="160dp"
         android:layout_margin="10dp"
-        app:cardCornerRadius="22dp"
+        app:cardCornerRadius="10dp"
         android:elevation="5dp"
         app:cardBackgroundColor="#9F897D"
         >
@@ -22,17 +22,17 @@
             <ImageView
                 android:id="@+id/bannerIv"
                 android:src="@drawable/image1"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_width="130dp"
+                android:layout_height="100dp"
                 android:scaleType="centerCrop"/>
             <TextView
                 android:id="@+id/titleTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:paddingStart="8dp"
                 android:text="The Title"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/descriptionTv"
