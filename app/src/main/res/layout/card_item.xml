@@ -40,7 +40,8 @@
                 android:layout_marginStart="8dp"
                 android:ellipsize="end"
                 android:maxLines="3"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
                 android:minLines="3"
                 android:layout_marginLeft="8dp"
                 android:text="Description"/>
