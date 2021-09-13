@@ -8,6 +8,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.uee_recipe_management.category.CustomArrayList.CustomArrayList;
 import com.example.uee_recipe_management.category.R;
+import com.example.uee_recipe_management.category.category.adapter.FoodItemAdapter;
+import com.example.uee_recipe_management.category.category.model.FoodItemModel;
 
 import java.util.ArrayList;
 public class ResponsiveLayout extends AppCompatActivity {
@@ -18,8 +20,8 @@ public class ResponsiveLayout extends AppCompatActivity {
     //Registering UI Views
     private ViewPager viewPage1;
 
-    private ArrayList<MyModel> modelArrayList;
-    private MyAdapter myAdapter1;
+    private ArrayList<FoodItemModel> modelArrayList;
+    private FoodItemAdapter myAdapter1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,14 +61,14 @@ public class ResponsiveLayout extends AppCompatActivity {
 
         //Custom ArrayList
         modelArrayList = new ArrayList<>();
-        modelArrayList.add(new MyModel("Android Image", "Description 01", "3/8/2020", R.drawable.image1));
-        modelArrayList.add(new MyModel("Second Image", "Description 01", "3/8/2020",R.drawable.image2));
-        modelArrayList.add(new MyModel("Third Image", "Description 01", "3/8/2020",R.drawable.image3));
-        modelArrayList.add(new MyModel("Fourth Image", "Description 01", "3/8/2020",R.drawable.image4));
-        modelArrayList.add(new MyModel("Fifth Image", "Description 01", "3/8/2020",R.drawable.image5));
+        modelArrayList.add(new FoodItemModel("Android Image", "Description 01", "3/8/2020", R.drawable.image1));
+        modelArrayList.add(new FoodItemModel("Second Image", "Description 01", "3/8/2020",R.drawable.image2));
+        modelArrayList.add(new FoodItemModel("Third Image", "Description 01", "3/8/2020",R.drawable.image3));
+        modelArrayList.add(new FoodItemModel("Fourth Image", "Description 01", "3/8/2020",R.drawable.image4));
+        modelArrayList.add(new FoodItemModel("Fifth Image", "Description 01", "3/8/2020",R.drawable.image5));
 
         //Setting the adapter
-        myAdapter1 = new MyAdapter(this, modelArrayList);
+        myAdapter1 = new FoodItemAdapter(this, modelArrayList);
         //Set adapter to view page.
         viewPage1.setAdapter(myAdapter1);
 

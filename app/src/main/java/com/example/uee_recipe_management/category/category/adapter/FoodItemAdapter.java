@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category.category;
+package com.example.uee_recipe_management.category.category.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,15 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.uee_recipe_management.category.R;
+import com.example.uee_recipe_management.category.category.model.FoodItemModel;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends PagerAdapter {
+public class FoodItemAdapter extends PagerAdapter {
     private Context context;
-    private ArrayList<MyModel> modelArrayList;
+    private ArrayList<FoodItemModel> modelArrayList;
 
     //constructor
-    public MyAdapter(Context context, ArrayList<MyModel> modelArrayList) {
+    public FoodItemAdapter(Context context, ArrayList<FoodItemModel> modelArrayList) {
         this.context = context;
         this.modelArrayList = modelArrayList;
     }
@@ -49,7 +50,7 @@ public class MyAdapter extends PagerAdapter {
         TextView dateTv = view.findViewById(R.id.dateTv);
 
         //get data from the modelArrayList when given the index.
-        MyModel model = modelArrayList.get(position);
+        FoodItemModel model = modelArrayList.get(position);
         String title = model.getTitle();
         String description = model.getDescription();
         String date = model.getDate();

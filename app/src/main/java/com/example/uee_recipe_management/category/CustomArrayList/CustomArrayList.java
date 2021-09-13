@@ -3,7 +3,7 @@ package com.example.uee_recipe_management.category.CustomArrayList;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.uee_recipe_management.category.category.MyModel;
+import com.example.uee_recipe_management.category.category.model.FoodItemModel;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,7 +17,7 @@ public class CustomArrayList {
     //Private Constructor.
     private CustomArrayList() {}
 
-    private ArrayList<MyModel> array = new ArrayList<>();
+    private ArrayList<FoodItemModel> array = new ArrayList<>();
 
     //Singleton Instance Fetching method.
     public static CustomArrayList getInstance(){
@@ -42,12 +42,12 @@ public class CustomArrayList {
     }
 
 
-    public void add(MyModel object) {
+    public void add(FoodItemModel object) {
        array.add(object);
     }
 
 
-    public Object remove(MyModel object, @Nullable String name) {
+    public Object remove(FoodItemModel object, @Nullable String name) {
        array.remove(object);
        return null;
     }
@@ -67,7 +67,7 @@ public class CustomArrayList {
         return super.toString();
     }
 
-    public ArrayList<MyModel> getArray(){
+    public ArrayList<FoodItemModel> getArray(){
         return array;
     }
 }

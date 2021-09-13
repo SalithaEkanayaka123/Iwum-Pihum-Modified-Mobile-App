@@ -1,10 +1,10 @@
-package com.example.uee_recipe_management.category.category;
+package com.example.uee_recipe_management.category.category.model;
 
-public class MyModel {
+public class FoodItemModel {
     String title, description, date;
     int image;
 
-    public MyModel(String title, String description, String date, int image) {
+    public FoodItemModel(String title, String description, String date, int image) {
         this.title = title;
         this.date = date;
         this.description = description;
