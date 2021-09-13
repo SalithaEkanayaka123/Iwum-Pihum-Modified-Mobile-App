@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category;
+package com.example.uee_recipe_management.category.category;
 
 import android.os.Bundle;
 
@@ -7,9 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.uee_recipe_management.category.CustomArrayList.CustomArrayList;
+import com.example.uee_recipe_management.category.R;
 
 import java.util.ArrayList;
-public class MainActivity extends AppCompatActivity {
+public class ResponsiveLayout extends AppCompatActivity {
 
     //This import should be androidx
     private ActionBar actionBar;

@@ -3,7 +3,7 @@ package com.example.uee_recipe_management.category.CustomArrayList;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.uee_recipe_management.category.MyModel;
+import com.example.uee_recipe_management.category.category.MyModel;
 
 import java.util.ArrayList;
 import java.util.Comparator;

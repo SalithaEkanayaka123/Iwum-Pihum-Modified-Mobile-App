@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category;
+package com.example.uee_recipe_management.category.category;
 
 public class MyModel {
     String title, description, date;

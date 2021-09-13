@@ -1,7 +1,6 @@
-package com.example.uee_recipe_management.category;
+package com.example.uee_recipe_management.category.category;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.uee_recipe_management.category.R;
 
 import java.util.ArrayList;
 
