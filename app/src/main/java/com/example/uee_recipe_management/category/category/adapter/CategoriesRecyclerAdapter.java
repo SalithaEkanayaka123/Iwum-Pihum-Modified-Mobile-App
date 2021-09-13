@@ -51,6 +51,9 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
             super(itemView);
             categoryName = itemView.findViewById(R.id.category_section_header);
             itemRecycleView = itemView.findViewById(R.id.category_section_scroll);
+            /**
+             * Add a listener to the arrow icon on the header section and pass the item list when navigate to the fragment.
+             * **/
         }
     }
 
