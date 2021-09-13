@@ -27,6 +27,10 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_responsive_vertical_horizontal_layout);
 
+        /**
+         * Following section should be automated.
+         * **/
+
         //Add items to the category item model class.
         List<CategoryItem> categoryItems = new ArrayList<>();
         categoryItems.add(new CategoryItem("Name", R.drawable.image1, "This is sample description"));
