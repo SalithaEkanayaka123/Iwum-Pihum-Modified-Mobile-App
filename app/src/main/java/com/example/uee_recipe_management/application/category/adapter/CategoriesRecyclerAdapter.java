@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,10 +20,15 @@ import java.util.List;
 public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRecyclerAdapter.MainViewHolder>{
     private Context context;
     private List<AllCategories> allCategoriesList;
+    private static List<CategoryItem> categoryItems;
 
     public CategoriesRecyclerAdapter(Context context, List<AllCategories> allCategories){
         this.context = context;
         this.allCategoriesList = allCategories;
+    }
+
+    public static List<CategoryItem> getCategoryItems(){
+        return categoryItems;
     }
 
 
@@ -46,18 +52,27 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
 
         TextView categoryName;
         RecyclerView itemRecycleView;
+        ImageView moreButton;
 
         public MainViewHolder(View itemView){
             super(itemView);
             categoryName = itemView.findViewById(R.id.category_section_header);
             itemRecycleView = itemView.findViewById(R.id.category_section_scroll);
+            moreButton = itemView.findViewById(R.id.section_more_button);
             /**
              * Add a listener to the arrow icon on the header section and pass the item list when navigate to the fragment.
              * **/
+            moreButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    System.out.println("Button Pressed." + getCategoryItems());
+                }
+            });
         }
     }
 
     private void setCategoryItemRecycler(RecyclerView recyclerView, List<CategoryItem> categoryItems){
+        this.categoryItems = categoryItems;
         CategoryItemAdapter itemRecyclerAdapter = new CategoryItemAdapter(context, categoryItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
         recyclerView.setAdapter(itemRecyclerAdapter);
