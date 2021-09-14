@@ -20,6 +20,7 @@ import com.example.uee_recipe_management.application.category.model.AllCategorie
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import static androidx.core.content.ContextCompat.startActivity;
@@ -76,11 +77,11 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
             moreButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    List<CategoryItem> items = getCategoryItems();
+                    ArrayList<CategoryItem> items = (ArrayList<CategoryItem>) getCategoryItems();
                     Intent intent = new Intent(view.getContext(), CategorySearchLayout.class);
                     Bundle args = new Bundle();
-                    args.putSerializable("ARRAYLIST", (Serializable)items);
-                    intent.putExtra("BUNDLE", args);
+                    args.putParcelableArrayList("ARRAYLIST", items);
+                    intent.putExtras(args);
                     view.getContext().startActivity(intent);
                 }
             });

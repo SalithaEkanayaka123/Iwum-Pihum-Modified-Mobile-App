@@ -1,6 +1,9 @@
 package com.example.uee_recipe_management.application.category.model;
 
-public class CategoryItem {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class CategoryItem  implements Parcelable {
     /**
      * Model class for the nested recycle view adapter.
      * **/
@@ -13,6 +16,28 @@ public class CategoryItem {
         this.image = image;
         this.description = description;
     }
+
+    protected CategoryItem(Parcel in) {
+        name = in.readString();
+        if (in.readByte() == 0) {
+            image = null;
+        } else {
+            image = in.readInt();
+        }
+        description = in.readString();
+    }
+
+    public static final Creator<CategoryItem> CREATOR = new Creator<CategoryItem>() {
+        @Override
+        public CategoryItem createFromParcel(Parcel in) {
+            return new CategoryItem(in);
+        }
+
+        @Override
+        public CategoryItem[] newArray(int size) {
+            return new CategoryItem[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -36,5 +61,22 @@ public class CategoryItem {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        if (image == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(image);
+        }
+        parcel.writeString(description);
     }
 }
