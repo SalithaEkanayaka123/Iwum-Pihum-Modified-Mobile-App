@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">uee-recipe-management</string>
+    <string name="title_activity_main">Categories</string>
 </resources>
