@@ -2,7 +2,7 @@
 
 #### UI.
 
-![GitHub Logo](mobile-application-ui.png)
+![GitHub Logo](banner.png)
 This repository contains UI/UX Enhanced version of the **Iwum Pihum** Cooking guidance application.
 
 #### About
