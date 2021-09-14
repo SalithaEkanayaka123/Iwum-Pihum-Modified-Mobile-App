@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.CategorySearchLayout;
 import com.example.uee_recipe_management.application.category.model.AllCategories;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 
 import java.util.List;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRecyclerAdapter.MainViewHolder>{
     private Context context;
@@ -29,6 +33,10 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
 
     public static List<CategoryItem> getCategoryItems(){
         return categoryItems;
+    }
+
+    public Context getContext(){
+        return context;
     }
 
 
@@ -66,6 +74,8 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
                 @Override
                 public void onClick(View view) {
                     System.out.println("Button Pressed." + getCategoryItems());
+                    Intent intent = new Intent(view.getContext(), CategorySearchLayout.class);
+                    view.getContext().startActivity(intent);
                 }
             });
         }
