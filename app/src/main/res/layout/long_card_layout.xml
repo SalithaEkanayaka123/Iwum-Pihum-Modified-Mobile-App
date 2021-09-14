@@ -7,9 +7,9 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginStart="5dp"
         app:cardCornerRadius="22dp"
         app:cardBackgroundColor="#9F897D"
         >
@@ -26,7 +26,7 @@
                 >
                 <TextView
                     android:id="@+id/lcard_title"
-                    android:layout_width="217dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="The Title"
                     android:textColor="#FFFFFF"
@@ -36,7 +36,7 @@
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/lcard_second_title"
-                    android:layout_width="217dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="The Title"
                     android:paddingStart="10dp"
@@ -45,7 +45,7 @@
                     android:textStyle="italic" />
                 <TextView
                     android:id="@+id/lcard_description"
-                    android:layout_width="217dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="The Title"
                     android:paddingStart="10dp"
