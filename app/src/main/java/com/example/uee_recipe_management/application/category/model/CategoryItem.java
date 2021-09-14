@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category.category.model;
+package com.example.uee_recipe_management.application.category.model;
 
 public class CategoryItem {
     /**

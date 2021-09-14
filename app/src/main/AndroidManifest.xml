@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.uee_recipe_management.category">
+    package="com.example.uee_recipe_management.application">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
 
-        <activity android:name=".category.ResponsiveVerticalHorizontalLayout">
+        <activity android:name="com.example.uee_recipe_management.application.category.ResponsiveVerticalHorizontalLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".category.ResponsiveLayout"
+            android:name="com.example.uee_recipe_management.application.category.ResponsiveLayout"
             android:label="@string/title_activity_main"
             android:theme="@style/NoActionBar">
             <intent-filter>

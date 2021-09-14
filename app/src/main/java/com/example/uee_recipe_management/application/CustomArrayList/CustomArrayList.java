@@ -1,9 +1,9 @@
-package com.example.uee_recipe_management.category.CustomArrayList;
+package com.example.uee_recipe_management.application.CustomArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.uee_recipe_management.category.category.model.FoodItemModel;
+import com.example.uee_recipe_management.application.category.model.FoodItemModel;
 
 import java.util.ArrayList;
 import java.util.Comparator;

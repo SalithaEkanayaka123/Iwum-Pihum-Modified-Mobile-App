@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category.category.adapter;
+package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.uee_recipe_management.category.R;
-import com.example.uee_recipe_management.category.category.model.AllCategories;
-import com.example.uee_recipe_management.category.category.model.CategoryItem;
+import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.model.AllCategories;
+import com.example.uee_recipe_management.application.category.model.CategoryItem;
 
 import java.util.List;
 
