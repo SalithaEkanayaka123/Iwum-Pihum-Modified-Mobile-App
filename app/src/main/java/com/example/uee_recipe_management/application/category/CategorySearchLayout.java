@@ -37,8 +37,6 @@ public class CategorySearchLayout extends AppCompatActivity {
         }
         // Calling the layout setting method.
         setRecyclerSearchCategory();
-
-
     }
     private void setRecyclerSearchCategory(){
         longCardRecyclerView = findViewById(R.id.search_page_recycler);

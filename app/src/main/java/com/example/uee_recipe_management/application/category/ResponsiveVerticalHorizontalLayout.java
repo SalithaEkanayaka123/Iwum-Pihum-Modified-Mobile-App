@@ -33,11 +33,11 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
 
         //Add items to the category item model class.
         List<CategoryItem> categoryItems = new ArrayList<>();
-        categoryItems.add(new CategoryItem("Name", R.drawable.image1, "This is sample description"));
-        categoryItems.add(new CategoryItem("Name", R.drawable.image2, "This is sample description"));
-        categoryItems.add(new CategoryItem("Name", R.drawable.image3, "This is sample description"));
-        categoryItems.add(new CategoryItem("Name", R.drawable.image4, "This is sample description"));
-        categoryItems.add(new CategoryItem("Name", R.drawable.image5, "This is sample description"));
+        categoryItems.add(new CategoryItem("Fried Rice", R.drawable.image_1, "This is sample description"));
+        categoryItems.add(new CategoryItem("Chicken Kottu", R.drawable.image_2, "This is sample description"));
+        categoryItems.add(new CategoryItem("Soup", R.drawable.image_3, "This is sample description"));
+        categoryItems.add(new CategoryItem("Coca Cola", R.drawable.image_4, "This is sample description"));
+        categoryItems.add(new CategoryItem("Curry", R.drawable.image_5, "This is sample description"));
 
         //Dummy data to the model class.
         List<AllCategories> allCategories  = new ArrayList<>();

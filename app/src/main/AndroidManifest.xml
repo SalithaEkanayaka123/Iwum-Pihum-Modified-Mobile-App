@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
-        <activity android:name=".category.CategorySearchLayout"></activity>
+        <activity android:name=".home.Home"></activity>
+        <activity android:name=".bookmark.Bookmark" />
+        <activity android:name=".settings.SettingPage" />
+        <activity android:name=".temporary.TemporaryIndexPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".category.CategorySearchLayout" />
         <activity android:name=".category.ResponsiveVerticalHorizontalLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
