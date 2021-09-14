@@ -32,7 +32,6 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
 
     @Override
     public void onBindViewHolder(@NonNull  CategoryItemViewHolder holder, int position) {
-
         holder.bannerTv.setImageResource(categoryItemList.get(position).getImage());
     }
 
@@ -54,7 +53,6 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
             titleTv = itemView.findViewById(R.id.titleTv);
             descriptionTv = itemView.findViewById(R.id.descriptionTv);
             dateTv = itemView.findViewById(R.id.dateTv);
-
         }
     }
 }
