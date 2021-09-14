@@ -20,7 +20,6 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
     private List<CategoryItem> categorySearchItemList;
 
     // Constructor
-
     public CategoryItemSearchAdapter(Context context, List<CategoryItem> categorySearchItemList) {
         this.context = context;
         this.categorySearchItemList = categorySearchItemList;

@@ -82,6 +82,7 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
                     Bundle args = new Bundle();
                     args.putParcelableArrayList("ARRAYLIST", items);
                     intent.putExtras(args);
+                    intent.putExtra("categoryName", categoryName.getText().toString());
                     view.getContext().startActivity(intent);
                 }
             });
