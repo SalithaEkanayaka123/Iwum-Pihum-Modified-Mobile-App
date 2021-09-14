@@ -1,7 +1,8 @@
 # UEE - Iwum Pihum Mobile Application (Enhanced Version).
 
 #### UI.
-![GitHub Logo](banner.png)
+
+![GitHub Logo](mobile-application-ui.png)
 This repository contains UI/UX Enhanced version of the **Iwum Pihum** Cooking guidance application.
 
 #### About
