@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category.category.adapter;
+package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.uee_recipe_management.category.R;
-import com.example.uee_recipe_management.category.category.model.FoodItemModel;
+import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.model.FoodItemModel;
 
 import java.util.ArrayList;
 

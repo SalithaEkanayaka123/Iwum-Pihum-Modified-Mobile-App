@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category.category.adapter;
+package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,9 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.uee_recipe_management.category.R;
-import com.example.uee_recipe_management.category.category.model.AllCategories;
-import com.example.uee_recipe_management.category.category.model.CategoryItem;
+import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.model.CategoryItem;
 
 import java.util.List;
 
@@ -33,7 +32,6 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
 
     @Override
     public void onBindViewHolder(@NonNull  CategoryItemViewHolder holder, int position) {
-
         holder.bannerTv.setImageResource(categoryItemList.get(position).getImage());
     }
 
@@ -55,7 +53,6 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
             titleTv = itemView.findViewById(R.id.titleTv);
             descriptionTv = itemView.findViewById(R.id.descriptionTv);
             dateTv = itemView.findViewById(R.id.dateTv);
-
         }
     }
 }

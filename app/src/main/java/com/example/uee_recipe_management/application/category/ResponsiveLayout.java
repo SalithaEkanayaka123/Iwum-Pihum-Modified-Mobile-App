@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category.category;
+package com.example.uee_recipe_management.application.category;
 
 import android.os.Bundle;
 
@@ -6,10 +6,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.uee_recipe_management.category.CustomArrayList.CustomArrayList;
-import com.example.uee_recipe_management.category.R;
-import com.example.uee_recipe_management.category.category.adapter.FoodItemAdapter;
-import com.example.uee_recipe_management.category.category.model.FoodItemModel;
+import com.example.uee_recipe_management.application.CustomArrayList.CustomArrayList;
+import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.adapter.FoodItemAdapter;
+import com.example.uee_recipe_management.application.category.model.FoodItemModel;
 
 import java.util.ArrayList;
 public class ResponsiveLayout extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.category.category;
+package com.example.uee_recipe_management.application.category;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import com.example.uee_recipe_management.category.R;
-import com.example.uee_recipe_management.category.category.adapter.CategoriesRecyclerAdapter;
-import com.example.uee_recipe_management.category.category.model.AllCategories;
-import com.example.uee_recipe_management.category.category.model.CategoryItem;
+import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.adapter.CategoriesRecyclerAdapter;
+import com.example.uee_recipe_management.application.category.model.AllCategories;
+import com.example.uee_recipe_management.application.category.model.CategoryItem;
 
 import java.util.ArrayList;
 import java.util.List;
