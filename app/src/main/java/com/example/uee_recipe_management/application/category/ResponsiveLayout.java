@@ -61,11 +61,11 @@ public class ResponsiveLayout extends AppCompatActivity {
 
         //Custom ArrayList
         modelArrayList = new ArrayList<>();
-        modelArrayList.add(new FoodItemModel("Android Image", "Description 01", "3/8/2020", R.drawable.image1));
-        modelArrayList.add(new FoodItemModel("Second Image", "Description 01", "3/8/2020",R.drawable.image2));
-        modelArrayList.add(new FoodItemModel("Third Image", "Description 01", "3/8/2020",R.drawable.image3));
-        modelArrayList.add(new FoodItemModel("Fourth Image", "Description 01", "3/8/2020",R.drawable.image4));
-        modelArrayList.add(new FoodItemModel("Fifth Image", "Description 01", "3/8/2020",R.drawable.image5));
+        modelArrayList.add(new FoodItemModel("Android Image", "Description 01", "3/8/2020", R.drawable.image_1));
+        modelArrayList.add(new FoodItemModel("Second Image", "Description 01", "3/8/2020",R.drawable.image_2));
+        modelArrayList.add(new FoodItemModel("Third Image", "Description 01", "3/8/2020",R.drawable.image_3));
+        modelArrayList.add(new FoodItemModel("Fourth Image", "Description 01", "3/8/2020",R.drawable.image_4));
+        modelArrayList.add(new FoodItemModel("Fifth Image", "Description 01", "3/8/2020",R.drawable.image_5));
 
         //Setting the adapter
         myAdapter1 = new FoodItemAdapter(this, modelArrayList);
