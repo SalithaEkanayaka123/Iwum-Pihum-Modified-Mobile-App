@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uee_recipe_management.application.R;
@@ -46,6 +47,7 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
         TextView titleTv;
         TextView descriptionTv;
         TextView dateTv;
+        CardView smallCardItem;
 
         public CategoryItemViewHolder(View itemView) {
             super(itemView);
@@ -53,6 +55,15 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
             titleTv = itemView.findViewById(R.id.titleTv);
             descriptionTv = itemView.findViewById(R.id.descriptionTv);
             dateTv = itemView.findViewById(R.id.dateTv);
+            smallCardItem = itemView.findViewById(R.id.small_card_layout_card);
+
+            smallCardItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    System.out.println("Click on the " + titleTv.getText().toString());
+                }
+            });
         }
+
     }
 }
