@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".temporary.TemporaryIndexPage">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Index Page"
+       android:textColor="@color/white"
+       android:textSize="40sp"
+       />
+
+    <Button
+
+        android:id="@+id/responsive_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Responsive Page" />
+
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Settings Page" />
+
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Home Page" />
+
+    <Button
+        android:id="@+id/add_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Add Item" />
+
+</LinearLayout>
