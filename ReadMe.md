@@ -3,6 +3,7 @@
 #### UI.
 
 ![GitHub Logo](mobile-application-ui.png)
+
 This repository contains UI/UX Enhanced version of the **Iwum Pihum** Cooking guidance application.
 
 #### About
@@ -18,8 +19,6 @@ application, Users can filter the recipes using the category page. Once they cli
 they can generate a detailed information page related to that particular item
 
 #### Group Information
-
-Group Information
 
 | IT Number   |     Name    |  
 |----------|:-------------:|
