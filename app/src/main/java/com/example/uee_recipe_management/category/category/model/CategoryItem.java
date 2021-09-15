@@ -6,7 +6,7 @@ public class CategoryItem {
      * **/
     private String name;
     private Integer image;
-    private String description;
+    private String description;//
 
     public CategoryItem(String name, int image, String description) {
         this.name = name;
