@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.uee_recipe_management">
+    package="com.example.uee_recipe_management.application">
 
     <application
         android:allowBackup="true"
@@ -8,6 +8,39 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ueerecipemanagement" />
+        android:theme="@style/Theme.MaterialComponents.NoActionBar">
+        <activity android:name=".home.Home"></activity>
+        <activity android:name=".bookmark.Bookmark" />
+        <activity android:name=".settings.SettingPage" />
+        <activity android:name=".temporary.TemporaryIndexPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".category.CategorySearchLayout" />
+        <activity android:name=".category.ResponsiveVerticalHorizontalLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".category.ResponsiveLayout"
+            android:label="@string/title_activity_main"
+            android:theme="@style/NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
 
 </manifest>
