@@ -27,6 +27,7 @@
                 >
 
                 <EditText
+                    android:id="@+id/search_layout_search"
                     android:layout_width="326dp"
                     android:layout_height="30dp"
                     android:background="@null"

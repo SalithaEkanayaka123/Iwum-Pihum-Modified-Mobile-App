@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItemSearchAdapter.SearchViewHolder> {
@@ -62,6 +63,11 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
     @Override
     public int getItemCount() {
         return categorySearchItemList.size();
+    }
+
+    public void filterList(ArrayList<CategoryItem> filteredList){
+        categorySearchItemList = filteredList;
+        notifyDataSetChanged();
     }
 
     public static final class SearchViewHolder extends RecyclerView.ViewHolder {
