@@ -52,6 +52,12 @@
         android:layout_height="60dp"
         android:text="Add Item" />
 
+    <Button
+        android:id="@+id/splash_screen"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Splash Screen" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
