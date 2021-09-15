@@ -70,8 +70,9 @@
                 android:textColor="#9F9F9F"
                 android:layout_marginLeft="10dp"
                 android:textSize="20sp"/>
+
             <View
-                android:layout_width="229dp"
+                android:layout_width="181dp"
                 android:layout_height="match_parent" />
             <ImageView
                 android:layout_width="20dp"
