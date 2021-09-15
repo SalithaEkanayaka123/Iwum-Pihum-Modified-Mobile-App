@@ -42,6 +42,7 @@
                 >
 
                 <EditText
+                    android:id="@+id/searchbar_responsive_layout"
                     android:layout_width="326dp"
                     android:layout_height="30dp"
                     android:background="@null"
