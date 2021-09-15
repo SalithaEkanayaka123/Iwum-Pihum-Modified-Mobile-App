@@ -60,7 +60,7 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
             smallCardItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    System.out.println("Click on the Card");
+                    System.out.println("Click on the " + titleTv.getText().toString());
                 }
             });
         }
