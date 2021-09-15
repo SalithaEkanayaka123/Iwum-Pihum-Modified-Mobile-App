@@ -8,16 +8,26 @@
     android:orientation="vertical"
     tools:context=".temporary.TemporaryIndexPage">
 
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Index Page"
-       android:textColor="@color/white"
-       android:textSize="40sp"
-       />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Index Page"
+        android:paddingStart="10dp"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Development Navigation Page"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="italic"
+        android:paddingStart="10dp"
+        android:layout_marginBottom="20dp"/>
 
     <Button
-
         android:id="@+id/responsive_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -40,5 +50,16 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Add Item" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Development Preview."
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>
