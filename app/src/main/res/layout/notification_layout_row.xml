@@ -8,17 +8,17 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:elevation="8dp"
         android:padding="10dp"
         android:layout_margin="3dp"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="6dp"
         app:cardBackgroundColor="#C4C4C4"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
            >
 
@@ -51,21 +51,27 @@
                 android:layout_width="151dp"
                 android:layout_height="match_parent" />
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <View
-                    android:layout_width="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#F9BD7A">
-                    <View
-                        android:layout_width="40dp"
-                        android:layout_height="50dp"
-                        android:background="#E91E63"
-                        >
-
-                    </View>
-                </View>
-
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_height="40dp"
+                        android:src="@drawable/notification_green">
+                    </ImageView>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_height="40dp"
+                        android:src="@drawable/notification_red">
+                    </ImageView>
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
 
