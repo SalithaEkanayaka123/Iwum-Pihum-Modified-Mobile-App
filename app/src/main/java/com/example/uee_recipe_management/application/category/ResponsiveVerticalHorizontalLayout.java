@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.adapter.CategoriesRecyclerAdapter;
@@ -19,6 +20,7 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
 
     RecyclerView mainCategoryRecycler;
     CategoriesRecyclerAdapter mainRecyclerAdapter;
+    EditText searchKey;
 
 
     @Override

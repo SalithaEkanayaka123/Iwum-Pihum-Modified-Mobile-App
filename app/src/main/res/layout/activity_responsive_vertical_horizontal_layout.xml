@@ -28,12 +28,10 @@
             android:layout_height="match_parent"
             android:layout_below="@id/category_header"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             >
             <LinearLayout
                 android:id="@+id/vertical_linear_1"
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -41,22 +39,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_centerVertical="true">
+                >
 
-                <TextView
-                    android:layout_width="377dp"
-                    android:layout_height="wrap_content"
+                <EditText
+                    android:layout_width="326dp"
+                    android:layout_height="30dp"
+                    android:background="@null"
                     android:fontFamily="@font/raleway"
-                    android:paddingStart="10dp"
-                    android:text="Search Category..."
+                    android:gravity="center_vertical"
+                    android:hint="@string/search_category"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="3dp"
                     android:textColor="#9F9F9F"
+                    android:textColorHint="#9F9F9F"
                     android:textSize="15sp"
                     android:textStyle="italic" />
 
                 <ImageView
+                    android:id="@+id/search_button"
                     android:layout_width="15dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="25dp"
                     android:width="10dp"
+                    android:paddingTop="8dp"
                     android:height="10dp"
                     android:src="@drawable/search_icon" />
             </LinearLayout>
@@ -65,13 +69,15 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
+                android:layout_marginEnd="10dp"
                 android:background="#9F9F9F" />
             </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/parent_recycler"
-                android:layout_below="@id/vertical_linear_1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:layout_below="@id/vertical_linear_1" />
         </RelativeLayout>
     </RelativeLayout>
 
