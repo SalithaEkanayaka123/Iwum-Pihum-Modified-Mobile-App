@@ -1,12 +1,12 @@
 package com.example.uee_recipe_management.application.settings.model;
 
 public class customButton1 {
-    String title1, String2;
+    String title1, title2;
     Boolean status;
 
-    public customButton1(String title1, String string2, Boolean status) {
+    public customButton1(String title1, String title2, Boolean status) {
         this.title1 = title1;
-        String2 = string2;
+        title2 = title2;
         this.status = status;
     }
 
@@ -18,12 +18,12 @@ public class customButton1 {
         this.title1 = title1;
     }
 
-    public String getString2() {
-        return String2;
+    public String getTitle2() {
+        return title2;
     }
 
-    public void setString2(String string2) {
-        String2 = string2;
+    public void setTitle2(String title2) {
+        title2 = title2;
     }
 
     public Boolean getStatus() {
