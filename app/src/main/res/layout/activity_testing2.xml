@@ -7,10 +7,21 @@
     android:orientation="vertical"
     tools:context=".settings.Testing1">
 
-    <include layout="@layout/activity_custom_button_settings"/>
-    <include layout="@layout/activity_custom_button_settings"/>
-    <include layout="@layout/activity_custom_button_settings"/>
-    <include layout="@layout/activity_custom_button_settings"/>
-    <include layout="@layout/activity_custom_button_settings"/>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rrrrr"
+        android:textSize="50dp"/>
+
+    <ListView
+        android:id="@+id/listSettings1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+    <ListView
+        android:id="@+id/listSettings2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
