@@ -8,11 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItemSearchAdapter.SearchViewHolder> {
@@ -63,12 +65,18 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
         return categorySearchItemList.size();
     }
 
+    public void filterList(ArrayList<CategoryItem> filteredList){
+        categorySearchItemList = filteredList;
+        notifyDataSetChanged();
+    }
+
     public static final class SearchViewHolder extends RecyclerView.ViewHolder {
 
         TextView longCardHeader;
         TextView longCardSubHeading;
         TextView longCardDescription;
         ImageView longCardImageView;
+        CardView longCardView;
 
         public SearchViewHolder(View itemView) {
             super(itemView);
@@ -76,6 +84,14 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
             longCardSubHeading = itemView.findViewById(R.id.lcard_second_title);
             longCardDescription = itemView.findViewById(R.id.lcard_description);
             longCardImageView = itemView.findViewById(R.id.lcard_image);
+            longCardView = itemView.findViewById(R.id.long_card_view_item);
+
+            longCardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    System.out.println("Clicking on the "+ longCardHeader.getText().toString());
+                }
+            });
         }
     }
 }

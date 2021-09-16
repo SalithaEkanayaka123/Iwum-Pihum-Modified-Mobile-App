@@ -5,12 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.adapter.CategoriesRecyclerAdapter;
 import com.example.uee_recipe_management.application.category.model.AllCategories;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +24,8 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
 
     RecyclerView mainCategoryRecycler;
     CategoriesRecyclerAdapter mainRecyclerAdapter;
+    EditText searchBar;
+    ArrayList<AllCategories> allCategories;
 
 
     @Override
@@ -40,13 +47,44 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
         categoryItems.add(new CategoryItem("Curry", R.drawable.image_5, "This is sample description"));
 
         //Dummy data to the model class.
-        List<AllCategories> allCategories  = new ArrayList<>();
+        allCategories  = new ArrayList<>();
         allCategories.add(new AllCategories("Cool Drinks", categoryItems));
         allCategories.add(new AllCategories("Main courses",categoryItems));
         allCategories.add(new AllCategories("Short Eats",categoryItems));
         allCategories.add(new AllCategories("Candies",categoryItems));
         allCategories.add(new AllCategories("Steak",categoryItems));
         setMainCategoryRecycler(allCategories);
+
+        /**
+         * Search Bar for the Responsive Layout.
+         * **/
+        searchBar = findViewById(R.id.searchbar_responsive_layout);
+        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(editable.toString());
+            }
+        });
+    }
+
+    public void filter(String searchKey){
+        ArrayList<AllCategories> filteredAllCategories = new ArrayList<>();
+        for(AllCategories categoryItem : allCategories){
+            if(categoryItem.getCategoryName().toLowerCase().contains(searchKey.toLowerCase())){
+                filteredAllCategories.add(categoryItem);
+            }
+        }
+        mainRecyclerAdapter.filterList(filteredAllCategories);
     }
 
     private void setMainCategoryRecycler(List<AllCategories> allCategoriesList){
