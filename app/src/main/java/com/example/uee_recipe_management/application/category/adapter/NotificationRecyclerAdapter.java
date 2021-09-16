@@ -5,10 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.model.NotificationModel;
 
@@ -24,6 +22,11 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<RecyclerVi
     private static int TYPE_READ = 2; // For read notifications
     private Context context;
     private ArrayList<NotificationModel> notifications;
+
+    public NotificationRecyclerAdapter(Context context, ArrayList<NotificationModel> list) {
+        this.context = context;
+        this.notifications = list;
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
@@ -84,8 +87,8 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<RecyclerVi
 
         public ReadViewHolder( View itemView) {
             super(itemView);
-            Header = itemView.findViewById(R.id.new_notification_header);
-            SubHeader = itemView.findViewById(R.id.new_notification_subheader);
+            Header = itemView.findViewById(R.id.read_notification_header);
+            SubHeader = itemView.findViewById(R.id.read_notification_subheader);
         }
 
         public void setReadNotificationDetails(NotificationModel model) {
