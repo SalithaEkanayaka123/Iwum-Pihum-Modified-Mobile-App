@@ -30,6 +30,7 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
     private List<AllCategories> allCategoriesList;
     private static List<CategoryItem> categoryItems;
 
+
     public CategoriesRecyclerAdapter(Context context, List<AllCategories> allCategories){
         this.context = context;
         this.allCategoriesList = allCategories;
@@ -58,6 +59,11 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
     @Override
     public int getItemCount() {
        return allCategoriesList.size();
+    }
+
+    public void filterList(ArrayList<AllCategories> filteredArrayList){
+        allCategoriesList = filteredArrayList;
+        notifyDataSetChanged();
     }
 
     public static final class MainViewHolder extends RecyclerView.ViewHolder {
