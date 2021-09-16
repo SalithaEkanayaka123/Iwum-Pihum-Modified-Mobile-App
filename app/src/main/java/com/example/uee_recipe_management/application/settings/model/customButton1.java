@@ -6,7 +6,7 @@ public class customButton1 {
 
     public customButton1(String title1, String title2, Boolean status) {
         this.title1 = title1;
-        title2 = title2;
+        this.title2 = title2;
         this.status = status;
     }
 
