@@ -3,9 +3,7 @@ package com.example.uee_recipe_management.application.notification;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
-
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.adapter.NotificationRecyclerAdapter;
 import com.example.uee_recipe_management.application.category.model.NotificationModel;
@@ -34,6 +32,9 @@ public class NotificationLayout extends AppCompatActivity {
         notifications.add(new NotificationModel("Update Available 5.5v", "Bug Fixed", "NEW"));
         notifications.add(new NotificationModel("Update Available 5.5v", "Bug Fixed", "NEW"));
         notifications.add(new NotificationModel("Update Available 5.5v", "Bug Fixed", "NEW"));
+        notifications.add(new NotificationModel("Update Available 5.5v", "Bug Fixed", "READ"));
+        notifications.add(new NotificationModel("Update Available 5.5v", "Bug Fixed", "READ"));
+        notifications.add(new NotificationModel("Update Available 5.5v", "Bug Fixed", "READ"));
         setRecyclerNotifications();
 
     }
