@@ -25,6 +25,11 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<RecyclerVi
     private Context context;
     private ArrayList<NotificationModel> notifications;
 
+    public NotificationRecyclerAdapter(Context context, ArrayList<NotificationModel> list) {
+        this.context = context;
+        this.notifications = list;
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         View view;
@@ -84,8 +89,8 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<RecyclerVi
 
         public ReadViewHolder( View itemView) {
             super(itemView);
-            Header = itemView.findViewById(R.id.new_notification_header);
-            SubHeader = itemView.findViewById(R.id.new_notification_subheader);
+            Header = itemView.findViewById(R.id.read_notification_header);
+            SubHeader = itemView.findViewById(R.id.read_notification_subheader);
         }
 
         public void setReadNotificationDetails(NotificationModel model) {
