@@ -62,13 +62,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_height="40dp"
-                        android:src="@drawable/notification_green">
-                    </ImageView>
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_height="40dp"
                         android:src="@drawable/notification_red">
                     </ImageView>
                 </RelativeLayout>
