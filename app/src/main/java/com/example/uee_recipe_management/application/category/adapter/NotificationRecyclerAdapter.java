@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,26 +23,35 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<RecyclerVi
     private static int TYPE_NEW = 1; // For new notifications
     private static int TYPE_READ = 2; // For read notifications
     private Context context;
-    private ArrayList<NotificationRecyclerAdapter> notifications;
+    private ArrayList<NotificationModel> notifications;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         View view;
         if(viewType == TYPE_NEW){
             view = LayoutInflater.from(context).inflate(R.layout.notification_layout_row_new, parent, false);
-            return null; // Change once class created.
+            return new NewViewHolder(view);
         } else {
-            view = LayoutInflater.from(context).inflate(R.layout.notification_layout_row_new, parent, false);
-            return null; // Change once class created.
+            view = LayoutInflater.from(context).inflate(R.layout.notification_layout_row_read, parent, false);
+            return new ReadViewHolder(view);
+        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if(notifications.get(position).getType().contains("NEW")){
+            return TYPE_NEW;
+        } else {
+            return TYPE_READ;
         }
     }
 
     @Override
     public void onBindViewHolder(@NonNull  RecyclerView.ViewHolder holder, int position) {
         if(getItemViewType(position) == TYPE_NEW) {
-            // Update
+           ((NewViewHolder) holder).setNewNotificationDetails(notifications.get(position));
         } else {
-            // Update
+            ((ReadViewHolder) holder).setReadNotificationDetails(notifications.get(position));
         }
     }
 
@@ -52,23 +62,35 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<RecyclerVi
 
     class NewViewHolder extends RecyclerView.ViewHolder {
 
+        TextView Header;
+        TextView SubHeader;
+
         public NewViewHolder( View itemView) {
             super(itemView);
+            Header = itemView.findViewById(R.id.new_notification_header);
+            SubHeader = itemView.findViewById(R.id.new_notification_subheader);
         }
 
         public void setNewNotificationDetails(NotificationModel model) {
-            // Update the UI elements with model.
+           Header.setText(model.getName());
+           SubHeader.setText(model.getSubheading());
         }
     }
 
     class ReadViewHolder extends RecyclerView.ViewHolder {
 
+        TextView Header;
+        TextView SubHeader;
+
         public ReadViewHolder( View itemView) {
             super(itemView);
+            Header = itemView.findViewById(R.id.new_notification_header);
+            SubHeader = itemView.findViewById(R.id.new_notification_subheader);
         }
 
         public void setReadNotificationDetails(NotificationModel model) {
-            // Update the UI elements with model.
+            Header.setText(model.getName());
+            SubHeader.setText(model.getSubheading());
         }
     }
 }

@@ -31,6 +31,7 @@
                 android:paddingBottom="6dp">
 
                 <TextView
+                    android:id="@+id/read_notification_header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/raleway_bold"
@@ -38,6 +39,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold" />
                 <TextView
+                    android:id="@+id/read_notification_subheader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/raleway"
