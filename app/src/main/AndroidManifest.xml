@@ -10,8 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
         <activity android:name=".splash.OpeningSplashScreen"></activity>
-        <activity android:name=".CustomButtonSettings.CustomButtonSettings"></activity>
         <activity android:name=".settings.Testing1" />
+        <activity android:name=".notification.NotificationLayout"></activity>
+        <activity android:name=".CustomButtonSettings.CustomButtonSettings" />
+
         <activity android:name=".home.Home" />
         <activity android:name=".bookmark.Bookmark" />
         <activity android:name=".settings.SettingPage" />
