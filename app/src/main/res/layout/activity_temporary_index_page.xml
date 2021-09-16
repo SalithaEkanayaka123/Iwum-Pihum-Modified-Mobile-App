@@ -58,6 +58,13 @@
         android:layout_height="60dp"
         android:text="Splash Screen" />
 
+    <Button
+        android:id="@+id/notification_screen"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Notification Screen" />
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
