@@ -37,12 +37,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/raleway_bold"
                     android:textColor="@color/black"
-                    android:id="@+id/title1"
+                    android:id="@+id/settingstitle1"
                     android:text="Dark Mode"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/title2"
+                    android:id="@+id/settingstitle2"
                     android:text="Enable Dark Mode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

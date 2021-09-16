@@ -51,8 +51,8 @@ public class CustomButtonSettings extends BaseAdapter {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = layoutInflater.inflate(R.layout.activity_custom_button_settings , null);
             //textID = (TextView) view.findViewById(R.id.textID);
-            title1 = (TextView) view.findViewById(R.id.title1);
-            title2 = (TextView) view.findViewById(R.id.title2);
+            title1 = (TextView) view.findViewById(R.id.settingstitle1);
+            title2 = (TextView) view.findViewById(R.id.settingstitle2);
 
             toogleButton = view.findViewById(R.id.switch1);
             final customButton1 customButton1 = list.get(i);//i means relevent adapter position
