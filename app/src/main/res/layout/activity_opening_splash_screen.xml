@@ -4,12 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_centerVertical="true"
-    android:layout_centerHorizontal="true"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".splash.OpeningSplashScreen"
-    android:background="#9F897D">
+    android:background="@drawable/background_edited">
 
     <ImageView
         android:id="@+id/imageView"
@@ -49,7 +46,7 @@
         android:fontFamily="@font/raleway"
         android:text="Cooking Recepies"
         android:textAlignment="center"
-        android:textSize="20"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
