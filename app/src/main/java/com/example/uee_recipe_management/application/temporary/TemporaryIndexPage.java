@@ -12,6 +12,7 @@ import com.example.uee_recipe_management.application.bookmark.Bookmark;
 import com.example.uee_recipe_management.application.category.ResponsiveVerticalHorizontalLayout;
 import com.example.uee_recipe_management.application.home.Home;
 import com.example.uee_recipe_management.application.notification.NotificationLayout;
+import com.example.uee_recipe_management.application.settings.Background_Settings;
 import com.example.uee_recipe_management.application.settings.Notification_Settings;
 import com.example.uee_recipe_management.application.settings.SettingPage;
 import com.example.uee_recipe_management.application.settings.Testing1;
@@ -41,7 +42,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
+                Intent intent  = new Intent(view.getContext(), Background_Settings.class);
                 view.getContext().startActivity(intent);
             }
         });
