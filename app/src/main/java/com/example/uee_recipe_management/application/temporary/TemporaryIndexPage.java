@@ -43,7 +43,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
+                Intent intent  = new Intent(view.getContext(), SettingPage.class);
                 view.getContext().startActivity(intent);
             }
         });
