@@ -17,36 +17,35 @@ import java.util.ArrayList;
 
 public class Testing1 extends AppCompatActivity {
 
-    ListView listView1, listView2, listView3;
-    CustomButtonSettings adapter, adapter3;
+    ListView listView1, listView2;
+    CustomButtonSettings adapter;
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
-    ArrayList<customButton1> array, array2, array3;//
+    ArrayList<customButton1> array, array2;//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing2);
 
-        listView1 = (ListView) findViewById(R.id.listSettings3);
-        listView2 = (ListView) findViewById(R.id.listSettings4);
-        listView3 = (ListView) findViewById(R.id.listSettings5);
+        listView1 = (ListView) findViewById(R.id.listSettings1);
+        listView2 = (ListView) findViewById(R.id.listSettings2);
 
         array = new ArrayList<>();
-        array.add(new customButton1("Notification", "Enable notification alerts for notifications", true));
+        array.add(new customButton1("background1", "background2", true));
+        array.add(new customButton1("background1", "background2", true));
+        array.add(new customButton1("background1", "background2", true));
 
         array2 = new ArrayList<>();
-        array2.add(new customButton1("Ringing Tones", "Ringing Tones List", true));
+        array2.add(new customButton1("background11", "background22", true));
+        array2.add(new customButton1("background11", "background22", true));
+        array2.add(new customButton1("background11", "background22", true));
 
-        array3 = new ArrayList<>();
-        array3.add(new customButton1("Vibration", "Enable Vibration alerts for notifications", true));
 
 
         adapter = new CustomButtonSettings(this , array);//this is called in customMusicAdapter
         adapter2 = new CustomButtonSettings2(this , array2);//
-        adapter3 = new CustomButtonSettings(this , array3);
         //then set that adapter to the listView
         listView1.setAdapter(adapter);
         listView2.setAdapter(adapter2);
-        listView3.setAdapter(adapter3);
         listView1.setItemsCanFocus(false);
         //mentioning to update the rows
 //        adapter.notifyDataSetChanged();
