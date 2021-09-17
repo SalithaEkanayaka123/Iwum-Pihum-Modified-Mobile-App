@@ -61,7 +61,6 @@ public class CustomButtonSettings extends BaseAdapter {
             String name1 = customButton1.getTitle1();
             title1.setText(name1);
             String name2 = customButton1.getTitle2();
-            System.out.println(name2);
             title2.setText(name2);
 
             //needed to be updated
