@@ -1,5 +1,6 @@
 package com.example.uee_recipe_management.application.settings;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings2;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
+import com.example.uee_recipe_management.application.splash.OpeningSplashScreen;
 
 import java.util.ArrayList;
 
@@ -40,7 +42,23 @@ public class SettingPage extends AppCompatActivity {
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                System.out.println("calling");
+
+                if (i == 0){
+                    Intent intent  = new Intent(view.getContext(), Background_Settings.class);
+                    view.getContext().startActivity(intent);
+                }else if (i == 1){
+                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
+                    view.getContext().startActivity(intent);
+                }else if (i == 2){
+//                    Intent intent  = new Intent(view.getContext(), OpeningSplashScreen.class);
+//                    view.getContext().startActivity(intent);
+                }else if (i == 3){
+                    Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
+                    view.getContext().startActivity(intent);
+                }else if (i == 4){
+//                    Intent intent  = new Intent(view.getContext(), OpeningSplashScreen.class);
+//                    view.getContext().startActivity(intent);
+                }
             }
         });
     }
