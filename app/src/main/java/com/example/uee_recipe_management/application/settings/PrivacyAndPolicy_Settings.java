@@ -3,6 +3,8 @@ package com.example.uee_recipe_management.application.settings;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.uee_recipe_management.application.R;
@@ -35,5 +37,14 @@ public class PrivacyAndPolicy_Settings extends AppCompatActivity {
         adapter2 = new CustomButtonSettings3(this , array);//
         //then set that adapter to the list
         listView1.setAdapter(adapter2);
+
+
+
+//        listView1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                System.out.println("calling 1222");
+//            }
+//        });
     }
 }

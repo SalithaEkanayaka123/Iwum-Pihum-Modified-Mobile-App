@@ -1,13 +1,13 @@
 package com.example.uee_recipe_management.application.settings;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.uee_recipe_management.application.R;
-import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings2;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
 
@@ -36,5 +36,12 @@ public class SettingPage extends AppCompatActivity {
         adapter2 = new CustomButtonSettings2(this , array);//
         //then set that adapter to the list
         listView1.setAdapter(adapter2);
+
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                System.out.println("calling");
+            }
+        });
     }
 }
