@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFF"
     tools:context=".settings.Testing1">
 
 
@@ -19,7 +20,7 @@
         android:id="@+id/listSettings1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"></ListView>
+        android:clickable="true"/>
     <ListView
         android:id="@+id/listSettings2"
         android:layout_width="match_parent"

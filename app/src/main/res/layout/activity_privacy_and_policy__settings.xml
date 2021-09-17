@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFF"
-    tools:context=".settings.SettingPage">
+    tools:context=".settings.PrivacyAndPolicy_Settings">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/category_header"
@@ -26,13 +26,12 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/listSettings8"
+            android:id="@+id/listSettings9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true">
         </ListView>
 
     </LinearLayout>
-
 
 </LinearLayout>

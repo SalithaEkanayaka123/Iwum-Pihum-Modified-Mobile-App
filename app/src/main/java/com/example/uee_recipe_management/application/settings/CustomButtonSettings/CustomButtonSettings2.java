@@ -1,31 +1,24 @@
-package com.example.uee_recipe_management.application.CustomButtonSettings;
+package com.example.uee_recipe_management.application.settings.CustomButtonSettings;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.ToggleButton;
-
-import androidx.annotation.NonNull;
 
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
 
 import java.util.ArrayList;
 
-public class CustomButtonSettings extends BaseAdapter {
+public class CustomButtonSettings2 extends BaseAdapter {
 
     private Context context;
     ArrayList<customButton1> list;
     TextView title1, title2;
-    Switch toogleButton;
 
-    public CustomButtonSettings(Context context, ArrayList<customButton1> list) {
+    public CustomButtonSettings2(Context context, ArrayList<customButton1> list) {
         this.context = context;
         this.list = list;
     }
@@ -49,25 +42,18 @@ public class CustomButtonSettings extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view == null){
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            view = layoutInflater.inflate(R.layout.activity_custom_button_settings , null);
-            //textID = (TextView) view.findViewById(R.id.textID);
-            title1 = (TextView) view.findViewById(R.id.title1);
-            title2 = (TextView) view.findViewById(R.id.title2);
+            view = layoutInflater.inflate(R.layout.activity_custom_button_settings2 , null);
 
-            toogleButton = view.findViewById(R.id.switch1);
-            final customButton1 customButton1 = list.get(i);//i means relevent adapter position
-            //songList(i) means we are geting the relevent array value of ArrayList<SongList> at postion i
+            title1 = (TextView) view.findViewById(R.id.settingstitle3);
+            title2 = (TextView) view.findViewById(R.id.settingstitle4);
+
+            final customButton1 customButton1 = list.get(i);
 
             String name1 = customButton1.getTitle1();
             title1.setText(name1);
             String name2 = customButton1.getTitle2();
             System.out.println(name2);
             title2.setText(name2);
-
-            //needed to be updated
-            toogleButton.setChecked(true);
-
-
         }
         return view;
     }
