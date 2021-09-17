@@ -1,9 +1,11 @@
 package com.example.uee_recipe_management.application.settings;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -40,14 +42,26 @@ public class Testing1 extends AppCompatActivity {
         array2.add(new customButton1("background11", "background22", true));
         array2.add(new customButton1("background11", "background22", true));
 
+
+
         adapter = new CustomButtonSettings(this , array);//this is called in customMusicAdapter
         adapter2 = new CustomButtonSettings2(this , array2);//
         //then set that adapter to the listView
         listView1.setAdapter(adapter);
         listView2.setAdapter(adapter2);
+        listView1.setItemsCanFocus(false);
         //mentioning to update the rows
-        adapter.notifyDataSetChanged();
-        adapter2.notifyDataSetChanged();
+//        adapter.notifyDataSetChanged();
+//        adapter2.notifyDataSetChanged();
+
+//        listView1.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                return false;
+//            }
+//        });
+
+
 
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -60,6 +74,7 @@ public class Testing1 extends AppCompatActivity {
                 //navigating to the relevent activity
                 startActivity(intent);
             }
+
         });
     }
 }

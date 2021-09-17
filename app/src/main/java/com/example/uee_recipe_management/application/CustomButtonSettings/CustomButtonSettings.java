@@ -1,17 +1,14 @@
 package com.example.uee_recipe_management.application.CustomButtonSettings;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
-import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
@@ -24,6 +21,7 @@ public class CustomButtonSettings extends BaseAdapter {
     ArrayList<customButton1> list;
     TextView title1, title2;
     Switch toogleButton;
+    CardView longCardView;
 
     public CustomButtonSettings(Context context, ArrayList<customButton1> list) {
         this.context = context;
@@ -55,6 +53,7 @@ public class CustomButtonSettings extends BaseAdapter {
             title2 = (TextView) view.findViewById(R.id.settingstitle2);
 
             toogleButton = view.findViewById(R.id.switch1);
+            longCardView = view.findViewById(R.id.cardSettingsId1);
             final customButton1 customButton1 = list.get(i);//i means relevent adapter position
             //songList(i) means we are geting the relevent array value of ArrayList<SongList> at postion i
 
@@ -65,6 +64,15 @@ public class CustomButtonSettings extends BaseAdapter {
 
             //needed to be updated
             toogleButton.setChecked(true);
+
+//            longCardView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    System.out.println("cassss");
+//                }
+//            });
+
+
 
 
         }
