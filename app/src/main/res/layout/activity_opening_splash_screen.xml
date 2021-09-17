@@ -8,21 +8,11 @@
     android:layout_centerHorizontal="true"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".splash.OpeningSplashScreen">
+    tools:context=".splash.OpeningSplashScreen"
+    android:background="#9F897D">
 
-    <TextView
-        android:id="@+id/splash_header"
+    <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is the Splash Screen..."
-        android:textStyle="bold"
-        android:fontFamily="@font/raleway_bold"/>
-
-    <TextView
-        android:id="@+id/splash_second_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Comming soon.."
-        android:fontFamily="@font/raleway"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
