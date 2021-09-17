@@ -30,6 +30,7 @@ public class SettingPage extends AppCompatActivity {
         array.add(new customButton1("Background", "Handles Background Settings", true));
         array.add(new customButton1("Notification", "Handles Notification Settings", true));
         array.add(new customButton1("Synchronization", "Handles Synchronization Settings", true));
+        array.add(new customButton1("Privacy and Policy", "Privacy and Policy", true));
         array.add(new customButton1("About", "About", true));
 
         adapter2 = new CustomButtonSettings2(this , array);//
