@@ -20,4 +20,18 @@
         android:elevation="8dp"
         android:textStyle="bold" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/listSettings9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true">
+        </ListView>
+
+    </LinearLayout>
+
 </LinearLayout>
