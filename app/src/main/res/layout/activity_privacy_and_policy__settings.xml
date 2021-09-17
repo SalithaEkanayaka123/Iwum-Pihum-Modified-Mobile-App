@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFF"
-    tools:context=".PrivacyAndPolicy_Settings">
+    tools:context=".settings.PrivacyAndPolicy_Settings">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/category_header"

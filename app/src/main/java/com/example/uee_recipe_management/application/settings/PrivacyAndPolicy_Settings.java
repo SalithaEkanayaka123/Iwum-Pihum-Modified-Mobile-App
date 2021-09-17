@@ -1,8 +1,10 @@
-package com.example.uee_recipe_management.application;
+package com.example.uee_recipe_management.application.settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.uee_recipe_management.application.R;
 
 public class PrivacyAndPolicy_Settings extends AppCompatActivity {
 

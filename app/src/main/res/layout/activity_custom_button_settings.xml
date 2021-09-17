@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:clickable="true"
-    tools:context=".CustomButtonSettings.CustomButtonSettings">
+    tools:context=".settings.CustomButtonSettings.CustomButtonSettings">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardSettingsId1"

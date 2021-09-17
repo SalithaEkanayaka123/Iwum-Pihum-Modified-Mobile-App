@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.application.CustomButtonSettings;
+package com.example.uee_recipe_management.application.settings.CustomButtonSettings;
 
 import android.content.Context;
 import android.view.LayoutInflater;

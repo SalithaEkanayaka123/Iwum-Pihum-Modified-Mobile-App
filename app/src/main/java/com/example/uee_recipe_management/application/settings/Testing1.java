@@ -1,19 +1,16 @@
 package com.example.uee_recipe_management.application.settings;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.uee_recipe_management.application.CustomButtonSettings.CustomButtonSettings;
-import com.example.uee_recipe_management.application.CustomButtonSettings.CustomButtonSettings2;
+import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings;
+import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings2;
 import com.example.uee_recipe_management.application.R;
-import com.example.uee_recipe_management.application.category.model.FoodItemModel;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
 
 import java.util.ArrayList;

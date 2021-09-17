@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFF"
     android:orientation="vertical"
-    tools:context=".Background_Settings">
+    tools:context=".settings.Background_Settings">
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/category_header"
         android:layout_width="match_parent"
