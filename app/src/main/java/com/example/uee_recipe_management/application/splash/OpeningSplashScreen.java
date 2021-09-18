@@ -25,7 +25,7 @@ public class OpeningSplashScreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_opening_splash_screen);
 
-        //Registering the Anmiations
+        //Registering the Animation
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
@@ -33,5 +33,10 @@ public class OpeningSplashScreen extends AppCompatActivity {
         image = findViewById(R.id.logo);
         heading = findViewById(R.id.title_header);
         subheading = findViewById(R.id.title_subheader);
+
+        //Assigned the Animation.
+        image.setAnimation(topAnim);
+        heading.setAnimation(bottomAnim);
+        subheading.setAnimation(bottomAnim);
     }
 }
