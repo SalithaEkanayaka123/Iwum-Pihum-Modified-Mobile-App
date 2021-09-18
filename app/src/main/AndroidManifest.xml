@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.uee_recipe_management">
+    package="com.example.uee_recipe_management.application">
 
     <application
         android:allowBackup="true"
@@ -8,6 +8,47 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ueerecipemanagement" />
+        android:theme="@style/Theme.MaterialComponents.NoActionBar">
+        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings3" />
+        <activity android:name=".settings.PrivacyAndPolicy_Settings" />
+        <activity android:name=".settings.Background_Settings" />
+        <activity android:name=".settings.Notification_Settings" />
+        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings2" />
+        <activity android:name=".splash.OpeningSplashScreen" />
+        <activity android:name=".notification.NotificationLayout" />
+        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings" />
+        <activity android:name=".home.Home" />
+        <activity android:name=".bookmark.Bookmark" />
+        <activity android:name=".settings.SettingPage" />
+        <activity android:name=".temporary.TemporaryIndexPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".category.CategorySearchLayout" />
+        <activity android:name=".category.ResponsiveVerticalHorizontalLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".category.ResponsiveLayout"
+            android:label="@string/title_activity_main"
+            android:theme="@style/NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
 
 </manifest>

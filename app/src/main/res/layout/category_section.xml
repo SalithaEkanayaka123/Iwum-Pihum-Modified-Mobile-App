@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/category_section"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="#FFF">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/category_section_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_bold"
+            android:text="Main Courses"
+            android:textColor="#9F9F9F"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/section_more_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:width="10dp"
+            android:height="10dp"
+            android:src="@drawable/view_all" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/category_section_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
