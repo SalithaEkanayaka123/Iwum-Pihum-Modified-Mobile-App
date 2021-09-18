@@ -16,9 +16,11 @@
         android:elevation="8dp"
         android:fontFamily="@font/raleway_bold"
         android:padding="5dp"
-        android:text="Add a new recipe"
+        android:text="Your new recipes"
+        android:textColor="#FFFFFF"
         android:textSize="15dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_btn"
@@ -34,6 +36,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:rippleColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create something new"
+        android:textColor="#686464"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="281dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
