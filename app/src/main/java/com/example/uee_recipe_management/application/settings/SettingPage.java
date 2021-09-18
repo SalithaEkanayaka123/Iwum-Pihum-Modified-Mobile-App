@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings2;
@@ -53,8 +54,12 @@ public class SettingPage extends AppCompatActivity {
                     Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
                     view.getContext().startActivity(intent);
                 }else if (i == 2){
-//                    Intent intent  = new Intent(view.getContext(), OpeningSplashScreen.class);
-//                    view.getContext().startActivity(intent);
+                    System.out.println("ww1");
+                    TestingFragments settingsFragment = new TestingFragments();
+                    System.out.println("ww2");
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    System.out.println("ww3");
+                    fragmentManager.beginTransaction().add(R.id.settingsMainPage , settingsFragment).commit();
                 }else if (i == 3){
                     Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
                     view.getContext().startActivity(intent);
