@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.ResponsiveVerticalHorizontalLayout;
 import com.example.uee_recipe_management.application.temporary.TemporaryIndexPage;
 
 public class OpeningSplashScreen extends AppCompatActivity {
@@ -48,7 +49,7 @@ public class OpeningSplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(OpeningSplashScreen.this, TemporaryIndexPage.class);
+                Intent intent = new Intent(OpeningSplashScreen.this, ResponsiveVerticalHorizontalLayout.class);
                 startActivity(intent);
                 finish();
             }
