@@ -1,5 +1,4 @@
 package com.example.uee_recipe_management.application.notification;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,7 +35,6 @@ public class NotificationLayout extends AppCompatActivity {
         notifications.add(new NotificationModel("Update Available 5.5v", "Bug Fixed", "READ"));
         notifications.add(new NotificationModel("Update Available 5.5v", "Bug Fixed", "READ"));
         setRecyclerNotifications();
-
     }
 
     private void setRecyclerNotifications() {
@@ -45,6 +43,5 @@ public class NotificationLayout extends AppCompatActivity {
         notificationRecycler.setLayoutManager(layoutManager);
         notificationRecyclerAdapter = new NotificationRecyclerAdapter(this, notifications);
         notificationRecycler.setAdapter(notificationRecyclerAdapter);
-
     }
 }
