@@ -9,14 +9,11 @@ import android.widget.Button;
 
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.Bookmark;
+import com.example.uee_recipe_management.application.bookmark.ItemTesting;
 import com.example.uee_recipe_management.application.category.ResponsiveVerticalHorizontalLayout;
 import com.example.uee_recipe_management.application.home.Home;
 import com.example.uee_recipe_management.application.notification.NotificationLayout;
-import com.example.uee_recipe_management.application.settings.Background_Settings;
-import com.example.uee_recipe_management.application.settings.Notification_Settings;
-import com.example.uee_recipe_management.application.settings.PrivacyAndPolicy_Settings;
 import com.example.uee_recipe_management.application.settings.SettingPage;
-import com.example.uee_recipe_management.application.settings.Testing1;
 import com.example.uee_recipe_management.application.splash.OpeningSplashScreen;
 
 public class TemporaryIndexPage extends AppCompatActivity {
@@ -51,7 +48,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), Bookmark.class);
+                Intent intent  = new Intent(view.getContext(), ItemTesting.class);
                 view.getContext().startActivity(intent);
             }
         });
