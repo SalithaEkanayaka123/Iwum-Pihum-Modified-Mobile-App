@@ -8,18 +8,17 @@
     android:orientation="vertical"
     tools:context=".bookmark.ItemTesting">
 
-        <TextView
-            android:id="@+id/add_item_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#9F897D"
-            android:elevation="8dp"
-            android:fontFamily="@font/raleway_bold"
-            android:padding="5dp"
-            android:text="Your new recipes"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            />
+    <TextView
+        android:id="@+id/add_item_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9F897D"
+        android:elevation="8dp"
+        android:fontFamily="@font/raleway_bold"
+        android:padding="5dp"
+        android:text="Your new recipes"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 
     <TextView
