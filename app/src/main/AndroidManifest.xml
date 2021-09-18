@@ -17,7 +17,6 @@
         <activity android:name=".settings.Notification_Settings" />
         <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings2" />
         <activity android:name=".splash.OpeningSplashScreen" />
-        <activity android:name=".settings.Testing1" />
         <activity android:name=".notification.NotificationLayout" />
         <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings" />
         <activity android:name=".home.Home" />
