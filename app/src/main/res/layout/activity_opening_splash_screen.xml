@@ -1,28 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_centerVertical="true"
-    android:layout_centerHorizontal="true"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".splash.OpeningSplashScreen">
+    tools:context=".splash.OpeningSplashScreen"
+    android:background="@drawable/background_edited">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="262dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/splash_header"
-        android:layout_width="wrap_content"
+        android:id="@+id/title_header"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="This is the Splash Screen..."
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/raleway_bold"
+        android:text="ඉවුම් පිහුම්"
         android:textStyle="bold"
-        android:fontFamily="@font/raleway_bold"/>
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:textColor="#F39220"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <TextView
-        android:id="@+id/splash_second_header"
+        android:id="@+id/title_subheader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comming soon.."
-        android:fontFamily="@font/raleway"/>
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/raleway"
+        android:text="Cooking Recepies"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_header" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
