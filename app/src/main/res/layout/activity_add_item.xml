@@ -35,6 +35,7 @@
         android:inputType="textPersonName"
         android:textColor="#8F8F8F"
         app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
 
@@ -45,12 +46,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="8dp"
-        android:background="#DDD2CC"
+        android:background="@drawable/input_field_corner_radius"
+        android:padding="10dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Enter the description..."
         android:inputType="textMultiLine"
-        android:textColor="#8F8F8F"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_input_name" />
