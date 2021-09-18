@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
-        <activity android:name=".home.Home"></activity>
+        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings3"></activity>
+        <activity android:name=".settings.PrivacyAndPolicy_Settings" />
+        <activity android:name=".settings.Background_Settings" />
+        <activity android:name=".settings.Notification_Settings" />
+        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings2" />
+        <activity android:name=".splash.OpeningSplashScreen" />
+        <activity android:name=".settings.Testing1" />
+        <activity android:name=".notification.NotificationLayout" />
+        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings" />
+        <activity android:name=".home.Home" />
         <activity android:name=".bookmark.Bookmark" />
         <activity android:name=".settings.SettingPage" />
         <activity android:name=".temporary.TemporaryIndexPage">
