@@ -9,7 +9,7 @@
     tools:context=".bookmark.ItemTesting">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/category_header"
+        android:id="@+id/add_item_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#9F897D"
