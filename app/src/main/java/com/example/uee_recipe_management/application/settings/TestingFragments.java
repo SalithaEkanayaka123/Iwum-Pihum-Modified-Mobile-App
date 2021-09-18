@@ -2,6 +2,7 @@ package com.example.uee_recipe_management.application.settings;
 
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.uee_recipe_management.application.R;
 
-public class TestingFragments extends Fragment {
+public class TestingFragments extends DialogFragment {
 
 
     @Override

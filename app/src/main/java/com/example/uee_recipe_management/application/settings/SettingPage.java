@@ -54,12 +54,15 @@ public class SettingPage extends AppCompatActivity {
                     Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
                     view.getContext().startActivity(intent);
                 }else if (i == 2){
-                    System.out.println("ww1");
+
                     TestingFragments settingsFragment = new TestingFragments();
-                    System.out.println("ww2");
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    System.out.println("ww3");
-                    fragmentManager.beginTransaction().add(R.id.settingsMainPage , settingsFragment).commit();
+                    settingsFragment.show(getSupportFragmentManager(),"myFragment");
+//                    System.out.println("ww1");
+//
+//                    System.out.println("ww2");
+//                    FragmentManager fragmentManager = getSupportFragmentManager();
+//                    System.out.println("ww3");
+//                    fragmentManager.beginTransaction().add(R.id.settingsMainPage , settingsFragment).commit();
                 }else if (i == 3){
                     Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
                     view.getContext().startActivity(intent);
