@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#FFF"
+    android:background="@drawable/background_add_items"
     android:layout_height="match_parent"
     tools:context=".bookmark.AddItem"
     >
@@ -122,31 +122,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_add"
         android:layout_width="126dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/round_btn"
         android:text="Add Recipe"
-        android:textColor="@color/design_default_color_surface"
+        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_input_image"
         tools:ignore="MissingConstraints" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_reset"
         android:layout_width="84dp"
         android:layout_height="44dp"
         android:layout_marginTop="56dp"
-        android:background="@drawable/round_btn"
         android:text="RESET"
-        android:textColor="@color/design_default_color_surface"
+        android:background="@drawable/round_btn"
+        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_add"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/button_add"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
