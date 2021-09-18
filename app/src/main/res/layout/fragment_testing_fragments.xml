@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".settings.TestingFragments">
+    tools:context=".settings.TestingFragments"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/category_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9F897D"
+        android:fontFamily="@font/raleway_bold"
+        android:padding="5dp"
+        android:text="Notification"
+        android:textSize="15dp"
+        android:elevation="8dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <ListView
+            android:id="@+id/listSettings8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true">
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>
