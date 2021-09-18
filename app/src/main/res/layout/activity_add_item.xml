@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FFF"
+    android:layout_height="match_parent"
+    tools:context=".bookmark.AddItem">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/add_item_form_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9F897D"
+        android:elevation="8dp"
+        android:fontFamily="@font/raleway_bold"
+        android:padding="5dp"
+        android:text="Add a new recipe"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txt_input_name"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/custome_input"
+        android:ems="10"
+        android:hint="    Enter the name..."
+        android:inputType="textPersonName"
+        android:textColor="#8F8F8F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="fill_parent"
+        android:layout_height="87dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="8dp"
+        android:background="#DDD2CC"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="    Enter the description..."
+        android:inputType="textMultiLine"
+        android:textColor="#8F8F8F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
