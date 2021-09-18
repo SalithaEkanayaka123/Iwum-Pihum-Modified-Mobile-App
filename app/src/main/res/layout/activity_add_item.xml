@@ -24,12 +24,12 @@
 
     <EditText
         android:id="@+id/txt_input_name"
-        android:layout_width="322dp"
+        android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="8dp"
-        android:background="#DDD2CC"
+        android:background="@drawable/custome_input"
         android:ems="10"
         android:hint="    Enter the name..."
         android:inputType="textPersonName"
@@ -40,7 +40,7 @@
 
     <EditText
         android:id="@+id/editTextTextMultiLine"
-        android:layout_width="318dp"
+        android:layout_width="fill_parent"
         android:layout_height="87dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="21dp"
