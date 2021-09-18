@@ -1,5 +1,6 @@
 package com.example.uee_recipe_management.application.settings;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,8 @@ public class SettingPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_page);
+
+
 
         listView1 = (ListView) findViewById(R.id.listSettings8);
 
