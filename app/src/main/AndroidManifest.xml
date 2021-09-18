@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
-        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings3"></activity>
+        <activity android:name=".settings.TestingSettings"></activity>
+        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings3" />
         <activity android:name=".settings.PrivacyAndPolicy_Settings" />
         <activity android:name=".settings.Background_Settings" />
         <activity android:name=".settings.Notification_Settings" />
