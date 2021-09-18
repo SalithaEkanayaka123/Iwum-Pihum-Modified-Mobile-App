@@ -38,7 +38,7 @@
         android:padding="10dp"
         android:textColorHint="#8F8F8F"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
 
@@ -121,6 +121,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="126dp"
+        android:layout_height="47dp"
+        android:text="Add Recipie"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="459dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
