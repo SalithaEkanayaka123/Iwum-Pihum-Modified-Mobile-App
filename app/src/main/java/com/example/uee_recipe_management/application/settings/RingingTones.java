@@ -2,6 +2,7 @@ package com.example.uee_recipe_management.application.settings;
 
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,12 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.uee_recipe_management.application.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RingingTones#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class RingingTones extends Fragment {
+public class RingingTones extends DialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
