@@ -55,7 +55,7 @@ public class SettingPage extends AppCompatActivity {
                     view.getContext().startActivity(intent);
                 }else if (i == 2){
 
-                    TestingFragments settingsFragment = new TestingFragments();
+                    Synchronization settingsFragment = new Synchronization();
                     settingsFragment.show(getSupportFragmentManager(),"myFragment");
 //                    System.out.println("ww1");
 //
@@ -67,8 +67,8 @@ public class SettingPage extends AppCompatActivity {
                     Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
                     view.getContext().startActivity(intent);
                 }else if (i == 4){
-//                    Intent intent  = new Intent(view.getContext(), OpeningSplashScreen.class);
-//                    view.getContext().startActivity(intent);
+                    About settingsFragment = new About();
+                    settingsFragment.show(getSupportFragmentManager(),"myFragment1");
                 }
             }
         });
