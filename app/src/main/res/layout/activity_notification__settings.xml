@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical"
+    tools:context=".settings.Notification_Settings">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/category_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9F897D"
+        android:fontFamily="@font/raleway_bold"
+        android:padding="5dp"
+        android:text="Notification"
+        android:textSize="15dp"
+        android:elevation="8dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/listSettings3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true">
+        </ListView>
+        <ListView
+            android:id="@+id/listSettings4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ListView
+            android:id="@+id/listSettings5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
