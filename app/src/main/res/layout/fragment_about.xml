@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About Us"
+            android:text="About"
             android:textAlignment="center"
             android:textSize="20dp"
             android:textColor="@color/black"
@@ -41,7 +41,10 @@
             app:layout_constraintVertical_bias="0.0" />
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Version: xxxxxxx"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#9D9D9D"/>
 
 
     </LinearLayout>
