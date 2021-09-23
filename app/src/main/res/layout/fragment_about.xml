@@ -39,12 +39,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
-        <Button
+        <ListView
+            android:id="@+id/listSettings10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Version: xxxxxxx"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#9D9D9D"/>
+            android:clickable="true"/>
 
 
     </LinearLayout>
