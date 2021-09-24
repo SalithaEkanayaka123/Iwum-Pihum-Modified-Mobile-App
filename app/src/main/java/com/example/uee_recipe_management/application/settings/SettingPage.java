@@ -57,8 +57,8 @@ public class SettingPage extends AppCompatActivity {
                 }else if (i == 1){
                     //cardView.setBackgroundColor(Color.parseColor("#9F897D"));
 
-//                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
-//                    view.getContext().startActivity(intent);
+                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
+                    view.getContext().startActivity(intent);
                 }else if (i == 2){
 
                     Synchronization settingsFragment = new Synchronization();
