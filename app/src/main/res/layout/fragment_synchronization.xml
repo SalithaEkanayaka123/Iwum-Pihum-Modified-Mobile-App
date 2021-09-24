@@ -10,16 +10,24 @@
         android:layout_width="300dp"
         android:background="#FFF"
         android:layout_height="300dp"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Upcomming"
+            android:layout_height="wrap_content"
+            android:text="Synchronization"
             android:textAlignment="center"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:gravity="center"/>
+
+
+
+        <ListView
+            android:id="@+id/listSettings11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"/>
 
     </LinearLayout>
 
