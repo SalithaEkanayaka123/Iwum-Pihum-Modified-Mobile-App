@@ -45,7 +45,7 @@ public class CustomButtonSettings5 extends BaseAdapter {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = layoutInflater.inflate(R.layout.activity_custom_button_settings5 , null);
 
-//            title1 = (TextView) view.findViewById(R.id.settingstitle7);
+           title1 = (TextView) view.findViewById(R.id.settings5title1);
 //            cardView = (CardView) view.findViewById(R.id.custombuttonsettings4);
 
             final RingingTone customButton1 = list.get(i);
