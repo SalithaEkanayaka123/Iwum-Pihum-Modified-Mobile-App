@@ -2,12 +2,15 @@ package com.example.uee_recipe_management.application.settings;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.uee_recipe_management.application.R;
@@ -22,6 +25,7 @@ public class SettingPage extends AppCompatActivity {
     ListView listView1;
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
     ArrayList<customButton1> array;
+    //CardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,7 @@ public class SettingPage extends AppCompatActivity {
 
 
         listView1 = (ListView) findViewById(R.id.listSettings8);
-
+        //cardView = (CardView) findViewById(R.id.custombuttonsettings2);
         array = new ArrayList<>();
         array.add(new customButton1("Background", "Handles Background Settings", true));
         array.add(new customButton1("Notification", "Handles Notification Settings", true));
@@ -51,8 +55,10 @@ public class SettingPage extends AppCompatActivity {
                     Intent intent  = new Intent(view.getContext(), Background_Settings.class);
                     view.getContext().startActivity(intent);
                 }else if (i == 1){
-                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
-                    view.getContext().startActivity(intent);
+                    //cardView.setBackgroundColor(Color.parseColor("#9F897D"));
+
+//                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
+//                    view.getContext().startActivity(intent);
                 }else if (i == 2){
 
                     Synchronization settingsFragment = new Synchronization();
