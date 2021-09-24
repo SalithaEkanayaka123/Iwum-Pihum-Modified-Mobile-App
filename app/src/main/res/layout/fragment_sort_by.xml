@@ -25,7 +25,7 @@
             android:gravity="center"/>
 
         <ListView
-            android:id="@+id/listSettings13"
+            android:id="@+id/listSettings14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
