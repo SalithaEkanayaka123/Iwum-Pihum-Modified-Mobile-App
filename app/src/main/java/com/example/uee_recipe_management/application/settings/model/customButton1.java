@@ -1,27 +1,36 @@
 package com.example.uee_recipe_management.application.settings.model;
 
 public class customButton1 {
-    String songName;
-    String path;
+    String title1, title2;
+    Boolean status;
 
-    public customButton1(String songName, String path) {
-        this.songName = songName;
-        this.path = path;
+    public customButton1(String title1, String title2, Boolean status) {
+        this.title1 = title1;
+        this.title2 = title2;
+        this.status = status;
     }
 
-    public String getSongName() {
-        return songName;
+    public String getTitle1() {
+        return title1;
     }
 
-    public void setSongName(String songName) {
-        this.songName = songName;
+    public void setTitle1(String title1) {
+        this.title1 = title1;
     }
 
-    public String getPath() {
-        return path;
+    public String getTitle2() {
+        return title2;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setTitle2(String title2) {
+        title2 = title2;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }
