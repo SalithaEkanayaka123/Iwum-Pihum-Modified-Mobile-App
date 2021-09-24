@@ -30,7 +30,10 @@ public class RingingTones extends DialogFragment {
 
         array = new ArrayList<>();
         array.add(new customButton1("RingingTone1", "Automatic background sync", true));
-        array.add(new customButton1("Sinhala", "sync on startup", true));
+        array.add(new customButton1("RingingTone2", "sync on startup", true));
+        array.add(new customButton1("RingingTone3", "sync on startup", true));
+        array.add(new customButton1("RingingTone4", "sync on startup", true));
+        array.add(new customButton1("RingingTone5", "sync on startup", true));
 
 
         adapter2 = new CustomButtonSettings4(getContext() , array);//
