@@ -26,15 +26,6 @@
         app:sliderScrollTimeInSec="2"
         app:sliderStartAutoCycle="true"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/image_slider"
-        android:textAlignment="center"
-        android:text="Auto Image Slider Tutorial"
-        android:textSize="40sp"
-        android:layout_marginTop="100dp"/>
 
 
 </RelativeLayout>
