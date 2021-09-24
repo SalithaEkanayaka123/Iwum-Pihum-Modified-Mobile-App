@@ -19,6 +19,7 @@
             android:text="Upcomming"
             android:textAlignment="center"
             android:textSize="20dp"
+            android:fontFamily="@font/raleway_bold"
             android:textColor="@color/black"
             android:gravity="center"/>
 

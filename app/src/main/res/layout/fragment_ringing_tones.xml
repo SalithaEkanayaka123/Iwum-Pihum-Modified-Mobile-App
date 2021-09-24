@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Upcomming"
+            android:fontFamily="@font/raleway_bold"
             android:textAlignment="center"
             android:textSize="20dp"
             android:textColor="@color/black"

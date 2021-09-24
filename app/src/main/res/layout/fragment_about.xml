@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:text="About"
             android:textAlignment="center"
+            android:fontFamily="@font/raleway_bold"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:gravity="center"
