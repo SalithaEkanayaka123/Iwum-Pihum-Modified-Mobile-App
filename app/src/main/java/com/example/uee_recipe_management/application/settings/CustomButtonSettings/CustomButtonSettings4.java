@@ -43,7 +43,7 @@ public class CustomButtonSettings4 extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view == null){
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            view = layoutInflater.inflate(R.layout.activity_custom_button_settings2 , null);
+            view = layoutInflater.inflate(R.layout.activity_custom_button_settings4 , null);
 
             title1 = (TextView) view.findViewById(R.id.settingstitle7);
 
