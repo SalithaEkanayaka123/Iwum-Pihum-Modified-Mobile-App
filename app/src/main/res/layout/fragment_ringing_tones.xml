@@ -6,18 +6,29 @@
     tools:context=".settings.RingingTones">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center_vertical">
+        android:layout_width="300dp"
+        android:background="#FFF"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Upcomming"
+            android:text="Ringing Tones"
+            android:fontFamily="@font/raleway_bold"
             android:textAlignment="center"
-            android:textSize="50dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
             android:gravity="center"/>
+        <ListView
+            android:id="@+id/listSettings13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:clickable="true"/>
 
     </LinearLayout>
 

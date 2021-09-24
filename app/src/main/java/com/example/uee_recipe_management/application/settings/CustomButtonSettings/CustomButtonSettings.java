@@ -4,7 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
+import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -22,6 +25,7 @@ public class CustomButtonSettings extends BaseAdapter {
     TextView title1, title2;
     Switch toogleButton;
     CardView longCardView;
+    ListView listView1;
 
     public CustomButtonSettings(Context context, ArrayList<customButton1> list) {
         this.context = context;
@@ -51,6 +55,7 @@ public class CustomButtonSettings extends BaseAdapter {
             //textID = (TextView) view.findViewById(R.id.textID);
             title1 = (TextView) view.findViewById(R.id.settingstitle1);
             title2 = (TextView) view.findViewById(R.id.settingstitle2);
+            listView1 = (ListView) view.findViewById(R.id.listSettings11);
 
             toogleButton = view.findViewById(R.id.switch1);
             longCardView = view.findViewById(R.id.cardSettingsId1);
@@ -64,6 +69,23 @@ public class CustomButtonSettings extends BaseAdapter {
 
             //needed to be updated
             toogleButton.setChecked(true);
+            toogleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    System.out.println("ggg " + i);
+                }
+            });
+            //customButton1 item = list.get(i);
+//            listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//                    System.out.println("ggg " + i);
+//                }
+//            });
+//            if(customButton1.getStatus()){
+//                //toggle your switch.
+//            }
+
 
 //            longCardView.setOnClickListener(new View.OnClickListener() {
 //                @Override
