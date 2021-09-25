@@ -64,6 +64,12 @@
         android:layout_height="60dp"
         android:text="Notification Screen" />
 
+    <Button
+        android:id="@+id/individual_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Individual Item" />
+
 
     <TextView
         android:layout_width="match_parent"
