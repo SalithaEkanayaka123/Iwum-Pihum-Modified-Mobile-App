@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.bookmark;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -10,15 +11,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.uee_recipe_management.application.R;
-import com.example.uee_recipe_management.application.category.adapter.CategoryItemSearchAdapter;
+import com.example.uee_recipe_management.application.bookmark.adapter.BookmarkAdapter;
+import com.example.uee_recipe_management.application.bookmark.model.RecipieItem;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 
 import java.util.ArrayList;
 
 public class Bookmark extends AppCompatActivity {
     RecyclerView longCardRecyclerView;
-    CategoryItemSearchAdapter categoryItemSearchAdapter;
-    ArrayList<CategoryItem> items;
+    BookmarkAdapter bookmarkAdapter;
+    ArrayList<RecipieItem> items;
     String header;
     TextView searchCategoryHeader;
     EditText searchBar;
@@ -48,10 +50,26 @@ public class Bookmark extends AppCompatActivity {
                 //filter(editable.toString());
             }
         });
+    }
+
+    private void filter(String text){
+        ArrayList<RecipieItem> filteredList = new ArrayList<>();
+        for (RecipieItem item : items){
+            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+
+        bookmarkAdapter.filterList(filteredList);
+    }
 
 
-
-
-
+    private void setRecyclerSearchCategory(){
+        longCardRecyclerView = findViewById(R.id.search_page_recycler_2);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        longCardRecyclerView.setLayoutManager(layoutManager);
+        bookmarkAdapter = new BookmarkAdapter(this, items);
+        longCardRecyclerView.setAdapter(bookmarkAdapter);
+        searchCategoryHeader.setText(header);
     }
 }

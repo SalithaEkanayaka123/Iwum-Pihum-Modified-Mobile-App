@@ -48,7 +48,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), ItemTesting.class);
+                Intent intent  = new Intent(view.getContext(), Bookmark.class);
                 view.getContext().startActivity(intent);
             }
         });
