@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.item.Item;
 
 public class AddItem extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class AddItem extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), SingleItemView.class);
+                Intent intent  = new Intent(view.getContext(), Item.class);
                 view.getContext().startActivity(intent);
             }
         });
