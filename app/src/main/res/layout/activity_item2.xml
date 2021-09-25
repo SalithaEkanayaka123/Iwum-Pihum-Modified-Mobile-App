@@ -43,12 +43,10 @@
                 app:sliderIndicatorSelectedColor="#5A5A5A"
                 app:sliderIndicatorUnselectedColor="#FFF"
                 app:sliderScrollTimeInSec="2"
-                app:sliderStartAutoCycle="true"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="bottom"/>
+                app:sliderStartAutoCycle="true"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"/>
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tool_bar"
