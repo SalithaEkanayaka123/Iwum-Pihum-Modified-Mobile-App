@@ -2,6 +2,7 @@ package com.example.uee_recipe_management.application.bookmark;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,7 @@ public class AddItem extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), SingleItemView.class);
+                Intent intent  = new Intent(view.getContext(), ClipData.Item.class);
                 view.getContext().startActivity(intent);
             }
         });
