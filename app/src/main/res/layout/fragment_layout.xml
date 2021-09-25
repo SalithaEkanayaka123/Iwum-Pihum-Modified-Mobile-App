@@ -3,13 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".settings.TestingFragments"
+    android:orientation="vertical"
     android:background="#FFF"
-    android:orientation="vertical">
-
-    <!-- TODO: Update blank fragment layout -->
-
+    tools:context=".settings.LayoutFragment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -51,18 +47,18 @@
                 android:layout_gravity="center"
                 >
 
-                    <LinearLayout
-                        android:layout_margin="20dp"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@drawable/shape1"
-                            />
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape1"
+                        />
 
-                    </LinearLayout>
+                </LinearLayout>
                 <LinearLayout
                     android:layout_margin="20dp"
                     android:orientation="vertical"
@@ -131,5 +127,7 @@
 
 
     </LinearLayout>
+
+    <!-- TODO: Update blank fragment layout -->
 
 </LinearLayout>
