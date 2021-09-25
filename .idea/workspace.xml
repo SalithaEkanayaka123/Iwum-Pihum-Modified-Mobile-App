@@ -34,7 +34,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Color File Updated">
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Files (External) Added.">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/raleway_semibold.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +103,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/font" />
     <property name="settings.editor.selected.configurable" value="experimental" />
   </component>
   <component name="RecentsManager">
@@ -127,6 +128,7 @@
       <recent name="com.example.uee_recipe_management.application.category" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\Project_JS_Based\3Y2S\uee\uee-recipe-app\app\src\main\res\font" />
       <recent name="I:\Project_JS_Based\3Y2S\uee\uee-recipe-app\app\src\main\res\drawable" />
     </key>
     <key name="android.template.-210626618">
@@ -212,13 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Pictures updated in card layout.">
-      <created>1631644930937</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1631644930937</updated>
     </task>
     <task id="LOCAL-00036" summary="Index page created.">
       <created>1631647154538</created>
@@ -556,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632585014305</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Files (External) Added.">
+      <created>1632585111677</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1632585111677</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +574,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adapter class layout fixed. (Not functional yet)" />
     <MESSAGE value="Adapter class created with multi type. for notification." />
     <MESSAGE value="Index updated with notification page layout." />
     <MESSAGE value="PendingLayout Text File Added with the template." />
@@ -597,7 +598,8 @@
     <MESSAGE value="Changers" />
     <MESSAGE value="String File Updated" />
     <MESSAGE value="Color File Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Color File Updated" />
+    <MESSAGE value="Files (External) Added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Files (External) Added." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">
