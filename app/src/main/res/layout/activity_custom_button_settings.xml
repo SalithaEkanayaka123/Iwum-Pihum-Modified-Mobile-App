@@ -16,7 +16,7 @@
         android:padding="10dp"
         android:layout_margin="3dp"
         app:cardCornerRadius="6dp"
-        app:cardBackgroundColor="#C4C4C4"
+        app:cardBackgroundColor="@color/ash"
         android:layout_gravity="center_vertical"
         >
 
