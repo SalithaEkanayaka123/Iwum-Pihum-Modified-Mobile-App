@@ -3,6 +3,8 @@ package com.example.uee_recipe_management.application.settings;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.uee_recipe_management.application.R;
@@ -46,5 +48,16 @@ public class Notification_Settings extends AppCompatActivity {
         listView2.setAdapter(adapter2);
         listView3.setAdapter(adapter3);
         listView1.setItemsCanFocus(false);
+
+
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0){
+                    RingingTones settingsFragment = new RingingTones();
+                    settingsFragment.show(getSupportFragmentManager(),"myFragment");
+                }
+            }
+        });
     }
 }

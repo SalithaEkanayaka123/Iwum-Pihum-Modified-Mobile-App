@@ -3,34 +3,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".settings.TestingFragments"
-    android:background="@drawable/bellicon"
+    android:background="#FFF"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/category_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#9F897D"
-        android:fontFamily="@font/raleway_bold"
-        android:padding="5dp"
-        android:text="testing"
-        android:textSize="15dp"
-        android:elevation="8dp"
-        android:textStyle="bold" />
+
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:background="#FFF"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp">
 
-        <ListView
-            android:id="@+id/listSettings8"
+
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
-        </ListView>
+            android:text="Switch Layout"
+            android:textAlignment="center"
+            android:fontFamily="@font/raleway_bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <GridLayout
+                android:id="@+id/mainGrid"
+                android:columnCount="3"
+                android:rowCount="3"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_weight="8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                >
+
+                    <LinearLayout
+                        android:layout_margin="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <Button
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/shape1"
+                            />
+
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape2"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape1"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape4"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape5"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape6"
+                        />
+                </LinearLayout>
+
+
+            </GridLayout>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
