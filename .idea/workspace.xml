@@ -34,8 +34,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="String File Updated">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Color File Updated">
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,13 +212,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00034" summary="When changing the activity name send through the Intent.">
-      <created>1631640004395</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1631640004395</updated>
     </task>
     <task id="LOCAL-00035" summary="Pictures updated in card layout.">
       <created>1631644930937</created>
@@ -556,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632584976799</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Color File Updated">
+      <created>1632585014305</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1632585014305</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +572,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created the model class for the notifications" />
     <MESSAGE value="Adapter class layout fixed. (Not functional yet)" />
     <MESSAGE value="Adapter class created with multi type. for notification." />
     <MESSAGE value="Index updated with notification page layout." />
@@ -597,7 +596,8 @@
     <MESSAGE value="Tracking local changers IT19086408" />
     <MESSAGE value="Changers" />
     <MESSAGE value="String File Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="String File Updated" />
+    <MESSAGE value="Color File Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Color File Updated" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">
