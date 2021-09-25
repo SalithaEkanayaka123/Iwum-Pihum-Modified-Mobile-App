@@ -35,7 +35,7 @@
             android:orientation="vertical"
             >
             <GridLayout
-                android:id="@+id/mainGrid"
+                android:id="@+id/mainGridLayout"
                 android:columnCount="3"
                 android:rowCount="3"
                 android:alignmentMode="alignMargins"
@@ -53,6 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/layout_1_1"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shape1"
@@ -65,6 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/layout_2_1"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shape2"
@@ -77,9 +79,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/layout_3_1"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/shape1"
+                        android:background="@drawable/shape3"
                         />
 
                 </LinearLayout>
@@ -89,6 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/layout_4_1"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shape4"
@@ -101,6 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/layout_5_1"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shape5"
@@ -113,6 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/layout_6_1"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shape6"
