@@ -34,7 +34,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Tracking local changers IT19086408" />
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Tracking local changers IT19086408">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/bookmark/AddItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/bookmark/AddItem.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

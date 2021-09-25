@@ -24,7 +24,7 @@ public class AddItem extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), ClipData.Item.class);
+                Intent intent  = new Intent(view.getContext(), SingleItemView.class);
                 view.getContext().startActivity(intent);
             }
         });
