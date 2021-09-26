@@ -94,8 +94,6 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
 //        }
 //    }
 
-
-
     List<String> titles;
     List<Integer> images;
     LayoutInflater inflater;
@@ -127,14 +125,14 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title;
+        TextView description;
         ImageView gridIcon;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-//            title = itemView.findViewById(R.id.textView2);
-////            gridIcon = itemView.findViewById(R.id.imageView2);
-
-
+            title = itemView.findViewById(R.id.titleTv);
+            description = itemView.findViewById(R.id.descriptionTv);
+            gridIcon = itemView.findViewById(R.id.bannerIv);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
