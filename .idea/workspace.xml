@@ -34,21 +34,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Single Item List Updated.">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/single_view_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/single_view_list.xml" afterDir="false" />
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Method added to dynamically increse the size of the ListView.">
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,13 +224,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Both OnClick Listeners Updated and sout Message set.">
-      <created>1631683373419</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1631683373419</updated>
     </task>
     <task id="LOCAL-00049" summary="Search Layout Search Function implemented. With EditText.">
       <created>1631740434036</created>
@@ -581,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632646129540</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Method added to dynamically increse the size of the ListView.">
+      <created>1632648252253</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1632648252253</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -597,7 +584,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Defined and Registered the UI element in the Splash Screen." />
     <MESSAGE value="Assigned the Animation to the Splash Screen." />
     <MESSAGE value="Splash Screen Time delay and Redirection added to the Index Page." />
     <MESSAGE value="Input Corner Radius Drawable file attached." />
@@ -622,7 +608,8 @@
     <MESSAGE value="Custom Shape plug into the list view." />
     <MESSAGE value="Single View Item User interface." />
     <MESSAGE value="Single Item List Updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Single Item List Updated." />
+    <MESSAGE value="Method added to dynamically increse the size of the ListView." />
+    <option name="LAST_COMMIT_MESSAGE" value="Method added to dynamically increse the size of the ListView." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">
