@@ -33,6 +33,7 @@ public class Item extends AppCompatActivity {
              *  Reminder
              *  Refactor the model class and the item ingredients arraylist there. And pass to the
              *  This Activity.
+             *
              * **/
     String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry",
             "WebOS","Ubuntu","Windows7","Max OS X"};
