@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.application.bookmark;
+package com.example.uee_recipe_management.application.bookmark.adapter;
 
 import com.example.uee_recipe_management.application.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import com.smarteist.autoimageslider.SliderViewAdapter;
 
 public class SliderAdapter extends SliderViewAdapter<SliderAdapter.Holder> {
     int[] images;

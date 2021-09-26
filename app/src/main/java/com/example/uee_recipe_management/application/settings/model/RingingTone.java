@@ -1,9 +1,10 @@
 package com.example.uee_recipe_management.application.settings.model;
 
 public class RingingTone {
-    String title, path;
+    String title;
+    int path;
 
-    public RingingTone(String title, String path) {
+    public RingingTone(String title, int path) {
         this.title = title;
         this.path = path;
     }
@@ -17,11 +18,11 @@ public class RingingTone {
         this.title = title;
     }
 
-    public String getPath() {
+    public int getPath() {
         return path;
     }
 
-    public void setPath(String path) {
+    public void setPath(int path) {
         this.path = path;
     }
 }
