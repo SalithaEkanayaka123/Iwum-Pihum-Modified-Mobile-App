@@ -5,14 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.ui.AppBarConfiguration;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.uee_recipe_management.application.R;
-import com.example.uee_recipe_management.application.home.fragments.AddItemFragment;
-import com.example.uee_recipe_management.application.home.fragments.HomeFragment;
-import com.example.uee_recipe_management.application.home.fragments.SettingsFragment;
+import com.example.uee_recipe_management.application.category.CategorySearchLayout;
+import com.example.uee_recipe_management.application.notification.NotificationLayout;
+import com.example.uee_recipe_management.application.settings.SettingPage;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity {
@@ -33,23 +34,26 @@ public class Home extends AppCompatActivity {
                     Fragment selectedFragmnet =null;
                     switch (item.getItemId()){
                         case R.id.nav_home :
-                            selectedFragmnet = new HomeFragment();
+                            Intent intent = new Intent(Home.this, Home.class);
+                            startActivity(intent);
                             break;
                         case R.id.nav_search :
-                            selectedFragmnet = new HomeFragment();
+                            Intent intent1 = new Intent(Home.this, CategorySearchLayout.class);
+                            startActivity(intent1);
                             break;
                         case R.id.nav_add :
-                            selectedFragmnet = new AddItemFragment();
+                            Intent intent2 = new Intent(Home.this, CategorySearchLayout.class);
+                            startActivity(intent2);
                             break;
                         case R.id.nav_notification :
-                            selectedFragmnet = new HomeFragment();
+                            Intent intent3 = new Intent(Home.this, NotificationLayout.class);
+                            startActivity(intent3);
                             break;
                         case R.id.nav_settings :
-                            selectedFragmnet = new SettingsFragment();
+                            Intent intent4 = new Intent(Home.this, SettingPage.class);
+                            startActivity(intent4);
                             break;
                     }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragmnet).commit();
-
                     return true;
                 }
             };
