@@ -34,16 +34,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Custom Shape plug into the list view.">
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Single View Item User interface.">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/settings/RingingTones.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/settings/RingingTones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,13 +226,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Sorting Icon Added. Length Fixed.">
-      <created>1631682663502</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1631682663502</updated>
     </task>
     <task id="LOCAL-00047" summary="On Click Listener Added to the Card Item.">
       <created>1631683032866</created>
@@ -566,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632638464084</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Single View Item User interface.">
+      <created>1632644247123</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1632644247123</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +586,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated the Splash Screen (Animation need to add)" />
     <MESSAGE value="Update text padding and font weight." />
     <MESSAGE value="Defined and Registered the UI element in the Splash Screen." />
     <MESSAGE value="Assigned the Animation to the Splash Screen." />
@@ -607,7 +610,8 @@
     <MESSAGE value="Removed Dummy Values." />
     <MESSAGE value="Custom Shape added for the list customization." />
     <MESSAGE value="Custom Shape plug into the list view." />
-    <option name="LAST_COMMIT_MESSAGE" value="Custom Shape plug into the list view." />
+    <MESSAGE value="Single View Item User interface." />
+    <option name="LAST_COMMIT_MESSAGE" value="Single View Item User interface." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">
@@ -698,10 +702,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1632584478290" />
-    <state x="386" y="260" key="Vcs.Push.Dialog.v2" timestamp="1632640962815">
+    <state x="386" y="260" key="Vcs.Push.Dialog.v2" timestamp="1632644251990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="386" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632640962815" />
+    <state x="386" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632644251990" />
     <state x="776" y="298" key="chooseDestDirectoryDialog" timestamp="1632636460610">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

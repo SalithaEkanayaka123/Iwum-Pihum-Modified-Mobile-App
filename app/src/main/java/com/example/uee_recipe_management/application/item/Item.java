@@ -33,6 +33,7 @@ public class Item extends AppCompatActivity {
     String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry",
             "WebOS","Ubuntu","Windows7","Max OS X"};
 
+    ArrayList<String> array = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +56,15 @@ public class Item extends AppCompatActivity {
         //Setting the data set to the List view (Ingredients)
         listView = findViewById(R.id.single_item_list_view);
         listText = findViewById(R.id.single_item_header);
+
+        //Adding Items to the Array.
+        array.add("Text1");
+        array.add("Text2");
+        array.add("Text3");
+        array.add("Text4");
+
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.activity_list_item, R.id.single_item_header, mobileArray);
+                R.layout.single_view_list, R.id.single_ingred_name, array);
         listView.setAdapter(adapter);
 
 

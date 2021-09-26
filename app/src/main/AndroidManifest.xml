@@ -14,7 +14,6 @@
         <activity android:name=".bookmark.SingleItemView" />
         <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings5" />
         <activity android:name=".settings.TestingActivity" />
-        <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings5" />
         <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings4" />
         <activity android:name=".bookmark.AddItem" />
         <activity android:name=".bookmark.ItemTesting" />
