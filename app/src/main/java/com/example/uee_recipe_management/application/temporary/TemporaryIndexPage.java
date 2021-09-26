@@ -24,6 +24,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
     Button responsivePage;
     Button splashScreen;
     Button notificationPage;
+    Button bookmarkPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         responsivePage = findViewById(R.id.responsive_button);
         splashScreen = findViewById(R.id.splash_screen);
         notificationPage = findViewById(R.id.notification_screen);
+        bookmarkPage = findViewById(R.id.bookmark_screen);
 
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +50,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), Bookmark.class);
+                Intent intent  = new Intent(view.getContext(), ItemTesting.class);
                 view.getContext().startActivity(intent);
             }
         });
@@ -81,6 +83,14 @@ public class TemporaryIndexPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent  = new Intent(view.getContext(), NotificationLayout.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+
+        bookmarkPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(view.getContext(), Bookmark.class);
                 view.getContext().startActivity(intent);
             }
         });
