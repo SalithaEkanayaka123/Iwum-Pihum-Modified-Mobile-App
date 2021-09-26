@@ -1,5 +1,6 @@
 package com.example.uee_recipe_management.application.category;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,13 +9,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.adapter.CategoryItemSearchAdapter;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
+import com.example.uee_recipe_management.application.notification.NotificationLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +33,7 @@ public class CategorySearchLayout extends AppCompatActivity {
     TextView searchCategoryHeader;
     EditText searchBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +41,9 @@ public class CategorySearchLayout extends AppCompatActivity {
         items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
         header = this.getIntent().getExtras().getString("categoryName");
         System.out.println(header);
+
+
+
 
         // Testing.
         for(CategoryItem item : items){
@@ -86,4 +96,6 @@ public class CategorySearchLayout extends AppCompatActivity {
         searchCategoryHeader = findViewById(R.id.search_page_header);
         searchCategoryHeader.setText(header);
     }
+
+
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/single_ingred_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textStyle="bold"
+        android:fontFamily="@font/raleway_italic"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="2dp"
+        android:padding="2dp"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+    />
+</LinearLayout>
