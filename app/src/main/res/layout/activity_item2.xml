@@ -20,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:title="Hello World!"
             app:contentScrim="@color/colorPrimary"
             app:expandedTitleMarginStart="15dp"
             app:expandedTitleMarginBottom="20dp"
@@ -72,7 +71,9 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+
             <TextView
+                android:id="@+id/single_item_header"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="6dp"
@@ -80,51 +81,65 @@
                 android:fontFamily="@font/raleway_semibold"
                 android:text="@string/about"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
-                android:fontFamily="@font/raleway"
-                android:text="@string/dummy_text"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="normal" />
+            <LinearLayout
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
-                android:fontFamily="@font/raleway"
-                android:text="@string/dummy_text"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="normal" />
+                >
 
-            <TextView
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/notification_red" />
+
+                <TextView
+                    android:id="@+id/single_item_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="nirmith_akash"
+                    android:textColor="#676767"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="81dp"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/clock" />
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:text="30 mins ago"
+                    android:textColor="#676767"
+                    android:textSize="10sp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
-                android:fontFamily="@font/raleway"
-                android:text="@string/dummy_text"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="normal" />
+                android:layout_height="0.5dp"
+                android:background="#838383"
+                android:layout_marginTop="10dp"/>
+
+            <ListView
+                android:id="@+id/single_item_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:background="@drawable/custom_list_view"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:src="@drawable/ic_cup"
-        app:layout_anchorGravity="bottom|end|right"
-        app:layout_anchor="@id/appbar"
-        app:maxImageSize="28dp"
-        android:tint="@color/white"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
