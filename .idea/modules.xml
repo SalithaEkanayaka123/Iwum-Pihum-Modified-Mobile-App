@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uee-recipe-management.iml" filepath="$PROJECT_DIR$/.idea/modules/uee-recipe-management.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/uee-recipe-management.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/uee-recipe-management.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="uee-recipe-management/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uee-recipe-management.iml" filepath="$PROJECT_DIR$/.idea/modules/uee-recipe-management.iml" group="uee-recipe-management" />
     </modules>
   </component>
 </project>
