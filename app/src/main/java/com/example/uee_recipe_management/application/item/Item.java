@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -66,7 +69,25 @@ public class Item extends AppCompatActivity {
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.single_view_list, R.id.single_ingred_name, array);
         listView.setAdapter(adapter);
+        setListViewHeightBasedOnChildren(listView);
 
 
+    }
+
+    // Dynamically expand the ListView based on the Item count.
+    public static void setListViewHeightBasedOnChildren(ListView myListView) {
+        ListAdapter adapter = myListView.getAdapter();
+        if (myListView != null) {
+            int totalHeight = 0;
+            for (int i = 0; i < adapter.getCount(); i++) {
+                View item= adapter.getView(i, null, myListView);
+                item.measure(0, 0);
+                totalHeight += item.getMeasuredHeight();
+            }
+
+            ViewGroup.LayoutParams params = myListView.getLayoutParams();
+            params.height = totalHeight + (myListView.getDividerHeight() * (adapter.getCount() - 1));
+            myListView.setLayoutParams(params);
+        }
     }
 }
