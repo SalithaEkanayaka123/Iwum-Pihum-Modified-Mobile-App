@@ -26,6 +26,7 @@ public class Item extends AppCompatActivity {
     int[] images = {R.drawable.img_1, R.drawable.img_2, R.drawable.img_3,};
     ListView listView;
     TextView listText;
+    Toolbar toolbar;
 
     //Array With Dummy values, This should be passed to from the item model class
             /**
@@ -55,6 +56,11 @@ public class Item extends AppCompatActivity {
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
         sliderView.startAutoCycle();
+        toolbar = findViewById(R.id.tool_bar);
+
+        //Removing the header title from the Toolbar.
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
         //Setting the data set to the List view (Ingredients)
         listView = findViewById(R.id.single_item_list_view);

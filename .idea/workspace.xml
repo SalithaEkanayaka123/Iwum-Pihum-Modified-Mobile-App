@@ -34,8 +34,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Method added to dynamically increse the size of the ListView.">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Default Colors Changed.">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,13 +231,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Search Layout Search Function implemented. With EditText.">
-      <created>1631740434036</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1631740434037</updated>
     </task>
     <task id="LOCAL-00050" summary="Responsive Layout Search Function Created.">
       <created>1631741346014</created>
@@ -568,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632648252253</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Default Colors Changed.">
+      <created>1632648381572</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1632648381573</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -584,7 +591,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Assigned the Animation to the Splash Screen." />
     <MESSAGE value="Splash Screen Time delay and Redirection added to the Index Page." />
     <MESSAGE value="Input Corner Radius Drawable file attached." />
     <MESSAGE value="Resource File Updated." />
@@ -609,7 +615,8 @@
     <MESSAGE value="Single View Item User interface." />
     <MESSAGE value="Single Item List Updated." />
     <MESSAGE value="Method added to dynamically increse the size of the ListView." />
-    <option name="LAST_COMMIT_MESSAGE" value="Method added to dynamically increse the size of the ListView." />
+    <MESSAGE value="Default Colors Changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Default Colors Changed." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">
