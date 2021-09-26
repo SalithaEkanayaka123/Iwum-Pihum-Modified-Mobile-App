@@ -34,7 +34,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Single Item Page Interface Header Updated.">
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="List View Updated. Single View">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/single_view_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
     </list>
@@ -69,10 +70,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="Class" />
         <option value="valueResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -214,13 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Image updated.">
-      <created>1631649598134</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1631649598134</updated>
     </task>
     <task id="LOCAL-00043" summary="Index page updated.">
       <created>1631677767870</created>
@@ -558,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632636853487</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="List View Updated. Single View">
+      <created>1632637794546</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1632637794546</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -574,7 +575,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Splash Screen Background Changed" />
     <MESSAGE value="Constraints Added to the Image (Logo)" />
     <MESSAGE value="Splash screen wallpaper added." />
     <MESSAGE value="Splash Screen Basic View Added." />
@@ -599,7 +599,8 @@
     <MESSAGE value="UI Element defined XML file updated." />
     <MESSAGE value="Image fixed." />
     <MESSAGE value="Single Item Page Interface Header Updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Single Item Page Interface Header Updated." />
+    <MESSAGE value="List View Updated. Single View" />
+    <option name="LAST_COMMIT_MESSAGE" value="List View Updated. Single View" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">
@@ -626,10 +627,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1020" y="278" key="AndroidCreateResourceDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631533565948" />
-    <state x="1001" y="151" key="AndroidCreateResourceFileDialog" timestamp="1631991853377">
+    <state x="1001" y="151" key="AndroidCreateResourceFileDialog" timestamp="1632637851413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1001" y="151" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631991853377" />
+    <state x="1001" y="151" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1632637851413" />
     <state x="1117" y="363" key="AndroidCreateXmlResourceDialog" timestamp="1631678663516">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
