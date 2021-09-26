@@ -25,7 +25,11 @@ public class TemporaryIndexPage extends AppCompatActivity {
     Button responsivePage;
     Button splashScreen;
     Button notificationPage;
+
     Button individualPage;
+
+    Button bookmarkPage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +42,16 @@ public class TemporaryIndexPage extends AppCompatActivity {
         responsivePage = findViewById(R.id.responsive_button);
         splashScreen = findViewById(R.id.splash_screen);
         notificationPage = findViewById(R.id.notification_screen);
+
         individualPage = findViewById(R.id.individual_item);
+
+        bookmarkPage = findViewById(R.id.bookmark_screen);
+
 
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), SettingPage.class);
+                Intent intent = new Intent(view.getContext(), SettingPage.class);
                 view.getContext().startActivity(intent);
             }
         });
@@ -51,7 +59,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), ItemTesting.class);
+                Intent intent = new Intent(view.getContext(), ItemTesting.class);
                 view.getContext().startActivity(intent);
             }
         });
@@ -59,7 +67,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), Home.class);
+                Intent intent = new Intent(view.getContext(), Home.class);
                 view.getContext().startActivity(intent);
             }
         });
@@ -67,7 +75,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         responsivePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), ResponsiveVerticalHorizontalLayout.class);
+                Intent intent = new Intent(view.getContext(), ResponsiveVerticalHorizontalLayout.class);
                 view.getContext().startActivity(intent);
             }
         });
@@ -75,7 +83,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         splashScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), OpeningSplashScreen.class);
+                Intent intent = new Intent(view.getContext(), OpeningSplashScreen.class);
                 view.getContext().startActivity(intent);
             }
         });
@@ -83,20 +91,26 @@ public class TemporaryIndexPage extends AppCompatActivity {
         notificationPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), NotificationLayout.class);
+                Intent intent = new Intent(view.getContext(), NotificationLayout.class);
                 view.getContext().startActivity(intent);
             }
         });
+
 
         individualPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), Item.class);
+                Intent intent = new Intent(view.getContext(), Item.class);
                 view.getContext().startActivity(intent);
             }
         });
 
-
-
+        bookmarkPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Bookmark.class);
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 }
