@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
 
-        <activity android:name=".bookmark.RecipieItem"></activity>
+        <activity android:name=".item.Item"></activity>
+        <activity android:name=".bookmark.model.RecipieItem" />
         <activity android:name=".bookmark.SingleItemView" />
-
-        <activity android:name=".settings.TestingActivity"></activity>
         <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings5" />
+        <activity android:name=".settings.TestingActivity" />
         <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings4" />
         <activity android:name=".bookmark.AddItem" />
         <activity android:name=".bookmark.ItemTesting" />
