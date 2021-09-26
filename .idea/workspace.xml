@@ -34,16 +34,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="UI Element defined XML file updated.">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Image fixed.">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/clock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_18_2021_4_18_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_18_2021_4_18_AM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/uee_recipe_management/application/item/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,10 +108,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="settings.editor.selected.configurable" value="experimental" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.-41300613">
+      <recent name="com.example.uee_recipe_management.application.splash" />
+    </key>
     <key name="android.template.208503148">
       <recent name="com.example.uee_recipe_management.category.category" />
     </key>
@@ -123,9 +123,6 @@
       <recent name="com.example.uee_recipe_management.application.bookmark" />
       <recent name="com.example.uee_recipe_management.application.settings" />
       <recent name="com.example.uee_recipe_management.application.temporary" />
-    </key>
-    <key name="android.template.1927064546">
-      <recent name="com.example.uee_recipe_management.application.notification" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="I:\Project_JS_Based\3Y2S\uee\uee-recipe-app\app\src\main\res\drawable" />
@@ -136,15 +133,15 @@
       <recent name="com.example.uee_recipe_management.application.category" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\Project_JS_Based\3Y2S\uee\uee-recipe-app\app\src\main\res\font" />
       <recent name="I:\Project_JS_Based\3Y2S\uee\uee-recipe-app\app\src\main\res\drawable" />
+      <recent name="I:\Project_JS_Based\3Y2S\uee\uee-recipe-app\app\src\main\res\font" />
     </key>
     <key name="android.template.-210626618">
       <recent name="com.example.uee_recipe_management.application.item" />
       <recent name="com.example.uee_recipe_management.application" />
     </key>
-    <key name="android.template.-41300613">
-      <recent name="com.example.uee_recipe_management.application.splash" />
+    <key name="android.template.1927064546">
+      <recent name="com.example.uee_recipe_management.application.notification" />
     </key>
   </component>
   <component name="RunManager">
@@ -222,13 +219,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Image updated.">
-      <created>1631649427945</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1631649427945</updated>
     </task>
     <task id="LOCAL-00041" summary="Image updated.">
       <created>1631649519046</created>
@@ -566,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632585965880</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Image fixed.">
+      <created>1632587339441</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1632587339441</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +579,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Notification Layout Recycler View Created." />
     <MESSAGE value="Notification Layout Margin Error Fixed Final Version." />
     <MESSAGE value="Splash Screen Background Changed" />
     <MESSAGE value="Constraints Added to the Image (Logo)" />
@@ -607,7 +603,8 @@
     <MESSAGE value="Java File Updated Intent Updated." />
     <MESSAGE value="Main index updated and point to the individual item." />
     <MESSAGE value="UI Element defined XML file updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="UI Element defined XML file updated." />
+    <MESSAGE value="Image fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Image fixed." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">
@@ -698,14 +695,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1632584478290" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1632585309319">
+    <state x="386" y="260" key="Vcs.Push.Dialog.v2" timestamp="1632587355715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632585309319" />
-    <state x="776" y="298" key="chooseDestDirectoryDialog" timestamp="1631991617864">
+    <state x="386" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632587355715" />
+    <state x="776" y="298" key="chooseDestDirectoryDialog" timestamp="1632636460610">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="776" y="298" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631991617864" />
+    <state x="776" y="298" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1632636460610" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1631989539618">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
