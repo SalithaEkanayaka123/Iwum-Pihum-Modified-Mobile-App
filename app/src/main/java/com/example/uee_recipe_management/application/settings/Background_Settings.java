@@ -2,7 +2,10 @@ package com.example.uee_recipe_management.application.settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.uee_recipe_management.application.R;
@@ -41,5 +44,21 @@ public class Background_Settings extends AppCompatActivity {
         //then set that adapter to the listView
         listView1.setAdapter(adapter);
         listView2.setAdapter(adapter2);
+
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0){
+                    DisplayLanguage settingsFragment = new DisplayLanguage();
+                    settingsFragment.show(getSupportFragmentManager(),"myFragment");
+                }else if (i == 1){
+//                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
+//                    view.getContext().startActivity(intent);
+                }else if (i == 2){
+                    SortBy settingsFragment = new SortBy();
+                    settingsFragment.show(getSupportFragmentManager(),"myFragment");
+                }
+            }
+        });
     }
 }

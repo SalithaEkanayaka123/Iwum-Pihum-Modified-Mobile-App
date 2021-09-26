@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@
         android:layout_margin="3dp"
         app:cardCornerRadius="6dp"
         app:cardBackgroundColor="#C4C4C4"
+        android:id="@+id/custombuttonsettings2"
         >
 
         <LinearLayout
