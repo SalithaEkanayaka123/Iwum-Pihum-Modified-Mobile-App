@@ -24,19 +24,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfd0d4a0-5367-4205-80d6-a34d4fe34df2" name="Default Changelist" comment="Manifest update">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="dfd0d4a0-5367-4205-80d6-a34d4fe34df2" name="Default Changelist" comment="Manifest update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -163,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632650241147</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="untracted files 2">
+      <created>1632650993204</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632650993204</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,7 +200,9 @@
     <MESSAGE value="Bottom Navbar Complete" />
     <MESSAGE value="activity switch bottom navigation" />
     <MESSAGE value="Manifest update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Manifest update" />
+    <MESSAGE value="git ignore" />
+    <MESSAGE value="untracted files 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="untracted files 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="535" y="80" key="#Auto_Import" timestamp="1632573375776">
@@ -233,9 +253,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1632578852752" />
-    <state x="578" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632650520103">
+    <state x="578" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632650997029">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="578" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1632650520103" />
+    <state x="578" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1632650997029" />
   </component>
 </project>
