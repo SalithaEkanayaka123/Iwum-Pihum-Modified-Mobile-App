@@ -48,7 +48,9 @@ public class CustomButtonSettings4 extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+
         if(view == null){
+
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = layoutInflater.inflate(R.layout.activity_custom_button_settings4 , null);
 
@@ -59,23 +61,21 @@ public class CustomButtonSettings4 extends BaseAdapter {
 
             String name1 = customButton1.getTitle1();
             title1.setText(name1);
-//            view.setOnTouchListener(new View.OnTouchListener() {
+
+
+
+//            view.setOnClickListener(new View.OnClickListener() {
 //                @Override
-//                public boolean onTouch(View view, MotionEvent motionEvent) {
-//                    System.out.println("fffff");
-//                    cardView.setCardBackgroundColor(Color.parseColor("#488747"));
-//                    return true;
+//                public void onClick(View view) {
+//                    System.out.println("www" + i);
+//                    if (i == 0){
+//                        view.setBackground(view.getContext().getResources().getDrawable(R.color.dark_ash));
+//                    }else{
+//
+//                    }
+//
 //                }
 //            });
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    System.out.println("fffff");
-                    //cardView.setBackgroundColor(ContextCompat.getColor(, R.color.teal_200));
-                    //cardView.setCardBackgroundColor(Color.parseColor("#488747"));
-                    //cardView.setCardBackgroundColor(ContextCompat.getColor(Color.parseColor("#FFFFFF")));
-                }
-            });
         }
         return view;
     }

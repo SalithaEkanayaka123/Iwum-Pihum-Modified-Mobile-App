@@ -52,8 +52,8 @@ public class Background_Settings extends AppCompatActivity {
                     DisplayLanguage settingsFragment = new DisplayLanguage();
                     settingsFragment.show(getSupportFragmentManager(),"myFragment");
                 }else if (i == 1){
-//                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
-//                    view.getContext().startActivity(intent);
+                    LayoutFragment settingsFragment = new LayoutFragment();
+                    settingsFragment.show(getSupportFragmentManager(),"myFragment");
                 }else if (i == 2){
                     SortBy settingsFragment = new SortBy();
                     settingsFragment.show(getSupportFragmentManager(),"myFragment");

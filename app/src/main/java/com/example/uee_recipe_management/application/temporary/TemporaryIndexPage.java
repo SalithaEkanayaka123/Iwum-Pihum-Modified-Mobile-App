@@ -12,6 +12,7 @@ import com.example.uee_recipe_management.application.bookmark.Bookmark;
 import com.example.uee_recipe_management.application.bookmark.ItemTesting;
 import com.example.uee_recipe_management.application.category.ResponsiveVerticalHorizontalLayout;
 import com.example.uee_recipe_management.application.home.Home;
+import com.example.uee_recipe_management.application.item.Item;
 import com.example.uee_recipe_management.application.notification.NotificationLayout;
 import com.example.uee_recipe_management.application.settings.SettingPage;
 import com.example.uee_recipe_management.application.splash.OpeningSplashScreen;
@@ -24,7 +25,11 @@ public class TemporaryIndexPage extends AppCompatActivity {
     Button responsivePage;
     Button splashScreen;
     Button notificationPage;
+
+    Button individualPage;
+
     Button bookmarkPage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +42,11 @@ public class TemporaryIndexPage extends AppCompatActivity {
         responsivePage = findViewById(R.id.responsive_button);
         splashScreen = findViewById(R.id.splash_screen);
         notificationPage = findViewById(R.id.notification_screen);
+
+        individualPage = findViewById(R.id.individual_item);
+
         bookmarkPage = findViewById(R.id.bookmark_screen);
+
 
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,10 +96,17 @@ public class TemporaryIndexPage extends AppCompatActivity {
             }
         });
 
+
+        individualPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(view.getContext(), Item.class);
+
         bookmarkPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent  = new Intent(view.getContext(), Bookmark.class);
+
                 view.getContext().startActivity(intent);
             }
         });
