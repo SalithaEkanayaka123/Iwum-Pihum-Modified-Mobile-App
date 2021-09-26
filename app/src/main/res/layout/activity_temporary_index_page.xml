@@ -65,10 +65,17 @@
         android:text="Notification Screen" />
 
     <Button
+
         android:id="@+id/individual_item"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Individual Item" />
+
+
+        android:id="@+id/bookmark_screen"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Bookmarks Screen" />
 
 
     <TextView
