@@ -44,7 +44,7 @@ public class RingingTones extends DialogFragment {
         array.add(new RingingTone("Stop", R.raw.music5));
 
 
-        adapter2 = new CustomButtonSettings5(getContext() , array);//
+        adapter2 = new CustomButtonSettings5(getContext() , array);
         //then set that adapter to the list
         listView1.setAdapter(adapter2);
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
