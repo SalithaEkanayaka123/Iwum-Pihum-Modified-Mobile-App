@@ -34,12 +34,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Image fixed.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/clock.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_18_2021_4_18_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_18_2021_4_18_AM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Single Item Page Interface Header Updated.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
     </list>
@@ -219,13 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Image updated.">
-      <created>1631649519046</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1631649519046</updated>
     </task>
     <task id="LOCAL-00042" summary="Image updated.">
       <created>1631649598134</created>
@@ -563,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632587339441</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Single Item Page Interface Header Updated.">
+      <created>1632636853486</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1632636853487</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,7 +574,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Notification Layout Margin Error Fixed Final Version." />
     <MESSAGE value="Splash Screen Background Changed" />
     <MESSAGE value="Constraints Added to the Image (Logo)" />
     <MESSAGE value="Splash screen wallpaper added." />
@@ -604,7 +598,8 @@
     <MESSAGE value="Main index updated and point to the individual item." />
     <MESSAGE value="UI Element defined XML file updated." />
     <MESSAGE value="Image fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Image fixed." />
+    <MESSAGE value="Single Item Page Interface Header Updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="Single Item Page Interface Header Updated." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">
@@ -695,10 +690,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1632584478290" />
-    <state x="386" y="260" key="Vcs.Push.Dialog.v2" timestamp="1632587355715">
+    <state x="386" y="260" key="Vcs.Push.Dialog.v2" timestamp="1632636857003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="386" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632587355715" />
+    <state x="386" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1632636857003" />
     <state x="776" y="298" key="chooseDestDirectoryDialog" timestamp="1632636460610">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
