@@ -6,7 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 
 import com.example.uee_recipe_management.application.R;
-import com.example.uee_recipe_management.application.bookmark.SliderAdapter;
+import com.example.uee_recipe_management.application.bookmark.adapter.SliderAdapter;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
