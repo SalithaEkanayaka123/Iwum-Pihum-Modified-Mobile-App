@@ -1,19 +1,25 @@
 package com.example.uee_recipe_management.application.category;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.EditText;
 
+import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.adapter.CategoriesRecyclerAdapter;
 import com.example.uee_recipe_management.application.category.model.AllCategories;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.w3c.dom.Text;
 
@@ -26,6 +32,7 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
     CategoriesRecyclerAdapter mainRecyclerAdapter;
     EditText searchBar;
     ArrayList<AllCategories> allCategories;
+    NavgationController Nav = new NavgationController();
 
 
     @Override
@@ -33,6 +40,13 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_responsive_vertical_horizontal_layout);
+
+        //Bottom Nav Configs
+        BottomNavigationView bottomNavView  = findViewById(R.id.bottom_nav);
+        bottomNavView.setOnNavigationItemSelectedListener( navListener);
+        Menu menu = bottomNavView.getMenu();
+        MenuItem menuItem = menu.getItem(1);
+        menuItem.setChecked(true);
 
         /**
          * Following section should be automated.
@@ -94,4 +108,14 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
         mainRecyclerAdapter = new CategoriesRecyclerAdapter(this, allCategoriesList);
         mainCategoryRecycler.setAdapter(mainRecyclerAdapter);
     }
+
+    private  BottomNavigationView.OnNavigationItemSelectedListener navListener = new
+            BottomNavigationView.OnNavigationItemSelectedListener(){
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Intent change =  Nav.ChangeMainAcivty(item, ResponsiveVerticalHorizontalLayout.this);
+                    startActivity(change);
+                    return true;
+                }
+            };
 }
