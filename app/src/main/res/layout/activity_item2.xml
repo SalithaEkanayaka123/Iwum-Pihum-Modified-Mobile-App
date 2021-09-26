@@ -58,7 +58,6 @@
                 />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -132,13 +131,22 @@
                 android:background="#838383"
                 android:layout_marginTop="10dp"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingredients"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/raleway_semibold"
+                android:textSize="18sp"/>
+
             <ListView
                 android:id="@+id/single_item_list_view"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:background="@drawable/custom_list_view"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_list_view"
+                android:layout_marginTop="10dp"/>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
