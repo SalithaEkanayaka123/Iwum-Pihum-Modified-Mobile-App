@@ -39,7 +39,7 @@ public class RingingTones extends DialogFragment {
         array.add(new RingingTone("RingingTone5", "Automatic background sync"));
 
 
-        adapter2 = new CustomButtonSettings5(getContext() , array);//
+        adapter2 = new CustomButtonSettings5(getContext() , array);
         //then set that adapter to the list
         listView1.setAdapter(adapter2);
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
