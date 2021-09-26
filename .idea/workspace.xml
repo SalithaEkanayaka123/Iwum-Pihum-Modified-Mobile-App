@@ -34,9 +34,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Removed Dummy Values.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_list_view.xml" afterDir="false" />
+    <list default="true" id="a50f0dda-bb92-4960-9a36-6570922c3d7f" name="Default Changelist" comment="Custom Shape added for the list customization.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/custom_list_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_list_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,13 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627058215692</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Search Bar Edit text Updated.">
-      <created>1631682319452</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1631682319452</updated>
     </task>
     <task id="LOCAL-00045" summary="Search Page Search Fixed.">
       <created>1631682619839</created>
@@ -559,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632638031131</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Custom Shape added for the list customization.">
+      <created>1632638332442</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1632638332442</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -575,7 +575,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Splash screen wallpaper added." />
     <MESSAGE value="Splash Screen Basic View Added." />
     <MESSAGE value="Updated the Splash Screen (Animation need to add)" />
     <MESSAGE value="Update text padding and font weight." />
@@ -600,7 +599,8 @@
     <MESSAGE value="Single Item Page Interface Header Updated." />
     <MESSAGE value="List View Updated. Single View" />
     <MESSAGE value="Removed Dummy Values." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Dummy Values." />
+    <MESSAGE value="Custom Shape added for the list customization." />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom Shape added for the list customization." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1631774292558">

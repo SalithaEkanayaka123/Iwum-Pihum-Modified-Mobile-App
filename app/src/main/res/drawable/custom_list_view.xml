@@ -6,4 +6,7 @@
         android:topLeftRadius="7dp"
         android:topRightRadius="7dp"
         />
+    <solid android:color="#909090"/>
+
+
 </shape>
