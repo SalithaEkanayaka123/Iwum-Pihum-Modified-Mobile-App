@@ -11,6 +11,7 @@
     app:cardCornerRadius="30dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_grid_item"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:clickable="true"
@@ -27,6 +28,7 @@
         />
     </androidx.cardview.widget.CardView>
     <TextView
+        android:id="@+id/grid_item_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Italian"
@@ -36,6 +38,7 @@
         android:layout_marginLeft="5dp"/>
 
     <TextView
+        android:id="@+id/grid_item_subheader"
         android:layout_marginTop="-5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

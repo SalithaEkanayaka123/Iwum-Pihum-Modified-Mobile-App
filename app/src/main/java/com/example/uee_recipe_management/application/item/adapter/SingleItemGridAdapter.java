@@ -2,7 +2,14 @@ package com.example.uee_recipe_management.application.item.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.uee_recipe_management.application.R;
+
 import java.util.List;
 
 public class SingleItemGridAdapter extends RecyclerView.Adapter<SingleItemGridAdapter.MyViewHolder> {
@@ -32,8 +39,19 @@ public class SingleItemGridAdapter extends RecyclerView.Adapter<SingleItemGridAd
 
    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
+      CardView cardView;
+      TextView header;
+      TextView subheader;
+      ImageView imageView;
+
+
       public MyViewHolder(View itemView) {
          super(itemView);
+
+         cardView = (CardView) itemView.findViewById(R.id.cardview_grid_item);
+         header = (TextView) itemView.findViewById(R.id.grid_item_header);
+         subheader = (TextView) itemView.findViewById(R.id.grid_item_subheader);
+         imageView = (ImageView) itemView.findViewById(R.id.image_grid_item);
       }
    }
 }
