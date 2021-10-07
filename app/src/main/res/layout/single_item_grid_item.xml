@@ -6,17 +6,16 @@
     android:clickable="true"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="10dp"
-    android:padding="5dp"
+    android:padding="2dp"
     app:cardCornerRadius="30dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview_grid_item"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:clickable="true"
-        android:layout_margin="5dp"
-        app:cardCornerRadius="30dp">
+        android:layout_margin="1dp"
+        app:cardCornerRadius="10dp">
 
     <ImageView
         android:id="@+id/image_grid_item"
@@ -43,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Short eats"
-        android:textColor="#909090"
+        android:textColor="#474747"
         android:textStyle="normal"
         android:textSize="13sp"
         android:layout_marginLeft="5dp"/>
