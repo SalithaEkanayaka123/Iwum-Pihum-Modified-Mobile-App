@@ -27,7 +27,7 @@ import java.util.Objects;
 
 public class Item extends AppCompatActivity {
 
-    SliderView sliderView;
+    SliderView sliderView; //
     int[] images = {R.drawable.img_1, R.drawable.img_2, R.drawable.img_3,};
     ListView listView;
     TextView listText;
