@@ -28,11 +28,11 @@ public class NavgationController extends AppCompatActivity {
                             return intent2;
                         case R.id.nav_notification :
                             Intent intent3 = new Intent(currentIntent, NotificationLayout.class);
-
                             return intent3;
                         case R.id.nav_settings :
                             Intent intent4 = new Intent(currentIntent, SettingPage.class);
                             return intent4;
+
                     }
       return null;
   }
