@@ -25,9 +25,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
     Button responsivePage;
     Button splashScreen;
     Button notificationPage;
-
     Button individualPage;
-
     Button bookmarkPage;
 
 
