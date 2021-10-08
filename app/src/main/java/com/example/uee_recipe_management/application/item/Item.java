@@ -12,16 +12,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import com.example.uee_recipe_management.application.item.adapter.ItemAdapter;
 import com.example.uee_recipe_management.application.R;
-import com.example.uee_recipe_management.application.bookmark.adapter.SliderAdapter;
 import com.example.uee_recipe_management.application.item.adapter.SimilarItem;
 import com.example.uee_recipe_management.application.item.adapter.SingleItemGridAdapter;
+import com.example.uee_recipe_management.application.bookmark.adapter.SliderAdapter;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Item extends AppCompatActivity {
@@ -32,6 +33,11 @@ public class Item extends AppCompatActivity {
     TextView listText;
     Toolbar toolbar;
     RecyclerView similarItemsRecycler;
+
+    RecyclerView dataMethods;
+    List<String> titles;
+    List<String> description;
+    ItemAdapter itemAdapter;
 
     //Array With Dummy values, This should be passed to from the item model class
             /**
@@ -94,6 +100,26 @@ public class Item extends AppCompatActivity {
                 R.layout.single_view_list, R.id.single_ingred_name, array);
         listView.setAdapter(adapter);
         setListViewHeightBasedOnChildren(listView);
+
+        dataMethods = findViewById(R.id.data_method);
+
+        titles = new ArrayList<>();
+        description = new ArrayList<>();
+
+        titles.add("1");
+        titles.add("2");
+        titles.add("3");
+
+        description.add("This is a description");
+        description.add("This is a description");
+        description.add("This is a description");
+
+
+        itemAdapter = new ItemAdapter(this,titles,description);
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2,GridLayoutManager.VERTICAL,false);
+        dataMethods.setLayoutManager(gridLayoutManager);
+        dataMethods.setAdapter((RecyclerView.Adapter) itemAdapter);
 
 
     }
