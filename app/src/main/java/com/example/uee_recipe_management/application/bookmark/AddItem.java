@@ -24,7 +24,6 @@ public class AddItem extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private Uri imageUri;
-
     Button addItem;
     Button attachImage;
     ProgressBar progressBar;
@@ -32,7 +31,7 @@ public class AddItem extends AppCompatActivity {
     EditText subName;
     EditText description;
     ImageView attachImageView;
-
+  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
