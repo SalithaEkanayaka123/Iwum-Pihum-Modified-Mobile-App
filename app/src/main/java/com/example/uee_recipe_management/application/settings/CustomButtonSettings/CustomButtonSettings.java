@@ -77,9 +77,16 @@ public class CustomButtonSettings extends BaseAdapter {
                        System.out.println("notification");
                    }else if (name1.contentEquals("Vibration")){
                        System.out.println("Vibration");
-                   }else if (name1.contentEquals("Vibration")){
-                       System.out.println("Vibration");
+                   }else if (name1.contentEquals("Sync")){
+                       System.out.println("Sync");
                    }
+                   else if (name1.contentEquals("Dark Mode")){
+                       System.out.println("Dark Mode");
+                   }
+                   else if (name1.contentEquals("Sync on startup")){
+                       System.out.println("Sync on startup");
+                   }
+
                 }
             });
             //customButton1 item = list.get(i);
