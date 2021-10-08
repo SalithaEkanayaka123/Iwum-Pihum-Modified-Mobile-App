@@ -56,7 +56,7 @@ public class AddItem extends AppCompatActivity {
         });
     }
 
-    //Old Method.
+    /** Image Attachment Deprecated Method **/
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -73,4 +73,6 @@ public class AddItem extends AppCompatActivity {
             Picasso.with(this).load(imageUri).into(attachImageView);
         }
     }
+
+    /** Image Attachment Updated Method **/
 }
