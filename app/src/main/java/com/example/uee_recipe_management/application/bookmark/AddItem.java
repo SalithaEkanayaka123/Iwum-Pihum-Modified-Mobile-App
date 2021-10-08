@@ -1,6 +1,12 @@
 package com.example.uee_recipe_management.application.bookmark;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,7 +49,7 @@ public class AddItem extends AppCompatActivity {
         attachImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openFileChooser();
+                mGetContent.launch("image/*");
             }
         });
 
@@ -74,5 +80,18 @@ public class AddItem extends AppCompatActivity {
         }
     }
 
+    ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
+            new ActivityResultCallback<Uri>() {
+                @Override
+                public void onActivityResult(Uri uri) {
+                    imageUri = uri;
+                    Picasso.with(getApplicationContext()).load(imageUri).into(attachImageView);
+                }
+            });
+
+
     /** Image Attachment Updated Method **/
+    private void OpenFileChoosev2 () {
+
+    }
 }
