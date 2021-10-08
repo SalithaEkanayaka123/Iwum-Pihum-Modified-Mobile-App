@@ -4,19 +4,25 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.CategorySearchLayout;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings2;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
 import com.example.uee_recipe_management.application.splash.OpeningSplashScreen;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -26,11 +32,19 @@ public class SettingPage extends AppCompatActivity {
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
     ArrayList<customButton1> array;
     //CardView cardView;
+    NavgationController Nav = new NavgationController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_page);
+
+        //Bottom Nav Configs
+        BottomNavigationView bottomNavView  = findViewById(R.id.bottom_nav);
+        bottomNavView.setOnNavigationItemSelectedListener( navListener);
+        Menu menu = bottomNavView.getMenu();
+        MenuItem menuItem = menu.getItem(4);
+        menuItem.setChecked(true);
 
 
 
@@ -79,4 +93,14 @@ public class SettingPage extends AppCompatActivity {
             }
         });
     }
+
+    private  BottomNavigationView.OnNavigationItemSelectedListener navListener = new
+            BottomNavigationView.OnNavigationItemSelectedListener(){
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Intent change =  Nav.ChangeMainAcivty(item, SettingPage.this);
+                    startActivity(change);
+                    return true;
+                }
+            };
 }
