@@ -74,17 +74,45 @@ public class CustomButtonSettings extends BaseAdapter {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                    if (name1.contentEquals("Notification")){
-                       System.out.println("notification");
+                       if (b == true){
+                           System.out.println(b);
+                       }else if (b == false){
+                           System.out.println(b);
+                       }
+
                    }else if (name1.contentEquals("Vibration")){
-                       System.out.println("Vibration");
+                       if (b == true){
+                           System.out.println(b);
+                       }else if (b == false){
+                           System.out.println(b);
+                       }
+
                    }else if (name1.contentEquals("Sync")){
-                       System.out.println("Sync");
+                       if (b == true){
+                           System.out.println(b);
+
+                       }else if (b == false){
+                           System.out.println(b);
+
+                       }
                    }
                    else if (name1.contentEquals("Dark Mode")){
-                       System.out.println("Dark Mode");
+                       if (b == true){
+                           System.out.println(b);
+
+                       }else if (b == false){
+                           System.out.println(b);
+
+                       }
                    }
                    else if (name1.contentEquals("Sync on startup")){
-                       System.out.println("Sync on startup");
+                       if (b == true){
+                           System.out.println(b);
+
+                       }else if (b == false){
+                           System.out.println(b);
+
+                       }
                    }
 
                 }
