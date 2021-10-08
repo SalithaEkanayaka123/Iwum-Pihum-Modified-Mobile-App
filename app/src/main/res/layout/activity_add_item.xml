@@ -27,7 +27,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/input_field_corner_radius"
         android:ems="10"
@@ -44,15 +44,15 @@
     <EditText
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="fill_parent"
-        android:layout_height="87dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/input_field_corner_radius"
         android:ems="10"
         android:fontFamily="@font/raleway_italic"
         android:gravity="start|top"
-        android:hint="Enter the description..."
+        android:hint="Enter the sub name..."
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:textColor="#000000"
@@ -65,19 +65,19 @@
     <EditText
         android:id="@+id/txt_input_ingredients"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="284dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/input_field_corner_radius"
         android:ems="10"
         android:fontFamily="@font/raleway_italic"
-        android:hint="Enter the ingredients..."
+        android:hint="Enter the Description..."
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColorHint="#8F8F8F"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
 
@@ -86,7 +86,7 @@
         android:layout_width="fill_parent"
         android:layout_height="87dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="152dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/input_field_corner_radius"
         android:ems="10"
@@ -98,53 +98,65 @@
         android:textColor="#000000"
         android:textColorHint="#8F8F8F"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_input_name" />
 
-    <EditText
-        android:id="@+id/txt_input_image"
-        android:layout_width="345dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="368dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/input_field_corner_radius"
-        android:ems="10"
-        android:fontFamily="@font/raleway_italic"
-        android:hint="Enter the image..."
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textColorHint="#8F8F8F"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
+        app:layout_constraintTop_toBottomOf="@+id/button_reset"
+        app:layout_constraintVertical_bias="0.255" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_add"
         android:layout_width="126dp"
         android:layout_height="45dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/round_btn"
-        android:text="Add Recipe"
-        android:textColor="#FFF"
+        android:background="@drawable/round_image_attach_button"
+        android:text="Choose Image"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_image"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="492dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_reset"
-        android:layout_width="84dp"
+        android:layout_width="100dp"
         android:layout_height="44dp"
-        android:layout_marginTop="56dp"
-        android:text="RESET"
+        android:layout_marginTop="52dp"
         android:background="@drawable/round_btn"
+        android:text="Add Recipes"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_add"/>
+        app:layout_constraintTop_toTopOf="@+id/button_add" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/view2"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="12dp"
+        app:cardCornerRadius="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_input_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/art_wallpaper" />
+    </android.support.v7.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
