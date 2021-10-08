@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.AddItem;
 import com.example.uee_recipe_management.application.bookmark.Bookmark;
 import com.example.uee_recipe_management.application.bookmark.ItemTesting;
 import com.example.uee_recipe_management.application.category.ResponsiveVerticalHorizontalLayout;
@@ -57,7 +58,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ItemTesting.class);
+                Intent intent = new Intent(view.getContext(), AddItem.class);
                 view.getContext().startActivity(intent);
             }
         });
