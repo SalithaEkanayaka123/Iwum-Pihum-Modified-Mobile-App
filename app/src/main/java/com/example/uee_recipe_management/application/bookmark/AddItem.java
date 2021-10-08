@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.uee_recipe_management.application.R;
+import com.squareup.picasso.Picasso;
 
 public class AddItem extends AppCompatActivity {
 
