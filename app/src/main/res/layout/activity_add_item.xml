@@ -52,7 +52,7 @@
         android:ems="10"
         android:fontFamily="@font/raleway_italic"
         android:gravity="start|top"
-        android:hint="Enter the description..."
+        android:hint="Enter the sub name..."
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:textColor="#000000"
@@ -72,7 +72,7 @@
         android:background="@drawable/input_field_corner_radius"
         android:ems="10"
         android:fontFamily="@font/raleway_italic"
-        android:hint="Enter the ingredients..."
+        android:hint="Enter the Description..."
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColorHint="#8F8F8F"
@@ -102,25 +102,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_input_name" />
 
-    <EditText
-        android:id="@+id/txt_input_image"
-        android:layout_width="fill_parent"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="332dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/input_field_corner_radius"
-        android:ems="10"
-        android:fontFamily="@font/raleway_italic"
-        android:hint="Enter the image..."
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textColorHint="#8F8F8F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
-
     <ProgressBar
         android:layout_width="300dp"
         android:layout_height="10dp"
@@ -135,14 +116,13 @@
         android:id="@+id/button_add"
         android:layout_width="126dp"
         android:layout_height="45dp"
-        android:layout_marginTop="12dp"
         android:background="@drawable/round_image_attach_button"
         android:text="Choose Image"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_image"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="372dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_reset"
