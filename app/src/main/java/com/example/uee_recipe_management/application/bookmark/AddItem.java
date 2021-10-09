@@ -50,6 +50,7 @@ public class AddItem extends AppCompatActivity {
     EditText description;
     ImageView attachImageView;
     String downloadUrl;
+    String downloadUrl2;
 
     /**
      * Firebase Extensions
@@ -157,6 +158,7 @@ public class AddItem extends AppCompatActivity {
                     Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), taskSnapshot.getStorage().getDownloadUrl().toString(), description.getText().toString().trim());
                     String uploadId = mDatabaseRef.push().getKey();
                     mDatabaseRef.child(uploadId).setValue(upload);
+
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -172,7 +174,8 @@ public class AddItem extends AppCompatActivity {
             }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(Task<UploadTask.TaskSnapshot> task) {
-                    downloadUrl = task.getResult().toString();
+                    downloadUrl=task.getResult().getMetadata().getReference().getDownloadUrl().toString();
+                    SaveProductInforToDatabase(); // Adding References to the Uploaded files.
                 }
             });
         } else {
@@ -207,5 +210,12 @@ public class AddItem extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Please upload image!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    /** Method to save the Image Meta information to the Realtime Database **/
+    public void SaveProductInforToDatabase() {
+        Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), downloadUrl, description.getText().toString().trim());
+        String uploadId = mDatabaseRef.push().getKey();
+        mDatabaseRef.child(uploadId).setValue(upload);
     }
 }
