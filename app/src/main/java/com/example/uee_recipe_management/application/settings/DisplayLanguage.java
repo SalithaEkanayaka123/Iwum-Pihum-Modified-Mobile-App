@@ -66,12 +66,18 @@ public class DisplayLanguage extends DialogFragment {
 
                     Toast.makeText(getContext(), "change to English", Toast.LENGTH_SHORT).show();
                 }else if (i == 1){
-                    Locale locale = new Locale("sq");
+                    String languageToLoad  = "fr";
+                    Locale locale = new Locale("si", "lk");
                     Locale.setDefault(locale);
-                    Resources resources = getResources();
-                    Configuration config = resources.getConfiguration();
-                    config.setLocale(locale);
-                    resources.updateConfiguration(config, resources.getDisplayMetrics());
+                    Configuration config = new Configuration();
+                    config.locale = locale;
+                    getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+//                    Locale locale = new Locale("si", "lk");
+//                    Locale.setDefault(locale);
+//                    Resources resources = getResources();
+//                    Configuration config = resources.getConfiguration();
+//                    config.setLocale(locale);
+//                    resources.updateConfiguration(config, resources.getDisplayMetrics());
                     Toast.makeText(getContext(), "change to Sinhala", Toast.LENGTH_SHORT).show();
                 }
             }

@@ -9,4 +9,15 @@
     <string name="English">ඉංග්රීසි</string>
     <string name="DarkMode">අඳුරු මාදිලිය</string>
     <string name="EnableDarkMode" translatable="false">" අඳුරු ප්‍රකාරය සක්‍රීය කරන්න"</string>
+    <string name="Background">" පසුබිම"</string>
+    <string name="Notification">දැනුම් දීම</string>
+    <string name="Synchronization">" සමමුහුර්තකරණය"</string>
+    <string name="PrivacyandPolicy">පෞද්ගලිකත්‍ව සහ ප්‍රතිපත්ති</string>
+    <string name="about">" ගැන"</string>
+    <string name="first_fragment_label" translatable="false">" ▲ පළමු ඛණ්ඩය"</string>
+    <string name="second_fragment_label">" ▲ දෙවන ඛණ්ඩය"</string>
+    <string name="next">" ඊළඟ"</string>
+    <string name="previous">" කලින්"</string>
+    <string name="hello_first_fragment">ආයුබෝවන් පළමු කොටස</string>
+    <string name="hello_second_fragment">ආයුබෝවන් දෙවන කොටස</string>
 </resources>
