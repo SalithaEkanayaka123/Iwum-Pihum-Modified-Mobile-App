@@ -21,21 +21,30 @@
         android:elevation="8dp"
         android:textStyle="bold" />
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="485dp"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/listSettings8"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true">
+            android:layout_height="485dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listSettings8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true">
 
 
-        </ListView>
 
-    </LinearLayout>
+            </ListView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

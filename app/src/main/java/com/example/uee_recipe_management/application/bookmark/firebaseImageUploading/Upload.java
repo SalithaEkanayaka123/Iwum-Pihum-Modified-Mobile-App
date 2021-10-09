@@ -7,6 +7,10 @@ public class Upload {
     private String description;
 
     public Upload(String name, String subName, String imageUrl, String description) {
+        // Null Validation
+        if (name.trim().equals("")){
+            name = "No Name";
+        }
         this.name = name;
         this.subName = subName;
         this.imageUrl = imageUrl;

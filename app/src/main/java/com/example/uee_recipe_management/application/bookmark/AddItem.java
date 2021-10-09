@@ -1,23 +1,42 @@
 package com.example.uee_recipe_management.application.bookmark;
-import androidx.activity.result.ActivityResult;
+
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 public class AddItem extends AppCompatActivity {
 
@@ -31,12 +50,18 @@ public class AddItem extends AppCompatActivity {
     EditText subName;
     EditText description;
     ImageView attachImageView;
-  
+
+    /**
+     * Firebase Extensions
+     **/
+    private StorageReference mStorageRef;
+    private DatabaseReference mDatabaseRef;
+    private StorageTask mUploadTask;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-
         addItem = findViewById(R.id.add_recipe_button);
         attachImage = findViewById(R.id.attach_image_button);
         attachImageView = findViewById(R.id.attach_image);
@@ -45,23 +70,35 @@ public class AddItem extends AppCompatActivity {
         subName = findViewById(R.id.sub_name);
         description = findViewById(R.id.description);
 
+        /** Firebase Schema Definition **/
+        mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
+        mDatabaseRef = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
+
         attachImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 mGetContent.launch("image/*");
+                //openFileChooser();
             }
         });
 
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), SingleItemView.class);
-                view.getContext().startActivity(intent);
+                /** Upload File When Press the Upload Button **/
+                if (mUploadTask != null && mUploadTask.isInProgress()) {
+                    Toast.makeText(AddItem.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
+                } else {
+                    uploadFile();
+                }
             }
         });
     }
 
-    /** Image Attachment Deprecated Method **/
+    /**
+     * Image Attachment Deprecated Method
+     **/
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -70,15 +107,17 @@ public class AddItem extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             Picasso.with(this).load(imageUri).into(attachImageView);
         }
     }
 
+    /**
+     * Image Attachment Updated Method
+     **/
     ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
             new ActivityResultCallback<Uri>() {
                 @Override
@@ -88,9 +127,80 @@ public class AddItem extends AppCompatActivity {
                 }
             });
 
+    private String getFileExtension(Uri uri) {
+        ContentResolver cR = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
+    }
 
-    /** Image Attachment Updated Method **/
-    private void OpenFileChoosev2 () {
 
+    /**
+     * Upload File Method
+     **/
+    private void uploadFile() {
+        if (imageUri != null) {
+            StorageReference fileReference = mStorageRef.child(imageUri.getLastPathSegment());
+            mUploadTask = fileReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Handler handler = new Handler();
+                    /** Deplay the progress bar filling animation **/
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressBar.setProgress(0);
+                        }
+                    }, 5000);
+                    Toast.makeText(AddItem.this, "Upload Successful", Toast.LENGTH_SHORT).show();
+
+                    /** Creating a Reference in the Realtime Database **/
+                    Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), taskSnapshot.getMetadata().getReference().getDownloadUrl().toString(), description.getText().toString().trim());
+                    String uploadId = mDatabaseRef.push().getKey();
+                    mDatabaseRef.child(uploadId).setValue(upload);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(Exception e) {
+                    Toast.makeText(AddItem.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot snapshot) {
+                    double progress = ((100.0) * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+                    progressBar.setProgress((int) progress);
+                }
+            });
+        } else {
+            Toast.makeText(this, "No File Selected", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void uploadFilev2() {
+        if (imageUri != null) {
+            mStorageRef.putFile(imageUri).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
+                    }
+                    return mStorageRef.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+                        Log.e("TAG", "then: " + downloadUri.toString());
+                        Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), downloadUri.toString(), description.getText().toString().trim());
+                        mDatabaseRef.push().setValue(upload);
+                        Toast.makeText(AddItem.this, "Uploaded", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(AddItem.this, "upload failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        } else {
+            Toast.makeText(this, "Please upload image!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
