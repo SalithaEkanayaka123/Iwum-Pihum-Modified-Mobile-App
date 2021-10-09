@@ -52,7 +52,7 @@
         android:ems="10"
         android:fontFamily="@font/raleway_italic"
         android:gravity="start|top"
-        android:hint="Enter the sub name..."
+        android:hint="Enter the ingredients..."
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:textColor="#000000"
@@ -65,7 +65,7 @@
     <EditText
         android:id="@+id/description"
         android:layout_width="fill_parent"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="296dp"
         android:layout_marginEnd="8dp"
@@ -81,43 +81,73 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
 
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/raleway_italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/select"
+        android:textColorHint="#9F897D"
+        app:layout_constraintBottom_toTopOf="@+id/attach_image_button"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintVertical_bias="0.142"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/input_field_corner_radius"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        tools:layout_editor_absoluteX="16dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_field_corner_radius"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="300dp"
         android:layout_height="10dp"
+        android:layout_marginTop="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_recipe_button"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.269" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/attach_image_button"
         android:layout_width="126dp"
         android:layout_height="45dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:background="@drawable/round_image_attach_button"
         android:text="Choose Image"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_recipe_button"
         android:layout_width="100dp"
         android:layout_height="44dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="1dp"
         android:background="@drawable/round_btn"
         android:text="Add Recipes"
         android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/attach_image_button"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/attach_image_button"
+        app:layout_constraintVertical_bias="0.119" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/view2"
