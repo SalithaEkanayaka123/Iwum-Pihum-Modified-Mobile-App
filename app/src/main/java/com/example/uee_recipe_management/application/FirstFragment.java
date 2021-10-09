@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.uee_recipe_management.application.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {

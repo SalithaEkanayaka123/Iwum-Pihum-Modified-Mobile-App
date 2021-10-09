@@ -46,6 +46,7 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
     DatabaseReference database;
     ArrayList<CategoryItem> fireAllItemsCategories;
     Set<String> AllCategoriesMap;
+    String[] items = {"Rice", "Cake", "Sweets", "Drinks", "Meals"};
 
 
 
