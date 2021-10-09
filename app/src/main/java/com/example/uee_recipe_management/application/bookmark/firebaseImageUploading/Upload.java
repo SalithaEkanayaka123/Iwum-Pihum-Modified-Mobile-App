@@ -6,6 +6,7 @@ public class Upload {
     private String imageUrl;
     private String description;
     private String category;
+    private boolean state;
 
     // New Text Fields.
     // bookmark state
@@ -25,6 +26,7 @@ public class Upload {
         this.imageUrl = imageUrl;
         this.description = description;
         this.category = category;
+        this.state = false;
 
     }
 
@@ -66,5 +68,13 @@ public class Upload {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
     }
 }

@@ -51,5 +51,8 @@
 
     <string name="search_recipies" translatable="false">Search Recipies</string>
     <string name="select">Select Category</string>
+    <string name="invalid_name">Please enter name</string>
+    <string name="invalid_sub">Please enter ingredients</string>
+    <string name="invalid_des">Please enter description</string>
 
 </resources>
