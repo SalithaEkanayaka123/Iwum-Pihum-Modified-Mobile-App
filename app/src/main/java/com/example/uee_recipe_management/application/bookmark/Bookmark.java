@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.uee_recipe_management.application.CustomArrayList.CustomArrayList;
@@ -30,6 +31,8 @@ public class Bookmark extends AppCompatActivity {
     List<String> titles;
     List<Integer> images;
     BookmarkAdapter bookmarkAdapter;
+    ArrayList<RecipieItem> items;
+    EditText searchBar;
 
     FirebaseDatabase database;
     DatabaseReference databaseReference, fvrtref,fvrt_listRef;
@@ -43,7 +46,28 @@ public class Bookmark extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookmark);
         dataList = findViewById(R.id.search_page_recycler_2);
-        
+
+        /**
+         * Search Bar Listener.
+         * **/
+        searchBar = findViewById(R.id.search_layout_search_2);
+        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 //        FirebaseUser user = CustomArrayList.getInstance().getCurrentUser();
 //        String currentUserId = user.getUid();
 
@@ -94,6 +118,17 @@ public class Bookmark extends AppCompatActivity {
         dataList.setLayoutManager(gridLayoutManager);
         dataList.setAdapter((RecyclerView.Adapter) bookmarkAdapter);
 
+    }
+
+    private void filter(String text){
+//        ArrayList<RecipieItem> filteredList = new ArrayList<>();
+//        for (A item : items){
+//            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+//                filteredList.add(item);
+//            }
+//        }
+//
+//        bookmarkAdapter.filterList(filteredList);
     }
 
 

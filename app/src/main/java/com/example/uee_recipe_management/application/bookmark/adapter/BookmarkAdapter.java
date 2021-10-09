@@ -1,5 +1,4 @@
 package com.example.uee_recipe_management.application.bookmark.adapter;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,26 +7,19 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.uee_recipe_management.application.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
+import com.example.uee_recipe_management.application.bookmark.model.RecipieItem;
 import java.util.List;
 
 public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHolder>{
 
-
     List<String> titles;
     List<Integer> images;
     LayoutInflater inflater;
-
+    private List<RecipieItem> recipeSearchItems;
+    boolean checkItem = false;
 
     public BookmarkAdapter(Context ctx, List<String> titles, List<Integer> images){
         this.titles = titles;
@@ -81,10 +73,16 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
         return titles.size();
     }
 
+    public void filterList(List<String>  filteredList){
+        titles = filteredList;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title;
         TextView description;
         ImageView gridIcon;
+        ImageButton fvrt_btn;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -92,7 +90,18 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
             title = itemView.findViewById(R.id.titleTv);
             description = itemView.findViewById(R.id.descriptionTv);
             gridIcon = itemView.findViewById(R.id.bannerIv);
-//            fvrt_btn = itemView.findViewById(R.id.fvrt_f2_item);
+            fvrt_btn = itemView.findViewById(R.id.fvrt_f2_item);
+
+            fvrt_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    System.out.println("CALLING" + title.getText().toString());
+
+                    if(title.getText().toString().contains("First Item")){
+                        checkItem = true;
+                    }
+                }
+            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
