@@ -12,6 +12,7 @@ import com.example.uee_recipe_management.application.category.ResponsiveVertical
 import com.example.uee_recipe_management.application.home.Home;
 import com.example.uee_recipe_management.application.notification.NotificationLayout;
 import com.example.uee_recipe_management.application.settings.SettingPage;
+import com.example.uee_recipe_management.application.userControlMenu.UserControlMenu;
 
 public class NavgationController extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class NavgationController extends AppCompatActivity {
                             Intent intent1 = new Intent(currentIntent, ResponsiveVerticalHorizontalLayout.class);
                             return intent1;
                         case R.id.nav_add :
-                            Intent intent2 = new Intent(currentIntent, null);
+                            Intent intent2 = new Intent(currentIntent, UserControlMenu.class);
                             return intent2;
                         case R.id.nav_notification :
                             Intent intent3 = new Intent(currentIntent, NotificationLayout.class);
