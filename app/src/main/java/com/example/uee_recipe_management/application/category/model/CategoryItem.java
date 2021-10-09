@@ -10,6 +10,13 @@ public class CategoryItem  implements Parcelable {
     private String name;
     private Integer image;
     private String description;
+    private String fireURL;
+
+    public CategoryItem(String name, String fireURL, String description){
+        this.name = name;
+        this.fireURL = fireURL;
+        this.description = description;
+    }
 
     public CategoryItem(String name, int image, String description) {
         this.name = name;
@@ -61,6 +68,10 @@ public class CategoryItem  implements Parcelable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getFireURL(){
+        return fireURL;
     }
 
     @Override

@@ -6,6 +6,14 @@ public class Upload {
     private String imageUrl;
     private String description;
 
+    // New Text Fields.
+    // bookmark state
+    // category
+
+    public Upload(){
+
+    }
+
     public Upload(String name, String subName, String imageUrl, String description) {
         // Null Validation
         if (name.trim().equals("")){

@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,10 +55,18 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
 
     @Override
     public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
+        Uri myUri = null;
         holder.longCardHeader.setText(categorySearchItemList.get(position).getName());
         holder.longCardSubHeading.setText(categorySearchItemList.get(position).getName());
         holder.longCardDescription.setText(categorySearchItemList.get(position).getDescription());
-        holder.longCardImageView.setImageResource(categorySearchItemList.get(position).getImage());
+//        holder.longCardImageView.setImageResource(categorySearchItemList.get(position).getImage());
+        try {
+            myUri = Uri.parse(categorySearchItemList.get(position).getFireURL());
+        } catch (Exception e){
+            System.out.println("Exception |CategoryItemSearchAdapter | - " + e.getMessage());
+        }
+
+        holder.longCardImageView.setImageURI(myUri);
     }
 
     @Override

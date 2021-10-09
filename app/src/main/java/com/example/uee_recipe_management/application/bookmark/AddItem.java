@@ -49,6 +49,9 @@ public class AddItem extends AppCompatActivity {
     EditText subName;
     EditText description;
     ImageView attachImageView;
+
+    /** New EditText **/
+
     String downloadUrl;
 
     /**
@@ -69,6 +72,9 @@ public class AddItem extends AppCompatActivity {
         name = findViewById(R.id.recipe_name);
         subName = findViewById(R.id.sub_name);
         description = findViewById(R.id.description);
+
+        /** Register EditText **/
+
 
         /** Firebase Schema Definition **/
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
@@ -136,6 +142,7 @@ public class AddItem extends AppCompatActivity {
 
     /**
      * Upload File Method
+     * Taneesha should change only this method.
      **/
     private void uploadFile() {
         if (imageUri != null) {
