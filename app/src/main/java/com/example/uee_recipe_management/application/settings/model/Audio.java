@@ -3,6 +3,10 @@ package com.example.uee_recipe_management.application.settings.model;
 public class Audio {
     String title, audio;
 
+//    public Audio(String title, String audio) {
+//        this.title = title;
+//        this.audio = audio;
+//    }
 
     public String getTitle() {
         return title;

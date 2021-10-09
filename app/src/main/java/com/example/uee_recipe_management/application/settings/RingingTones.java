@@ -28,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class RingingTones extends DialogFragment {
     private MediaPlayer mediaPlayer;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    Audio audio;
+    Audio audio, audio1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class RingingTones extends DialogFragment {
         View v1 = inflater.inflate(R.layout.fragment_ringing_tones, container, false);
         listView1 = (ListView) v1.findViewById(R.id.listSettings13);
         audio = new Audio();
+
 //        ArrayAdapter
             array = new ArrayList<>();
 //        array.add(new RingingTone("RingingTone1", R.raw.music1));
@@ -57,7 +59,7 @@ public class RingingTones extends DialogFragment {
 //        array.add(new RingingTone("RingingTone5", R.raw.music5));
 //        array.add(new RingingTone("Stop", R.raw.music5));
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/");
         databaseReference = firebaseDatabase.getReference("Audio");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -65,9 +67,16 @@ public class RingingTones extends DialogFragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds:snapshot.getChildren()) {
                     System.out.println("fff " + ds);
+                    audio1 = new Audio();
                     audio = ds.getValue(Audio.class);
-                    array.add(audio);
+
+                    audio1.setTitle(audio.getTitle());
+                    audio1.setAudio(audio.getAudio());
+                    System.out.println("dd " + audio1.getTitle());
+                    array.add(audio1);
+
                 }
+                System.out.println(array.get(2).getTitle());
                 adapter2 = new CustomButtonSettings5(getContext() , array);
                 //then set that adapter to the list
                 listView1.setAdapter(adapter2);
