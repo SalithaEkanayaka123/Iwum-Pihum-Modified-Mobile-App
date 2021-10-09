@@ -50,7 +50,7 @@ public class CategorySearchLayout extends AppCompatActivity {
 
         /** Parameters From the Responsive Layout **/
         items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
-        header = this.getIntent().getExtras().getString("categoryName");
+        header = this.getIntent().getExtras().getString("categoryName"); // header name use to filter the item list.
         System.out.println(header);
 
         /** Database connection to the Schema **/

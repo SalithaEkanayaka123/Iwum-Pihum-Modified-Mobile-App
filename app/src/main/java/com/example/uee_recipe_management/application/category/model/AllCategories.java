@@ -15,6 +15,10 @@ public class AllCategories {
 
     }
 
+    public AllCategories(String categoryName){
+        this.categoryName = categoryName;
+    }
+
     public String getCategoryName() {
         return categoryName;
     }

@@ -16,12 +16,16 @@ import android.widget.EditText;
 
 import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
 import com.example.uee_recipe_management.application.category.adapter.CategoriesRecyclerAdapter;
 import com.example.uee_recipe_management.application.category.model.AllCategories;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -34,6 +38,7 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
     CategoriesRecyclerAdapter mainRecyclerAdapter;
     EditText searchBar;
     ArrayList<AllCategories> allCategories;
+    ArrayList<AllCategories> fireAllCategories;
     NavgationController Nav = new NavgationController();
     DatabaseReference database;
 
@@ -93,6 +98,29 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 filter(editable.toString());
+            }
+        });
+
+        // Calling the layout setting method.
+        fireAllCategories = new ArrayList<>();
+
+
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Upload upload = dataSnapshot.getValue(Upload.class);
+                    // Transfer the objects into CategoryItems.
+                    AllCategories categoryItem = new AllCategories(upload.getCategory());
+                    /** Conditionally Adding the Items to the Array Respect to the Category name **/
+                    fireAllCategories.add(categoryItem);
+                }
+                mainRecyclerAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
             }
         });
     }
