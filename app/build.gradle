@@ -51,5 +51,5 @@ dependencies {
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-
+    implementation 'com.basgeekball:awesome-validation:4.3'
 }

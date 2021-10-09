@@ -8,34 +8,50 @@
     android:background="#FFF"
     android:id="@+id/settingsMainPage"
     tools:context=".settings.SettingPage">
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/category_header"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#9F897D"
-        android:fontFamily="@font/raleway_bold"
-        android:padding="5dp"
-        android:text="Settings"
-        android:textSize="15dp"
-        android:elevation="8dp"
-        android:textStyle="bold" />
+        >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="485dp"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/listSettings8"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/category_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
+            android:background="#9F897D"
+            android:fontFamily="@font/raleway_bold"
+            android:padding="5dp"
+            android:text="Settings"
+            android:textSize="15dp"
+            android:elevation="8dp"
+            android:textStyle="bold"
+            />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="485dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listSettings8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true">
 
 
-        </ListView>
 
-    </LinearLayout>
+            </ListView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

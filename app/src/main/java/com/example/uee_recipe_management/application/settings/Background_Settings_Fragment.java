@@ -1,10 +1,13 @@
 package com.example.uee_recipe_management.application.settings;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -15,20 +18,21 @@ import com.example.uee_recipe_management.application.settings.model.customButton
 
 import java.util.ArrayList;
 
-public class Background_Settings extends AppCompatActivity {
+public class Background_Settings_Fragment extends Fragment {
+
 
     ListView listView1, listView2;
     CustomButtonSettings adapter;
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
-    ArrayList<customButton1> array, array2;//
+    ArrayList<customButton1> array, array2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_background__settings);
-
-        listView1 = (ListView) findViewById(R.id.listSettings6);
-        listView2 = (ListView) findViewById(R.id.listSettings7);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v1 = inflater.inflate(R.layout.fragment_background__settings_, container, false);
+        listView1 = (ListView) v1.findViewById(R.id.listSettings6);
+        listView2 = (ListView) v1.findViewById(R.id.listSettings7);
 
         array = new ArrayList<>();
         array.add(new customButton1(getString(R.string.DarkMode), getString(R.string.EnableDarkMode), true));
@@ -36,11 +40,11 @@ public class Background_Settings extends AppCompatActivity {
         array2 = new ArrayList<>();
         array2.add(new customButton1(getString(R.string.DisplayLanguage), getString(R.string.Choosealanguage), true));
         array2.add(new customButton1(getString(R.string.SwitchLayout), getString(R.string.Changethelayoutsofinterface), true));
-        array2.add(new customButton1("Sort By", "sort by", true));
+        array2.add(new customButton1(getString(R.string.SortBy), getString(R.string.SortBy), true));
 
 
-        adapter = new CustomButtonSettings(this , array);//this is called in customMusicAdapter
-        adapter2 = new CustomButtonSettings2(this , array2);//
+        adapter = new CustomButtonSettings(getActivity() , array);//this is called in customMusicAdapter
+        adapter2 = new CustomButtonSettings2(getActivity() , array2);//
         //then set that adapter to the listView
         listView1.setAdapter(adapter);
         listView2.setAdapter(adapter2);
@@ -50,15 +54,27 @@ public class Background_Settings extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0){
                     DisplayLanguage settingsFragment = new DisplayLanguage();
-                    settingsFragment.show(getSupportFragmentManager(),"myFragment");
+                    settingsFragment.show(getChildFragmentManager(),"myFragment");
+//                    FragmentTransaction fr = getFragmentManager().beginTransaction();
+//                    fr.replace(R.id.container1,new DisplayLanguage());
+//                    fr.commit();
                 }else if (i == 1){
                     LayoutFragment settingsFragment = new LayoutFragment();
-                    settingsFragment.show(getSupportFragmentManager(),"myFragment");
+                    settingsFragment.show(getChildFragmentManager(),"myFragment");
+//                    FragmentTransaction fr = getFragmentManager().beginTransaction();
+//                    fr.replace(R.id.container1,new LayoutFragment());
+//                    fr.commit();
                 }else if (i == 2){
                     SortBy settingsFragment = new SortBy();
-                    settingsFragment.show(getSupportFragmentManager(),"myFragment");
+                    settingsFragment.show(getChildFragmentManager(),"myFragment");
+//                    FragmentTransaction fr = getFragmentManager().beginTransaction();
+//                    fr.replace(R.id.container1,new SortBy());
+//                    fr.commit();
+
                 }
             }
         });
+
+        return v1;
     }
 }

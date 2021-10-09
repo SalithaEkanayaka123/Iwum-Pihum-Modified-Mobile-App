@@ -36,7 +36,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/small_card_layout_card"
                 android:layout_width="150dp"
-                android:layout_height="160dp"
+                android:layout_height="170dp"
                 android:layout_margin="5dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="5dp"
@@ -58,6 +58,14 @@
 
                     </ImageView>
 
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_turned_in_not_24"
+                        android:background="@android:color/transparent"
+                        android:layout_marginLeft="120dp"
+                        android:id="@+id/fvrt_f2_item"
+                        />
 <!--                <ImageView-->
 <!--                        android:id="@+id/imageView"-->
 <!--                        android:layout_width="10dp"-->
