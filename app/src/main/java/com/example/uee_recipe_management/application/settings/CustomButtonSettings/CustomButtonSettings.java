@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.settings.CustomButtonSettings;
 
 import android.content.Context;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
@@ -28,6 +30,7 @@ public class CustomButtonSettings extends BaseAdapter {
     Switch toogleButton;
     CardView longCardView;
     ListView listView1;
+    Vibrator vibrator;
 
     public CustomButtonSettings(Context context, ArrayList<customButton1> list) {
         this.context = context;
@@ -58,6 +61,8 @@ public class CustomButtonSettings extends BaseAdapter {
             title1 = (TextView) view.findViewById(R.id.settingstitle1);
             title2 = (TextView) view.findViewById(R.id.settingstitle2);
             listView1 = (ListView) view.findViewById(R.id.listSettings11);
+            vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+            final long [] pattern = {2000, 10000};
 
             toogleButton = view.findViewById(R.id.switch1);
             longCardView = view.findViewById(R.id.cardSettingsId1);
@@ -75,47 +80,26 @@ public class CustomButtonSettings extends BaseAdapter {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                    if (name1.contentEquals("Notification")){
-                       if (b == true){
-                           System.out.println(b);
-                       }else if (b == false){
-                           System.out.println(b);
-                       }
-
+                       System.out.println("notification");
+                   }else if (name1.contentEquals("Dark Mode")){
+                       System.out.println("Dark Mode");
                    }else if (name1.contentEquals("Vibration")){
+                       System.out.println("Vibration " + b);
                        if (b == true){
-                           System.out.println(b);
-                       }else if (b == false){
-                           System.out.println(b);
+                           vibrator.vibrate(pattern, 0);
+                           System.out.println("Vibration 1");
+                           Toast.makeText(context, "vibrator on", Toast.LENGTH_SHORT).show();
+                       }else  if (b == true){
+                            vibrator.cancel();
+                           Toast.makeText(context, "vibrator off", Toast.LENGTH_SHORT).show();
+                           System.out.println("Vibration 2");
                        }
-
                    }else if (name1.contentEquals("Sync")){
-                       if (b == true){
-                           System.out.println(b);
-
-                       }else if (b == false){
-                           System.out.println(b);
-
-                       }
-                   }
-                   else if (name1.contentEquals("Dark Mode")){
-                       if (b == true){
-                           System.out.println(b);
-
-                       }else if (b == false){
-                           System.out.println(b);
-
-                       }
+                       System.out.println("Sync");
                    }
                    else if (name1.contentEquals("Sync on startup")){
-                       if (b == true){
-                           System.out.println(b);
-
-                       }else if (b == false){
-                           System.out.println(b);
-
-                       }
+                       System.out.println("Sync on startup");
                    }
-
                 }
             });
             //customButton1 item = list.get(i);

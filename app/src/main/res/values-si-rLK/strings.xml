@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">uee-recipe-management</string>
+    <string name="title_activity_main">" ප්රවර්ග"</string>
+    <string name="hello_blank_fragment">" හෙලෝ හිස් කැබැල්ල"</string>
+    <string name="search_category">කාණ්ඩය සොයන්න</string>
+    <string name="title_activity_item">අයිතමය</string>
+    <string name="Sinhala">සිංහල</string>
+    <string name="English">ඉංග්රීසි</string>
+    <string name="DarkMode">අඳුරු මාදිලිය</string>
+    <string name="EnableDarkMode" translatable="false">" අඳුරු ප්‍රකාරය සක්‍රීය කරන්න"</string>
+</resources>
