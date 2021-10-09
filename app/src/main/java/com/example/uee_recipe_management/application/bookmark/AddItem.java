@@ -3,24 +3,32 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.uee_recipe_management.application.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 public class AddItem extends AppCompatActivity {
@@ -67,8 +75,8 @@ public class AddItem extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(view.getContext(), SingleItemView.class);
-                view.getContext().startActivity(intent);
+                /** Upload File When Press the Upload Button **/
+                uploadFile();
             }
         });
     }
@@ -90,6 +98,7 @@ public class AddItem extends AppCompatActivity {
         }
     }
 
+    /** Image Attachment Updated Method **/
     ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
             new ActivityResultCallback<Uri>() {
                 @Override
@@ -99,9 +108,35 @@ public class AddItem extends AppCompatActivity {
                 }
             });
 
+    private String getFileExtension(Uri uri){
+        ContentResolver cR = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
+    }
 
-    /** Image Attachment Updated Method **/
-    private void OpenFileChoosev2 () {
 
+    /** Upload File Method **/
+    private void uploadFile () {
+        if(imageUri != null){
+            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
+            fileReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(Exception e) {
+
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot snapshot) {
+
+                }
+            });
+        } else {
+            Toast.makeText(this, "No File Selected", Toast.LENGTH_SHORT).show();
+        }
     }
 }
