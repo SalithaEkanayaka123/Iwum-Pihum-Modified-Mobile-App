@@ -35,13 +35,13 @@ public class Notification_Settings_Fragment extends Fragment {
         listView3 = (ListView) v1.findViewById(R.id.listSettings5);
 
         array = new ArrayList<>();
-        array.add(new customButton1("Notification", "Enable notification alerts for notifications", true));
+        array.add(new customButton1(getString(R.string.Notification), getString(R.string.Enablenotificationalertsfornotifications), true));
 
         array2 = new ArrayList<>();
-        array2.add(new customButton1("Ringing Tones", "Ringing Tones List", true));
+        array2.add(new customButton1(getString(R.string.RingingTones), getString(R.string.RingingTonesList), true));
 
         array3 = new ArrayList<>();
-        array3.add(new customButton1("Vibration", "Enable Vibration alerts for notifications", true));
+        array3.add(new customButton1(getString(R.string.Vibration), getString(R.string.EnableVibration), true));
 
 
         adapter = new CustomButtonSettings(getActivity() , array);//this is called in customMusicAdapter
