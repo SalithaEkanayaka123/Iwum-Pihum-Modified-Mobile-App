@@ -12,6 +12,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -21,6 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
@@ -47,6 +50,7 @@ public class AddItem extends AppCompatActivity {
     /** Firebase Extensions**/
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
+    private StorageTask mUploadTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +68,10 @@ public class AddItem extends AppCompatActivity {
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
 
-
         attachImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 mGetContent.launch("image/*");
             }
         });
@@ -76,6 +80,9 @@ public class AddItem extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 /** Upload File When Press the Upload Button **/
+                if(mUploadTask != null && mUploadTask.isInProgress()){
+                    Toast.makeText(AddItem.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
+                }
                 uploadFile();
             }
         });
@@ -122,17 +129,31 @@ public class AddItem extends AppCompatActivity {
             fileReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Handler handler = new Handler();
+                    /** Deplay the progress bar filling animation **/
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressBar.setProgress(0);
+                        }
+                    }, 5000);
+                    Toast.makeText(AddItem.this, "Upload Successful", Toast.LENGTH_SHORT).show();
 
+                    /** Creating a Reference in the Realtime Database **/
+                    Upload upload = new Upload(name.getText().toString(), subName.getText().toString(), taskSnapshot.getMetadata().getReference().getDownloadUrl().toString(), description.getText().toString());
+                    String uploadId = mDatabaseRef.push().getKey();
+                    mDatabaseRef.child(uploadId).setValue(upload);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(Exception e) {
-
+                    Toast.makeText(AddItem.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(UploadTask.TaskSnapshot snapshot) {
-
+                    double progress = ((100.0) * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+                    progressBar.setProgress((int)progress);
                 }
             });
         } else {
