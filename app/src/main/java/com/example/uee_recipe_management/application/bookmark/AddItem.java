@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.uee_recipe_management.application.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 public class AddItem extends AppCompatActivity {
@@ -31,6 +33,10 @@ public class AddItem extends AppCompatActivity {
     EditText subName;
     EditText description;
     ImageView attachImageView;
+
+    /** Firebase Extensions**/
+    private StorageReference mStorageRef;
+    private DatabaseReference mDatabaseRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
