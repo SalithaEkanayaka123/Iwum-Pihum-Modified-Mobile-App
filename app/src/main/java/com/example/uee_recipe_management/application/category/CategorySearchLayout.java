@@ -92,7 +92,7 @@ public class CategorySearchLayout extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Upload upload = dataSnapshot.getValue(Upload.class);
                     // Transfer the objects into CategoryItems.
-                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName());
+                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName(), upload.getCategory());
                     /** Conditionally Adding the Items to the Array Respect to the Category name **/
                     fireArrayItems.add(categoryItem);
                 }
