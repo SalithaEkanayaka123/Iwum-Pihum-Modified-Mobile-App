@@ -41,7 +41,7 @@ public class CustomButtonSettings extends BaseAdapter {
     ListView listView1;
     Vibrator vibrator;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference, databaseReference1;
 
     public CustomButtonSettings(Context context, ArrayList<customButton1> list) {
         this.context = context;
@@ -77,6 +77,7 @@ public class CustomButtonSettings extends BaseAdapter {
 
             firebaseDatabase = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/");
             databaseReference = firebaseDatabase.getReference("Notification").child("1");
+            databaseReference1 = firebaseDatabase.getReference("SynchronizeStart").child("1");
 
             toogleButton = view.findViewById(R.id.switch1);
             longCardView = view.findViewById(R.id.cardSettingsId1);
@@ -157,10 +158,33 @@ public class CustomButtonSettings extends BaseAdapter {
                    else if (name1.contentEquals("Sync on startup")){
                        System.out.println("Sync on startup");
                        if (b == true){
-                           Snackbar.make(finalView,"Synchronizing on startup",Snackbar.LENGTH_LONG).show();
+                           databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
+                               @Override
+                               public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                   databaseReference1.child("status").setValue(true);
+                                   Snackbar.make(finalView,"Synchronizing on startup",Snackbar.LENGTH_LONG).show();
+                               }
+
+                               @Override
+                               public void onCancelled(@NonNull DatabaseError error) {
+                                   Snackbar.make(finalView,"Error...!!!",Snackbar.LENGTH_LONG).show();
+                               }
+                           });
+
                        }else  if (b == false){
-                           Snackbar.make(finalView,"Synchronizing on startup",Snackbar.LENGTH_LONG).show();
-                           Toast.makeText(context, "Synchronization off", Toast.LENGTH_SHORT).show();
+                           databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
+                               @Override
+                               public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                   databaseReference1.child("status").setValue(false);
+                                   Snackbar.make(finalView,"Synchronization off",Snackbar.LENGTH_LONG).show();
+                               }
+
+                               @Override
+                               public void onCancelled(@NonNull DatabaseError error) {
+                                   Snackbar.make(finalView,"Error...!!!",Snackbar.LENGTH_LONG).show();
+                               }
+                           });
+
                        }
                    }
                 }
