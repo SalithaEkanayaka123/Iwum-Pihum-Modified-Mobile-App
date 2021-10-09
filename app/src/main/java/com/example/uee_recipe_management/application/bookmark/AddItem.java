@@ -49,6 +49,9 @@ public class AddItem extends AppCompatActivity {
     EditText subName;
     EditText description;
     ImageView attachImageView;
+
+    /** New EditText **/
+
     String downloadUrl;
 
     /**
@@ -69,6 +72,9 @@ public class AddItem extends AppCompatActivity {
         name = findViewById(R.id.recipe_name);
         subName = findViewById(R.id.sub_name);
         description = findViewById(R.id.description);
+
+        /** Register EditText **/
+
 
         /** Firebase Schema Definition **/
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
@@ -136,6 +142,7 @@ public class AddItem extends AppCompatActivity {
 
     /**
      * Upload File Method
+     * Taneesha should change only this method.
      **/
     private void uploadFile() {
         if (imageUri != null) {
@@ -157,7 +164,7 @@ public class AddItem extends AppCompatActivity {
                         @Override
                         public void onSuccess(Uri uri) {
                             /** Creating a Reference in the Realtime Database **/
-                            Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), uri.toString(), description.getText().toString().trim());
+                            Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), uri.toString(), description.getText().toString().trim(), "Default");
                             String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
                         }
@@ -196,8 +203,6 @@ public class AddItem extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Uri downloadUri = task.getResult();
                         Log.e("TAG", "then: " + downloadUri.toString());
-                        Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), downloadUri.toString(), description.getText().toString().trim());
-                        mDatabaseRef.push().setValue(upload);
                         Toast.makeText(AddItem.this, "Uploaded", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(AddItem.this, "upload failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
