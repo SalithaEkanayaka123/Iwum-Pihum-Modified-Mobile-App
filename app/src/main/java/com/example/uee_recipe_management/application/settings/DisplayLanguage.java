@@ -35,8 +35,8 @@ public class DisplayLanguage extends DialogFragment {
         cardView = (CardView) v1.findViewById(R.id.custombuttonsettings4);
 
         array = new ArrayList<>();
-        array.add(new customButton1("English", "Automatic background sync", true));
-        array.add(new customButton1("Sinhala", "sync on startup", true));
+        array.add(new customButton1(getString(R.string.English), "Automatic background sync", true));
+        array.add(new customButton1(getString(R.string.Sinhala), "sync on startup", true));
 
 
         adapter2 = new CustomButtonSettings4(getContext() , array);//

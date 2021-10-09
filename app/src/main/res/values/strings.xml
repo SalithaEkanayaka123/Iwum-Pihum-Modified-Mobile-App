@@ -7,33 +7,35 @@
 
     <string name="title_activity_item">Item</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="DarkMode">Dark Mode</string>
-    <string name="EnableDarkMode">Enable Dark Mode</string>
-    <string name="DisplayLanguage">Display Language</string>
-    <string name="Choosealanguage">Choose a language</string>
-    <string name="SwitchLayout">Switch Layout</string>
-    <string name="Changethelayoutsofinterface">Changethelayoutsofinterface</string>
-    <string name="SortBy">Sort By</string>
-    <string name="Background">Background</string>
-    <string name="Notification">Notification</string>
-    <string name="Synchronization">Synchronization</string>
-    <string name="HandlesBackgroundSettings">Handles Background Settings</string>
-    <string name="HandlesNotificationSettings">Handles Notification Settings</string>
-    <string name="HandlesSynchronizationSettings">Handles Synchronization Settings</string>
-    <string name="PrivacyandPolicy">Privacy and Policy</string>
-    <string name="about">About</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="DarkMode" translatable="false">Dark Mode</string>
+    <string name="EnableDarkMode" translatable="false">Enable Dark Mode</string>
+    <string name="DisplayLanguage" translatable="false">Display Language</string>
+    <string name="Choosealanguage" translatable="false">Choose a language</string>
+    <string name="SwitchLayout" translatable="false">Switch Layout</string>
+    <string name="Changethelayoutsofinterface" translatable="false">Change the layouts of interface</string>
+    <string name="Sinhala">Sinhala</string>
+    <string name="English">English</string>
+    <string name="SortBy" translatable="false">Sort By</string>
+    <string name="Background" translatable="false">Background</string>
+    <string name="Notification" translatable="false">Notification</string>
+    <string name="Synchronization" translatable="false">Synchronization</string>
+    <string name="HandlesBackgroundSettings" translatable="false">Handles Background Settings</string>
+    <string name="HandlesNotificationSettings" translatable="false">Handles Notification Settings</string>
+    <string name="HandlesSynchronizationSettings" translatable="false">Handles Synchronization Settings</string>
+    <string name="PrivacyandPolicy" translatable="false">Privacy and Policy</string>
+    <string name="about" translatable="false">About</string>
 
 
-    <string name="version">Version: xxxxxxx</string>
+    <string name="version" translatable="false">Version: xxxxxxx</string>
 
-    <string name="dummy_text">
+    <string name="dummy_text" translatable="false">
         no,
         they\'re not wrong, but they don\'t teach
         what you don\'t know you don\'t know, whereas
@@ -47,6 +49,6 @@
         branch was an unknown unknown.
     </string>
 
-    <string name="search_recipies">Search Recipies</string>
+    <string name="search_recipies" translatable="false">Search Recipies</string>
 
 </resources>

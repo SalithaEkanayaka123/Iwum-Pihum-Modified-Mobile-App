@@ -81,8 +81,8 @@ public class CustomButtonSettings extends BaseAdapter {
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                    if (name1.contentEquals("Notification")){
                        System.out.println("notification");
-                   }else if (name1.contentEquals("Notification")){
-                       System.out.println("Vibration");
+                   }else if (name1.contentEquals("Dark Mode")){
+                       System.out.println("Dark Mode");
                    }else if (name1.contentEquals("Vibration")){
                        System.out.println("Vibration " + b);
                        if (b == true){
@@ -94,6 +94,11 @@ public class CustomButtonSettings extends BaseAdapter {
                            Toast.makeText(context, "vibrator off", Toast.LENGTH_SHORT).show();
                            System.out.println("Vibration 2");
                        }
+                   }else if (name1.contentEquals("Sync")){
+                       System.out.println("Sync");
+                   }
+                   else if (name1.contentEquals("Sync on startup")){
+                       System.out.println("Sync on startup");
                    }
                 }
             });
