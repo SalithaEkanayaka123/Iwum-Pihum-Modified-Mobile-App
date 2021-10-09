@@ -5,6 +5,7 @@ public class Upload {
     private String subName;
     private String imageUrl;
     private String description;
+    private String category;
 
     // New Text Fields.
     // bookmark state
@@ -14,7 +15,7 @@ public class Upload {
 
     }
 
-    public Upload(String name, String subName, String imageUrl, String description) {
+    public Upload(String name, String subName, String imageUrl, String description, String category) {
         // Null Validation
         if (name.trim().equals("")){
             name = "No Name";
@@ -23,6 +24,8 @@ public class Upload {
         this.subName = subName;
         this.imageUrl = imageUrl;
         this.description = description;
+        this.category = category;
+
     }
 
     public String getName() {
@@ -47,6 +50,14 @@ public class Upload {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getDescription() {

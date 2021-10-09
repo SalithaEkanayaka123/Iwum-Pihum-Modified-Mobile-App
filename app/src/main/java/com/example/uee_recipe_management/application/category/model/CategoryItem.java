@@ -11,11 +11,29 @@ public class CategoryItem  implements Parcelable {
     private Integer image;
     private String description;
     private String fireURL;
+    private String subName;
 
-    public CategoryItem(String name, String fireURL, String description){
+    public CategoryItem(String name, String fireURL, String description, String subName){
+        // Null Validation
+        if (name.trim().equals("")){
+            name = "No Name";
+        }
+        // Null Validation
+        if (fireURL.trim().equals("")){
+            fireURL = "https://firebasestorage.googleapis.com/v0/b/uee-recipe-management.appspot.com/o/util%2Fnot_found_image.jpg?alt=media&token=cd8249f3-75c1-4a5a-976a-eb80206482ed";
+        }
+        // Null Validation
+        if (description.trim().equals("")){
+            description = "No Description";
+        }
+        // Null Validation
+        if (subName.trim().equals("")){
+            subName = "No SubName";
+        }
         this.name = name;
         this.fireURL = fireURL;
         this.description = description;
+        this.subName = subName;
     }
 
     public CategoryItem(String name, int image, String description) {
@@ -72,6 +90,14 @@ public class CategoryItem  implements Parcelable {
 
     public String getFireURL(){
         return fireURL;
+    }
+
+    public String getSubName() {
+        return subName;
+    }
+
+    public void setSubName(String subName) {
+        this.subName = subName;
     }
 
     @Override
