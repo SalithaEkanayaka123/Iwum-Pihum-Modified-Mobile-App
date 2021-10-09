@@ -51,11 +51,11 @@ public class Background_Settings extends AppCompatActivity {
         listView2 = (ListView) findViewById(R.id.listSettings7);
 
         array = new ArrayList<>();
-        array.add(new customButton1("Dark Mode", "Enable Dark Mode", true));
+        array.add(new customButton1(getString(R.string.DarkMode), getString(R.string.EnableDarkMode), true));
 
         array2 = new ArrayList<>();
-        array2.add(new customButton1("Display Language", "Choose a language", true));
-        array2.add(new customButton1("Switch Layout", "Change the layouts of interface", true));
+        array2.add(new customButton1(getString(R.string.DisplayLanguage), getString(R.string.Choosealanguage), true));
+        array2.add(new customButton1(getString(R.string.SwitchLayout), getString(R.string.Changethelayoutsofinterface), true));
         array2.add(new customButton1("Sort By", "sort by", true));
 
 

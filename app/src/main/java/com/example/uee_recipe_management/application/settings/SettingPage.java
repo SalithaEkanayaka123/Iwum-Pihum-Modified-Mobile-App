@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -32,6 +33,7 @@ public class SettingPage extends AppCompatActivity {
     ListView listView1;
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
     ArrayList<customButton1> array;
+    AppCompatTextView appCompatTextView;
     //CardView cardView;
     NavgationController Nav = new NavgationController();
 
@@ -42,6 +44,7 @@ public class SettingPage extends AppCompatActivity {
 
         //Bottom Nav Configs
         BottomNavigationView bottomNavView  = findViewById(R.id.bottom_nav);
+        appCompatTextView = (AppCompatTextView) findViewById(R.id.category_header);
         bottomNavView.setOnNavigationItemSelectedListener( navListener);
         Menu menu = bottomNavView.getMenu();
         MenuItem menuItem = menu.getItem(4);
@@ -52,11 +55,11 @@ public class SettingPage extends AppCompatActivity {
         listView1 = (ListView) findViewById(R.id.listSettings8);
         //cardView = (CardView) findViewById(R.id.custombuttonsettings2);
         array = new ArrayList<>();
-        array.add(new customButton1("Background", "Handles Background Settings", true));
-        array.add(new customButton1("Notification", "Handles Notification Settings", true));
-        array.add(new customButton1("Synchronization", "Handles Synchronization Settings", true));
-        array.add(new customButton1("Privacy and Policy", "Privacy and Policy", true));
-        array.add(new customButton1("About", "About", true));
+        array.add(new customButton1(getString(R.string.Background), getString(R.string.HandlesBackgroundSettings), true));
+        array.add(new customButton1(getString(R.string.Notification), getString(R.string.HandlesNotificationSettings), true));
+        array.add(new customButton1(getString(R.string.Synchronization), getString(R.string.HandlesSynchronizationSettings), true));
+        array.add(new customButton1(getString(R.string.PrivacyandPolicy), getString(R.string.PrivacyandPolicy), true));
+        array.add(new customButton1(getString(R.string.about), getString(R.string.about), true));
 
         adapter2 = new CustomButtonSettings2(this , array);//
         //then set that adapter to the list
@@ -70,6 +73,7 @@ public class SettingPage extends AppCompatActivity {
                     System.out.println("calling");
 //                    Intent intent  = new Intent(view.getContext(), Background_Settings.class);
 //                    view.getContext().startActivity(intent);
+                    appCompatTextView.setText(R.string.Background);
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new Background_Settings_Fragment()).commit();
 
 //                    Background_Settings_Fragment fr = getFragmentManager().beginTransaction();
@@ -77,11 +81,11 @@ public class SettingPage extends AppCompatActivity {
 //                    fr.commit();
                 }else if (i == 1){
                     //cardView.setBackgroundColor(Color.parseColor("#9F897D"));
+                    appCompatTextView.setText(R.string.Notification);
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new Notification_Settings_Fragment()).commit();
 //                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
 //                    view.getContext().startActivity(intent);
                 }else if (i == 2){
-
                     Synchronization settingsFragment = new Synchronization();
                     settingsFragment.show(getSupportFragmentManager(),"myFragment");
 //                    System.out.println("ww1");
@@ -91,6 +95,7 @@ public class SettingPage extends AppCompatActivity {
 //                    System.out.println("ww3");
 //                    fragmentManager.beginTransaction().add(R.id.settingsMainPage , settingsFragment).commit();
                 }else if (i == 3){
+                    appCompatTextView.setText(R.string.PrivacyandPolicy);
 //                    Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
 //                    view.getContext().startActivity(intent);
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new PrivacyAndPolicy_Settings_Fragment()).commit();
