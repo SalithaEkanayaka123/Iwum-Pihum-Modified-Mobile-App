@@ -41,7 +41,6 @@ import java.util.Objects;
 public class AddItem extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
-
     private Uri imageUri;
     Button addItem;
     Button attachImage;
@@ -50,6 +49,7 @@ public class AddItem extends AppCompatActivity {
     EditText subName;
     EditText description;
     ImageView attachImageView;
+    String downloadUrl;
 
     /**
      * Firebase Extensions
@@ -154,7 +154,7 @@ public class AddItem extends AppCompatActivity {
                     Toast.makeText(AddItem.this, "Upload Successful", Toast.LENGTH_SHORT).show();
 
                     /** Creating a Reference in the Realtime Database **/
-                    Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), taskSnapshot.getMetadata().getReference().getDownloadUrl().toString(), description.getText().toString().trim());
+                    Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), taskSnapshot.getStorage().getDownloadUrl().toString(), description.getText().toString().trim());
                     String uploadId = mDatabaseRef.push().getKey();
                     mDatabaseRef.child(uploadId).setValue(upload);
                 }
@@ -168,6 +168,11 @@ public class AddItem extends AppCompatActivity {
                 public void onProgress(UploadTask.TaskSnapshot snapshot) {
                     double progress = ((100.0) * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
                     progressBar.setProgress((int) progress);
+                }
+            }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(Task<UploadTask.TaskSnapshot> task) {
+                    downloadUrl = task.getResult().toString();
                 }
             });
         } else {
