@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.settings.model.Audio;
 import com.example.uee_recipe_management.application.settings.model.RingingTone;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
 
@@ -16,10 +17,10 @@ import java.util.ArrayList;
 public class CustomButtonSettings5 extends BaseAdapter {
 
     private Context context;
-    ArrayList<RingingTone> list;
+    ArrayList<Audio> list;
     TextView title1;
 
-    public CustomButtonSettings5(Context context, ArrayList<RingingTone> list) {
+    public CustomButtonSettings5(Context context, ArrayList<Audio> list) {
         this.context = context;
         this.list = list;
     }
@@ -48,7 +49,7 @@ public class CustomButtonSettings5 extends BaseAdapter {
            title1 = (TextView) view.findViewById(R.id.settings5title1);
 //            cardView = (CardView) view.findViewById(R.id.custombuttonsettings4);
 
-            final RingingTone customButton1 = list.get(i);
+            final Audio customButton1 = list.get(i);
 
             String name1 = customButton1.getTitle();
             title1.setText(name1);

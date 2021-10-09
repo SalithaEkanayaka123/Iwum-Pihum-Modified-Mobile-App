@@ -36,7 +36,7 @@ public class About extends DialogFragment {
         listView1 = (ListView) v1.findViewById(R.id.listSettings10);
 
         array = new ArrayList<>();
-        array.add(new customButton1("Version: xxxxxxx", "Handles Background Settings", true));
+        array.add(new customButton1(getString(R.string.version), "Handles Background Settings", true));
 
 
         adapter2 = new CustomButtonSettings4(getContext() , array);//
