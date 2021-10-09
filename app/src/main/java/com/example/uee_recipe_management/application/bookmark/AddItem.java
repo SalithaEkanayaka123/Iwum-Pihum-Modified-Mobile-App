@@ -14,6 +14,9 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -51,6 +54,10 @@ public class AddItem extends AppCompatActivity {
     ImageView attachImageView;
     String downloadUrl;
 
+    String[] items = {"Rice", "Cake", "Sweets", "Drinks", "Meals"};
+    AutoCompleteTextView autoCompleteTextView;
+    ArrayAdapter<String> adapterItems;
+
     /**
      * Firebase Extensions
      **/
@@ -69,6 +76,20 @@ public class AddItem extends AppCompatActivity {
         name = findViewById(R.id.recipe_name);
         subName = findViewById(R.id.sub_name);
         description = findViewById(R.id.description);
+        autoCompleteTextView = findViewById(R.id.auto_complete_txt);
+
+        adapterItems = new ArrayAdapter<String>(this,R.layout.list_item_dropdown,items);
+        autoCompleteTextView.setAdapter(adapterItems);
+
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(getApplicationContext(), "Item: " + item, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         /** Firebase Schema Definition **/
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
