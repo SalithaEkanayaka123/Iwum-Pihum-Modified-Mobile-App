@@ -41,7 +41,6 @@ import java.util.Objects;
 public class AddItem extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
-
     private Uri imageUri;
     Button addItem;
     Button attachImage;
@@ -50,6 +49,7 @@ public class AddItem extends AppCompatActivity {
     EditText subName;
     EditText description;
     ImageView attachImageView;
+    String downloadUrl;
 
     /**
      * Firebase Extensions
@@ -139,7 +139,7 @@ public class AddItem extends AppCompatActivity {
      **/
     private void uploadFile() {
         if (imageUri != null) {
-            StorageReference fileReference = mStorageRef.child(imageUri.getLastPathSegment());
+            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
             mUploadTask = fileReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -153,10 +153,15 @@ public class AddItem extends AppCompatActivity {
                     }, 5000);
                     Toast.makeText(AddItem.this, "Upload Successful", Toast.LENGTH_SHORT).show();
 
-                    /** Creating a Reference in the Realtime Database **/
-                    Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), taskSnapshot.getMetadata().getReference().getDownloadUrl().toString(), description.getText().toString().trim());
-                    String uploadId = mDatabaseRef.push().getKey();
-                    mDatabaseRef.child(uploadId).setValue(upload);
+                    fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            /** Creating a Reference in the Realtime Database **/
+                            Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), uri.toString(), description.getText().toString().trim());
+                            String uploadId = mDatabaseRef.push().getKey();
+                            mDatabaseRef.child(uploadId).setValue(upload);
+                        }
+                    });
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
