@@ -24,7 +24,6 @@ public class AddItem extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private Uri imageUri;
-
     Button addItem;
     Button attachImage;
     ProgressBar progressBar;
@@ -37,7 +36,6 @@ public class AddItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-
         addItem = findViewById(R.id.add_recipe_button);
         attachImage = findViewById(R.id.attach_image_button);
         attachImageView = findViewById(R.id.attach_image);
@@ -73,7 +71,6 @@ public class AddItem extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
             imageUri = data.getData();
             Picasso.with(this).load(imageUri).into(attachImageView);
