@@ -72,7 +72,7 @@ public class AddItem extends AppCompatActivity {
 
         /** Firebase Schema Definition **/
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
+        mDatabaseRef = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
 
         attachImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,8 +191,6 @@ public class AddItem extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Uri downloadUri = task.getResult();
                         Log.e("TAG", "then: " + downloadUri.toString());
-
-
                         Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), downloadUri.toString(), description.getText().toString().trim());
                         mDatabaseRef.push().setValue(upload);
                         Toast.makeText(AddItem.this, "Uploaded", Toast.LENGTH_SHORT).show();
