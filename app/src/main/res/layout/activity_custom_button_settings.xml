@@ -40,12 +40,12 @@
                     android:fontFamily="@font/raleway_bold"
                     android:textColor="@color/black"
                     android:id="@+id/settingstitle1"
-                    android:text="Dark Mode"
+                    android:text="@string/DarkMode"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/settingstitle2"
-                    android:text="Enable Dark Mode"
+                    android:text="@string/EnableDarkMode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/raleway"

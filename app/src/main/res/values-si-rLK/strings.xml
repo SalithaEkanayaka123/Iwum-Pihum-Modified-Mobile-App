@@ -7,4 +7,6 @@
     <string name="title_activity_item">අයිතමය</string>
     <string name="Sinhala">සිංහල</string>
     <string name="English">ඉංග්රීසි</string>
+    <string name="DarkMode">අඳුරු මාදිලිය</string>
+    <string name="EnableDarkMode" translatable="false">" අඳුරු ප්‍රකාරය සක්‍රීය කරන්න"</string>
 </resources>

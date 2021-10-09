@@ -14,8 +14,8 @@
 
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
-    <string name="DarkMode" translatable="false">Dark Mode</string>
-    <string name="EnableDarkMode" translatable="false">Enable Dark Mode</string>
+    <string name="DarkMode">Dark Mode</string>
+    <string name="EnableDarkMode">Enable Dark Mode</string>
     <string name="DisplayLanguage" translatable="false">Display Language</string>
     <string name="Choosealanguage" translatable="false">Choose a language</string>
     <string name="SwitchLayout" translatable="false">Switch Layout</string>
