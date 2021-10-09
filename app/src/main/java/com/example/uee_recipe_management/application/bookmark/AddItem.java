@@ -50,7 +50,6 @@ public class AddItem extends AppCompatActivity {
     EditText description;
     ImageView attachImageView;
     String downloadUrl;
-    String downloadUrl2;
 
     /**
      * Firebase Extensions
@@ -140,7 +139,7 @@ public class AddItem extends AppCompatActivity {
      **/
     private void uploadFile() {
         if (imageUri != null) {
-            StorageReference fileReference = mStorageRef.child(imageUri.getLastPathSegment());
+            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
             mUploadTask = fileReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -154,11 +153,15 @@ public class AddItem extends AppCompatActivity {
                     }, 5000);
                     Toast.makeText(AddItem.this, "Upload Successful", Toast.LENGTH_SHORT).show();
 
-                    /** Creating a Reference in the Realtime Database **/
-                    Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), taskSnapshot.getStorage().getDownloadUrl().toString(), description.getText().toString().trim());
-                    String uploadId = mDatabaseRef.push().getKey();
-                    mDatabaseRef.child(uploadId).setValue(upload);
-
+                    fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            /** Creating a Reference in the Realtime Database **/
+                            Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), uri.toString(), description.getText().toString().trim());
+                            String uploadId = mDatabaseRef.push().getKey();
+                            mDatabaseRef.child(uploadId).setValue(upload);
+                        }
+                    });
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -170,12 +173,6 @@ public class AddItem extends AppCompatActivity {
                 public void onProgress(UploadTask.TaskSnapshot snapshot) {
                     double progress = ((100.0) * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
                     progressBar.setProgress((int) progress);
-                }
-            }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onComplete(Task<UploadTask.TaskSnapshot> task) {
-                    downloadUrl=task.getResult().getMetadata().getReference().getDownloadUrl().toString();
-                    SaveProductInforToDatabase(); // Adding References to the Uploaded files.
                 }
             });
         } else {
@@ -210,12 +207,5 @@ public class AddItem extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Please upload image!", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    /** Method to save the Image Meta information to the Realtime Database **/
-    public void SaveProductInforToDatabase() {
-        Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), downloadUrl, description.getText().toString().trim());
-        String uploadId = mDatabaseRef.push().getKey();
-        mDatabaseRef.child(uploadId).setValue(upload);
     }
 }
