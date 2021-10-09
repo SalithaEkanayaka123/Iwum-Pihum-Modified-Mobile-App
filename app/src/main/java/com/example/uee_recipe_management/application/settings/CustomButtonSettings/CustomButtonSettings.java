@@ -16,6 +16,7 @@ import androidx.cardview.widget.CardView;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class CustomButtonSettings extends BaseAdapter {
@@ -72,7 +73,13 @@ public class CustomButtonSettings extends BaseAdapter {
             toogleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    System.out.println("ggg " + i);
+                   if (name1.contentEquals("Notification")){
+                       System.out.println("notification");
+                   }else if (name1.contentEquals("Vibration")){
+                       System.out.println("Vibration");
+                   }else if (name1.contentEquals("Vibration")){
+                       System.out.println("Vibration");
+                   }
                 }
             });
             //customButton1 item = list.get(i);

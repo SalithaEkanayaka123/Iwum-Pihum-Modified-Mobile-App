@@ -23,11 +23,11 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/txt_input_name"
+        android:id="@+id/recipe_name"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/input_field_corner_radius"
         android:ems="10"
@@ -35,116 +35,110 @@
         android:hint="Enter the name..."
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:textColorHint="#8F8F8F"
+        android:textColorHint="#9F897D"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="fill_parent"
-        android:layout_height="87dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/input_field_corner_radius"
-        android:ems="10"
-        android:fontFamily="@font/raleway_italic"
-        android:gravity="start|top"
-        android:hint="Enter the description..."
-        android:inputType="textMultiLine"
-        android:padding="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#8F8F8F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_name" />
-
-    <EditText
-        android:id="@+id/txt_input_ingredients"
+        android:id="@+id/sub_name"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/input_field_corner_radius"
-        android:ems="10"
-        android:fontFamily="@font/raleway_italic"
-        android:hint="Enter the ingredients..."
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textColorHint="#8F8F8F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
-
-    <EditText
-        android:id="@+id/txt_input_step"
-        android:layout_width="fill_parent"
-        android:layout_height="87dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/input_field_corner_radius"
         android:ems="10"
         android:fontFamily="@font/raleway_italic"
         android:gravity="start|top"
-        android:hint="Enter the steps..."
+        android:hint="Enter the sub name..."
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:textColor="#000000"
-        android:textColorHint="#8F8F8F"
+        android:textColorHint="#9F897D"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_name" />
+        app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
 
     <EditText
-        android:id="@+id/txt_input_image"
-        android:layout_width="345dp"
-        android:layout_height="37dp"
+        android:id="@+id/description"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="368dp"
+        android:layout_marginTop="296dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/input_field_corner_radius"
         android:ems="10"
         android:fontFamily="@font/raleway_italic"
-        android:hint="Enter the image..."
+        android:hint="Enter the Description..."
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:textColorHint="#8F8F8F"
+        android:textColorHint="#9F897D"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_item_form_header" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_recipe_button"
+        app:layout_constraintVertical_bias="0.111" />
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_add"
+        android:id="@+id/attach_image_button"
         android:layout_width="126dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/round_btn"
-        android:text="Add Recipe"
-        android:textColor="#FFF"
+        android:background="@drawable/round_image_attach_button"
+        android:text="Choose Image"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_input_image"
+        app:layout_constraintTop_toBottomOf="@+id/description"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_reset"
-        android:layout_width="84dp"
+        android:id="@+id/add_recipe_button"
+        android:layout_width="100dp"
         android:layout_height="44dp"
-        android:layout_marginTop="56dp"
-        android:text="RESET"
+        android:layout_marginTop="52dp"
         android:background="@drawable/round_btn"
+        android:text="Add Recipes"
         android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_add"/>
+        app:layout_constraintTop_toTopOf="@+id/attach_image_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/view2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="12dp"
+        app:cardCornerRadius="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/recipe_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696">
+
+        <ImageView
+            android:id="@+id/attach_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/art_wallpaper" />
+    </android.support.v7.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

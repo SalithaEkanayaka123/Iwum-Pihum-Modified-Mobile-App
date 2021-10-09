@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
@@ -66,13 +67,19 @@ public class SettingPage extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (i == 0){
-                    Intent intent  = new Intent(view.getContext(), Background_Settings.class);
-                    view.getContext().startActivity(intent);
+                    System.out.println("calling");
+//                    Intent intent  = new Intent(view.getContext(), Background_Settings.class);
+//                    view.getContext().startActivity(intent);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, new Background_Settings_Fragment()).commit();
+
+//                    Background_Settings_Fragment fr = getFragmentManager().beginTransaction();
+//                    fr.add(R.id.container,new DisplayLanguage());
+//                    fr.commit();
                 }else if (i == 1){
                     //cardView.setBackgroundColor(Color.parseColor("#9F897D"));
-
-                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
-                    view.getContext().startActivity(intent);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, new Notification_Settings_Fragment()).commit();
+//                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
+//                    view.getContext().startActivity(intent);
                 }else if (i == 2){
 
                     Synchronization settingsFragment = new Synchronization();
@@ -84,8 +91,9 @@ public class SettingPage extends AppCompatActivity {
 //                    System.out.println("ww3");
 //                    fragmentManager.beginTransaction().add(R.id.settingsMainPage , settingsFragment).commit();
                 }else if (i == 3){
-                    Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
-                    view.getContext().startActivity(intent);
+//                    Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
+//                    view.getContext().startActivity(intent);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, new PrivacyAndPolicy_Settings_Fragment()).commit();
                 }else if (i == 4){
                     About settingsFragment = new About();
                     settingsFragment.show(getSupportFragmentManager(),"myFragment1");
