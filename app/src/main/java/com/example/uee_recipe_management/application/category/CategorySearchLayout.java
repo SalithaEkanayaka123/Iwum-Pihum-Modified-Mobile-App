@@ -47,13 +47,14 @@ public class CategorySearchLayout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_search_layout);
+
+        /** Parameters From the Responsive Layout **/
         items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
         header = this.getIntent().getExtras().getString("categoryName");
         System.out.println(header);
+
+        /** Database connection to the Schema **/
         database = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
-
-
-
 
         // Testing.
         for(CategoryItem item : items){
@@ -81,6 +82,8 @@ public class CategorySearchLayout extends AppCompatActivity {
             }
         });
 
+        // Calling the layout setting method.
+        fireArrayItems = new ArrayList<>();
 
 
         database.addValueEventListener(new ValueEventListener() {
@@ -90,6 +93,7 @@ public class CategorySearchLayout extends AppCompatActivity {
                     Upload upload = dataSnapshot.getValue(Upload.class);
                     // Transfer the objects into CategoryItems.
                     CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName());
+                    /** Conditionally Adding the Items to the Array Respect to the Category name **/
                     fireArrayItems.add(categoryItem);
                 }
                 categoryItemSearchAdapter.notifyDataSetChanged();
@@ -100,9 +104,6 @@ public class CategorySearchLayout extends AppCompatActivity {
 
             }
         });
-
-        // Calling the layout setting method.
-        fireArrayItems = new ArrayList<>();
         setRecyclerSearchCategory();
 
     }
@@ -115,7 +116,6 @@ public class CategorySearchLayout extends AppCompatActivity {
                 filteredList.add(item);
             }
         }
-
         categoryItemSearchAdapter.filterList(filteredList);
     }
 

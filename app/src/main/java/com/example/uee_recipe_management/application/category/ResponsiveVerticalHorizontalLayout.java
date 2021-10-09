@@ -20,6 +20,8 @@ import com.example.uee_recipe_management.application.category.adapter.Categories
 import com.example.uee_recipe_management.application.category.model.AllCategories;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
@@ -33,6 +35,7 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
     EditText searchBar;
     ArrayList<AllCategories> allCategories;
     NavgationController Nav = new NavgationController();
+    DatabaseReference database;
 
 
     @Override
@@ -40,6 +43,9 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_responsive_vertical_horizontal_layout);
+
+        /** Firebase Database Connection **/
+        database = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
 
         //Bottom Nav Configs
         BottomNavigationView bottomNavView  = findViewById(R.id.bottom_nav);
