@@ -33,6 +33,7 @@ public class Bookmark extends AppCompatActivity {
     BookmarkAdapter bookmarkAdapter;
     ArrayList<RecipieItem> items;
     EditText searchBar;
+    ImageButton fvrt_btn;
 
     FirebaseDatabase database;
     DatabaseReference databaseReference, fvrtref,fvrt_listRef;
@@ -46,6 +47,17 @@ public class Bookmark extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookmark);
         dataList = findViewById(R.id.search_page_recycler_2);
+        fvrt_btn = findViewById(R.id.fvrt_f2_item);
+
+//        DrawableHelper
+//                .withContext(this)
+////                .withColor(R.color.white)
+//                .withDrawable(R.drawable.ic_baseline_turned_in_24)
+//                .tint()
+//                .applyTo(settings_icon);
+
+
+
 
         /**
          * Search Bar Listener.
