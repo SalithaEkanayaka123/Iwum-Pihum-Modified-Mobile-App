@@ -1,18 +1,18 @@
 package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +28,6 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
     }
 
     // Getters and Setters
-
-
     public Context getContext() {
         return context;
     }
@@ -54,10 +52,17 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
 
     @Override
     public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
+        Uri myUri = null;
         holder.longCardHeader.setText(categorySearchItemList.get(position).getName());
-        holder.longCardSubHeading.setText(categorySearchItemList.get(position).getName());
+        holder.longCardSubHeading.setText(categorySearchItemList.get(position).getSubName());
         holder.longCardDescription.setText(categorySearchItemList.get(position).getDescription());
-        holder.longCardImageView.setImageResource(categorySearchItemList.get(position).getImage());
+        try {
+            myUri = Uri.parse(categorySearchItemList.get(position).getFireURL());
+            Picasso.with(getContext()).load(myUri).into(holder.longCardImageView);
+        } catch (Exception e){
+            System.out.println("Exception | CategoryItemSearchAdapter | - " + e.getMessage());
+        }
+
     }
 
     @Override

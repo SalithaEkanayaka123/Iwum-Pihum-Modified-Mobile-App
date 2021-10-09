@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -17,10 +18,16 @@ import android.widget.TextView;
 
 import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
 import com.example.uee_recipe_management.application.category.adapter.CategoryItemSearchAdapter;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.example.uee_recipe_management.application.notification.NotificationLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +36,11 @@ public class CategorySearchLayout extends AppCompatActivity {
     RecyclerView longCardRecyclerView;
     CategoryItemSearchAdapter categoryItemSearchAdapter;
     ArrayList<CategoryItem> items;
+    ArrayList<CategoryItem> fireArrayItems;
     String header;
     TextView searchCategoryHeader;
     EditText searchBar;
+    DatabaseReference database;
 
 
     @Override
@@ -41,6 +50,7 @@ public class CategorySearchLayout extends AppCompatActivity {
         items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
         header = this.getIntent().getExtras().getString("categoryName");
         System.out.println(header);
+        database = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
 
 
 
@@ -49,8 +59,6 @@ public class CategorySearchLayout extends AppCompatActivity {
         for(CategoryItem item : items){
             System.out.println(item.getName());
         }
-        // Calling the layout setting method.
-        setRecyclerSearchCategory();
 
         /**
          * Search Bar Listener.
@@ -73,11 +81,36 @@ public class CategorySearchLayout extends AppCompatActivity {
             }
         });
 
+
+
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull  DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Upload upload = dataSnapshot.getValue(Upload.class);
+                    // Transfer the objects into CategoryItems.
+                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName());
+                    fireArrayItems.add(categoryItem);
+                }
+                categoryItemSearchAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
+        // Calling the layout setting method.
+        fireArrayItems = new ArrayList<>();
+        setRecyclerSearchCategory();
+
     }
 
+    /** Searching the ArrayList (Firebase) **/
     private void filter(String text){
         ArrayList<CategoryItem> filteredList = new ArrayList<>();
-        for (CategoryItem item : items){
+        for (CategoryItem item : fireArrayItems){
             if(item.getName().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(item);
             }
@@ -91,7 +124,7 @@ public class CategorySearchLayout extends AppCompatActivity {
         longCardRecyclerView = findViewById(R.id.search_page_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         longCardRecyclerView.setLayoutManager(layoutManager);
-        categoryItemSearchAdapter = new CategoryItemSearchAdapter(this, items);
+        categoryItemSearchAdapter = new CategoryItemSearchAdapter(this, fireArrayItems);
         longCardRecyclerView.setAdapter(categoryItemSearchAdapter);
         searchCategoryHeader = findViewById(R.id.search_page_header);
         searchCategoryHeader.setText(header);
