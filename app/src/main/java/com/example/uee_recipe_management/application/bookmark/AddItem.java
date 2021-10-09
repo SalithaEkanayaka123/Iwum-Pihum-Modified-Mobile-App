@@ -18,6 +18,8 @@ import android.widget.ProgressBar;
 
 import com.example.uee_recipe_management.application.R;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
@@ -49,6 +51,11 @@ public class AddItem extends AppCompatActivity {
         name = findViewById(R.id.recipe_name);
         subName = findViewById(R.id.sub_name);
         description = findViewById(R.id.description);
+
+        /** Firebase Schema Definition **/
+        mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
+
 
         attachImage.setOnClickListener(new View.OnClickListener() {
             @Override
