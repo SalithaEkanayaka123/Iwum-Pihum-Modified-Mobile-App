@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+//public class SliderAdapter extends SliderViewAdapter<SliderAdapter.Holder> {
 public class SliderAdapter extends SliderViewAdapter<SliderAdapter.Holder> {
     int[] images;
 

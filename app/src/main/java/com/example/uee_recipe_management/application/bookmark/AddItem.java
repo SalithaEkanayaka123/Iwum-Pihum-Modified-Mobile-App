@@ -14,12 +14,18 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
 import com.google.android.gms.tasks.Continuation;
@@ -54,12 +60,18 @@ public class AddItem extends AppCompatActivity {
 
     String downloadUrl;
 
+    String[] items = {"Rice", "Cake", "Sweets", "Drinks", "Meals"};
+    AutoCompleteTextView autoCompleteTextView;
+    ArrayAdapter<String> adapterItems;
+    AwesomeValidation awesomeValidation;
+
     /**
      * Firebase Extensions
      **/
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
     private StorageTask mUploadTask;
+    String item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +84,26 @@ public class AddItem extends AppCompatActivity {
         name = findViewById(R.id.recipe_name);
         subName = findViewById(R.id.sub_name);
         description = findViewById(R.id.description);
+        autoCompleteTextView = findViewById(R.id.auto_complete_txt);
+
+        adapterItems = new ArrayAdapter<String>(this,R.layout.list_item_dropdown,items);
+        autoCompleteTextView.setAdapter(adapterItems);
+
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(getApplicationContext(), "Item: " + item, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Initialize validation style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+        //add validation for the form
+        awesomeValidation.addValidation(this, R.id.recipe_name, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this, R.id.sub_name, RegexTemplate.NOT_EMPTY,R.string.invalid_sub);
+        awesomeValidation.addValidation(this, R.id.description, RegexTemplate.NOT_EMPTY,R.string.invalid_des);
 
         /** Register EditText **/
 
@@ -89,15 +121,22 @@ public class AddItem extends AppCompatActivity {
             }
         });
 
+
+
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /** Upload File When Press the Upload Button **/
-                if (mUploadTask != null && mUploadTask.isInProgress()) {
-                    Toast.makeText(AddItem.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
-                } else {
-                    uploadFile();
+                if(awesomeValidation.validate()){
+                    /** Upload File When Press the Upload Button **/
+                    if (mUploadTask != null && mUploadTask.isInProgress()) {
+                        Toast.makeText(AddItem.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
+                    } else {
+                        uploadFile();
+                    }
+                }else{
+                    Toast.makeText(AddItem.this, "Please enter data", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }
@@ -164,7 +203,7 @@ public class AddItem extends AppCompatActivity {
                         @Override
                         public void onSuccess(Uri uri) {
                             /** Creating a Reference in the Realtime Database **/
-                            Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), uri.toString(), description.getText().toString().trim(), "Default");
+                            Upload upload = new Upload(name.getText().toString().trim(), subName.getText().toString().trim(), uri.toString(), description.getText().toString().trim(), item);
                             String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
                         }
