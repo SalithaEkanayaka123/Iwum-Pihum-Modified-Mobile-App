@@ -14,6 +14,8 @@ import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings2;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -24,6 +26,7 @@ public class Notification_Settings_Fragment extends Fragment {
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
     ArrayList<customButton1> array, array2, array3;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,6 +36,8 @@ public class Notification_Settings_Fragment extends Fragment {
         listView1 = (ListView) v1.findViewById(R.id.listSettings3);
         listView2 = (ListView) v1.findViewById(R.id.listSettings4);
         listView3 = (ListView) v1.findViewById(R.id.listSettings5);
+
+
 
         array = new ArrayList<>();
         array.add(new customButton1(getString(R.string.Notification), getString(R.string.Enablenotificationalertsfornotifications), true));
