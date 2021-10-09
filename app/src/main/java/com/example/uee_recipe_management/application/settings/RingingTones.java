@@ -52,12 +52,6 @@ public class RingingTones extends DialogFragment {
 
 //        ArrayAdapter
             array = new ArrayList<>();
-//        array.add(new RingingTone("RingingTone1", R.raw.music1));
-//        array.add(new RingingTone("RingingTone2", R.raw.music2));
-//        array.add(new RingingTone("RingingTone3", R.raw.music3));
-//        array.add(new RingingTone("RingingTone4", R.raw.music4));
-//        array.add(new RingingTone("RingingTone5", R.raw.music5));
-//        array.add(new RingingTone("Stop", R.raw.music5));
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/");
         databaseReference = firebaseDatabase.getReference("Audio");
@@ -76,7 +70,6 @@ public class RingingTones extends DialogFragment {
                     array.add(audio1);
 
                 }
-                System.out.println(array.get(2).getTitle());
                 adapter2 = new CustomButtonSettings5(getContext() , array);
                 //then set that adapter to the list
                 listView1.setAdapter(adapter2);
@@ -99,31 +92,42 @@ public class RingingTones extends DialogFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 view.setSelected(true);
+                System.out.println(i);
+                System.out.println();
                 if (i == 0){
-                    System.out.println("1");
-                    mediaPlayer.stop();
+//                    System.out.println("1" + );
+//                    if (mediaPlayer.isPlaying()){
+//                        mediaPlayer.stop();
+//                    }
                     mediaPlayer=MediaPlayer.create(getActivity().getApplicationContext(),R.raw.music1);
                     mediaPlayer.start();
 
 
                 }else if (i == 1){
                     //mediaPlayer=MediaPlayer.create(getActivity().getApplicationContext(),R.raw.music1);
-                    mediaPlayer.stop();
+                    if (mediaPlayer.isPlaying()){
+                        mediaPlayer.stop();
+                    }
                     mediaPlayer=MediaPlayer.create(getActivity().getApplicationContext(),R.raw.music2);
                     mediaPlayer.start();
                 }else if (i == 2){
                     System.out.println("3");
-                    mediaPlayer.stop();
+                    if (mediaPlayer.isPlaying()){
+                        mediaPlayer.stop();
+                    }
                     mediaPlayer=MediaPlayer.create(getActivity().getApplicationContext(),R.raw.music3);
                     mediaPlayer.start();
                 }else if (i == 3){
                     System.out.println("4");
-                    mediaPlayer.stop();
+                    if (mediaPlayer.isPlaying()){
+                        mediaPlayer.stop();
+                    }
                     mediaPlayer=MediaPlayer.create(getActivity().getApplicationContext(),R.raw.music4);
                     mediaPlayer.start();
                 }else if (i == 4){
-                    System.out.println("5");
-                    mediaPlayer.stop();
+                    if (mediaPlayer.isPlaying()){
+                        mediaPlayer.stop();
+                    }
                     mediaPlayer=MediaPlayer.create(getActivity().getApplicationContext(),R.raw.music5);
                     mediaPlayer.start();
                 }

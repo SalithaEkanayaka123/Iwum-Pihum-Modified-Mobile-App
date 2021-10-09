@@ -52,11 +52,11 @@ public class SettingPage extends AppCompatActivity {
         listView1 = (ListView) findViewById(R.id.listSettings8);
         //cardView = (CardView) findViewById(R.id.custombuttonsettings2);
         array = new ArrayList<>();
-        array.add(new customButton1("Background", "Handles Background Settings", true));
-        array.add(new customButton1("Notification", "Handles Notification Settings", true));
-        array.add(new customButton1("Synchronization", "Handles Synchronization Settings", true));
-        array.add(new customButton1("Privacy and Policy", "Privacy and Policy", true));
-        array.add(new customButton1("About", "About", true));
+        array.add(new customButton1(getString(R.string.Background), getString(R.string.HandlesBackgroundSettings), true));
+        array.add(new customButton1(getString(R.string.Notification), getString(R.string.HandlesNotificationSettings), true));
+        array.add(new customButton1(getString(R.string.Synchronization), getString(R.string.HandlesSynchronizationSettings), true));
+        array.add(new customButton1(getString(R.string.PrivacyandPolicy), getString(R.string.PrivacyandPolicy), true));
+        array.add(new customButton1(getString(R.string.about), getString(R.string.about), true));
 
         adapter2 = new CustomButtonSettings2(this , array);//
         //then set that adapter to the list
