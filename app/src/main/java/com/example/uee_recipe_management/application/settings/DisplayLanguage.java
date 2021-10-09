@@ -1,5 +1,7 @@
 package com.example.uee_recipe_management.application.settings;
 
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings;
@@ -18,6 +21,7 @@ import com.example.uee_recipe_management.application.settings.CustomButtonSettin
 import com.example.uee_recipe_management.application.settings.model.customButton1;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class DisplayLanguage extends DialogFragment {
 
@@ -35,8 +39,8 @@ public class DisplayLanguage extends DialogFragment {
         cardView = (CardView) v1.findViewById(R.id.custombuttonsettings4);
 
         array = new ArrayList<>();
-        array.add(new customButton1("English", "Automatic background sync", true));
-        array.add(new customButton1("Sinhala", "sync on startup", true));
+        array.add(new customButton1(getString(R.string.English), "Automatic background sync", true));
+        array.add(new customButton1(getString(R.string.Sinhala), "sync on startup", true));
 
 
         adapter2 = new CustomButtonSettings4(getContext() , array);//
@@ -46,6 +50,30 @@ public class DisplayLanguage extends DialogFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 view.setSelected(true);
+                System.out.println(i);
+                if (i == 0){
+                    Locale locale = new Locale("en");
+                    Locale.setDefault(locale);
+                    Resources resources = getResources();
+                    Configuration config = resources.getConfiguration();
+                    config.setLocale(locale);
+                    resources.updateConfiguration(config, resources.getDisplayMetrics());
+//                    Locale locale = new Locale("si", "LK");
+//                    Locale.setDefault(locale);
+//                    Configuration config = new Configuration();
+//                    config.locale = locale;
+//                    getActivity().getBaseContext().getResources().updateConfiguration(config, getActivity().getBaseContext().getResources().getDisplayMetrics());
+
+                    Toast.makeText(getContext(), "change to English", Toast.LENGTH_SHORT).show();
+                }else if (i == 1){
+                    Locale locale = new Locale("sq");
+                    Locale.setDefault(locale);
+                    Resources resources = getResources();
+                    Configuration config = resources.getConfiguration();
+                    config.setLocale(locale);
+                    resources.updateConfiguration(config, resources.getDisplayMetrics());
+                    Toast.makeText(getContext(), "change to Sinhala", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

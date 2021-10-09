@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".settings.Background_Settings_Fragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/category_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#9F897D"
+            android:fontFamily="@font/raleway_bold"
+            android:padding="5dp"
+            android:text="Background"
+            android:textSize="15dp"
+            android:elevation="8dp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
