@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.uee_recipe_management.application.R;
 
 import java.util.List;
-
+//public class SingleItemGridAdapter extends RecyclerView.Adapter<SingleItemGridAdapter.MyViewHolder> {
 public class SingleItemGridAdapter extends RecyclerView.Adapter<SingleItemGridAdapter.MyViewHolder> {
    private Context context;
    private List<SimilarItem> similarItemList;
