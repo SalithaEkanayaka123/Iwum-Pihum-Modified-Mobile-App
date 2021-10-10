@@ -19,6 +19,7 @@ import com.example.uee_recipe_management.application.category.model.CategoryItem
 import com.example.uee_recipe_management.application.home.Adapter.HomeAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class Home extends AppCompatActivity {
 
     RecyclerView longCardRecyclerView;
     HomeAdapter homeAdapter;
+    DatabaseReference mDatabaseRef;
 
 
     NavgationController Nav = new NavgationController();
@@ -40,6 +42,8 @@ public class Home extends AppCompatActivity {
         Menu menu = bottomNavView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
+
+        mDatabaseRef = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("history");
 
 
         //Add items to the category item model class.
@@ -68,7 +72,7 @@ public class Home extends AppCompatActivity {
         longCardRecyclerView = findViewById(R.id.home_page_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         longCardRecyclerView.setLayoutManager(layoutManager);
-        homeAdapter = new HomeAdapter(this, hItems);
+        homeAdapter = new HomeAdapter(this, hItems, mDatabaseRef);
         longCardRecyclerView.setAdapter(homeAdapter);
     }
 }
