@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bookmark.ItemTestingFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="#FFF"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/vertical_linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:paddingRight="10dp"
+
+                    >
+                    <EditText
+                        android:id="@+id/searchbar_responsive_layout_1"
+                        android:layout_width="326dp"
+                        android:layout_height="30dp"
+                        android:background="@null"
+                        android:fontFamily="@font/raleway"
+                        android:gravity="center_vertical"
+                        android:hint="Search Your Recipies"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:textColor="#9F9F9F"
+                        android:textColorHint="#9F9F9F"
+                        android:textSize="15sp"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/search_button"
+                        android:layout_width="15dp"
+                        android:layout_height="25dp"
+                        android:width="20dp"
+                        android:height="10dp"
+
+                        android:paddingTop="8dp"
+                        android:src="@drawable/search_icon" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="#9F9F9F" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_page_recycler_new"
+                android:layout_width="match_parent"
+                android:layout_height="710dp"
+                />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_item_header"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="467dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FF9800"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_add"
+            tools:ignore="UnknownId" />
+    </RelativeLayout>
+
+</FrameLayout>

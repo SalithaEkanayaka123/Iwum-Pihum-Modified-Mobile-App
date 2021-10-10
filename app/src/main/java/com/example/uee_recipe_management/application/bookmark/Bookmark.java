@@ -49,15 +49,6 @@ public class Bookmark extends AppCompatActivity {
         dataList = findViewById(R.id.search_page_recycler_2);
         fvrt_btn = findViewById(R.id.fvrt_f2_item);
 
-//        DrawableHelper
-//                .withContext(this)
-////                .withColor(R.color.white)
-//                .withDrawable(R.drawable.ic_baseline_turned_in_24)
-//                .tint()
-//                .applyTo(settings_icon);
-
-
-
 
         /**
          * Search Bar Listener.
@@ -80,11 +71,11 @@ public class Bookmark extends AppCompatActivity {
             }
         });
 
-//        FirebaseUser user = CustomArrayList.getInstance().getCurrentUser();
-//        String currentUserId = user.getUid();
+//       FirebaseUser user = CustomArrayList.getInstance().getCurrentUser();
+//       String currentUserId = user.getUid();
 
-//        fvrtref = database.getReference("favourites");
-//        fvrt_listRef = database.getReference("favouriteList").child(currentUserid);
+//       fvrtref = database.getReference("favourites");
+//       fvrt_listRef = database.getReference("favouriteList").child(currentUserid);
 
         titles = new ArrayList<>();
         images = new ArrayList<>();
@@ -94,34 +85,14 @@ public class Bookmark extends AppCompatActivity {
         titles.add("Third Item");
         titles.add("Fourth Item");
         titles.add("Fifth Item");
-        titles.add("Second Item");
-        titles.add("Third Item");
-        titles.add("Fourth Item");
-        titles.add("First Item");
-        titles.add("Second Item");
-        titles.add("Third Item");
-        titles.add("Fourth Item");
-        titles.add("First Item");
-        titles.add("Second Item");
-        titles.add("Third Item");
-        titles.add("Fourth Item");
+
 
         images.add(R.drawable.image_1);
         images.add(R.drawable.image_2);
         images.add(R.drawable.image_3);
         images.add(R.drawable.image_4);
         images.add(R.drawable.image_5);
-        images.add(R.drawable.image_2);
-        images.add(R.drawable.image_3);
-        images.add(R.drawable.image_4);
-        images.add(R.drawable.image_1);
-        images.add(R.drawable.image_2);
-        images.add(R.drawable.image_3);
-        images.add(R.drawable.image_4);
-        images.add(R.drawable.image_1);
-        images.add(R.drawable.image_2);
-        images.add(R.drawable.image_3);
-        images.add(R.drawable.image_4);
+
 
 
         bookmarkAdapter = new BookmarkAdapter(this,titles,images);
@@ -132,7 +103,7 @@ public class Bookmark extends AppCompatActivity {
 
     }
 
-    private void filter(String text){
+//    private void filter(String text){
 //        ArrayList<RecipieItem> filteredList = new ArrayList<>();
 //        for (A item : items){
 //            if(item.getName().toLowerCase().contains(text.toLowerCase())){
@@ -141,7 +112,7 @@ public class Bookmark extends AppCompatActivity {
 //        }
 //
 //        bookmarkAdapter.filterList(filteredList);
-    }
+//    }
 
 
 }
