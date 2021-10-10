@@ -20,4 +20,24 @@
     <string name="previous">" කලින්"</string>
     <string name="hello_first_fragment">ආයුබෝවන් පළමු කොටස</string>
     <string name="hello_second_fragment">ආයුබෝවන් දෙවන කොටස</string>
+    <string name="DisplayLanguage" translatable="false">" සංදර්ශක භාෂාව"</string>
+    <string name="Choosealanguage">" භාෂාවක් තෝරන්න"</string>
+    <string name="SwitchLayout">පිරිසැලසුම මාරු කරන්න</string>
+    <string name="Changethelayoutsofinterface">අතුරු මුහුණතේ පිරිසැලසුම් වෙනස් කරන්න</string>
+    <string name="SortBy">" ▲ අනුව තෝරන්න"</string>
+    <string name="HandlesBackgroundSettings">" පසුබිම් සැකසුම් හසුරුවයි"</string>
+    <string name="HandlesNotificationSettings">දැනුම්දීම් සැකසුම් හසුරුවයි</string>
+    <string name="HandlesSynchronizationSettings">" සමමුහුර්ත කිරීමේ සැකසුම් හසුරුවයි"</string>
+    <string name="Enablenotificationalertsfornotifications">දැනුම්දීම් සඳහා දැනුම්දීම් ඇඟවීම් සක්‍රීය කරන්න</string>
+    <string name="RingingTones">නාද නාද</string>
+    <string name="RingingTonesList">නාද කිරීමේ නාද ලැයිස්තුව</string>
+    <string name="Vibration">" ▲ කම්පනය"</string>
+    <string name="EnableVibration">දැනුම්දීම් සඳහා කම්පන ඇඟවීම් සක්‍රීය කරන්න</string>
+    <string name="version">අනුවාදය: xxxxxxx</string>
+    <string name="search_recipies">" වට්ටෝරු සොයන්න"</string>
+    <string name="select">" වර්ගය තෝරන්න"</string>
+    <string name="invalid_name">කරුණාකර නම ඇතුළත් කරන්න</string>
+    <string name="invalid_sub">කරුණාකර අමුද්‍රව්‍ය ඇතුළත් කරන්න</string>
+    <string name="invalid_des">කරුණාකර විස්තරය ඇතුළත් කරන්න</string>
+    <string name="Settings">සැකසුම්</string>
 </resources>

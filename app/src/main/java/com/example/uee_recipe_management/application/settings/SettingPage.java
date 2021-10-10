@@ -26,6 +26,7 @@ import com.example.uee_recipe_management.application.settings.CustomButtonSettin
 import com.example.uee_recipe_management.application.settings.model.customButton1;
 import com.example.uee_recipe_management.application.splash.OpeningSplashScreen;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -75,7 +76,7 @@ public class SettingPage extends AppCompatActivity {
 //                    Intent intent  = new Intent(view.getContext(), Background_Settings.class);
 //                    view.getContext().startActivity(intent);
                     appCompatTextView.setText(R.string.Background);
-                    Toast.makeText(getBaseContext(), "Navigate to Background Interface", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(view,"Navigate to Background Interface",Snackbar.LENGTH_LONG).show();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new Background_Settings_Fragment()).commit();
 
 //                    Background_Settings_Fragment fr = getFragmentManager().beginTransaction();
@@ -84,7 +85,7 @@ public class SettingPage extends AppCompatActivity {
                 }else if (i == 1){
                     //cardView.setBackgroundColor(Color.parseColor("#9F897D"));
                     appCompatTextView.setText(R.string.Notification);
-                    Toast.makeText(getBaseContext(), "Navigate to Notification Interface", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(view,"Navigate to Notification Interface",Snackbar.LENGTH_LONG).show();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new Notification_Settings_Fragment()).commit();
 //                    Intent intent  = new Intent(view.getContext(), Notification_Settings.class);
 //                    view.getContext().startActivity(intent);
@@ -101,7 +102,7 @@ public class SettingPage extends AppCompatActivity {
                     appCompatTextView.setText(R.string.PrivacyandPolicy);
 //                    Intent intent  = new Intent(view.getContext(), PrivacyAndPolicy_Settings.class);
 //                    view.getContext().startActivity(intent);
-                    Toast.makeText(getBaseContext(), "Navigate to privacy and Policy Interface", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(view,"Navigate to privacy and Policy Interface",Snackbar.LENGTH_LONG).show();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new PrivacyAndPolicy_Settings_Fragment()).commit();
                 }else if (i == 4){
                     About settingsFragment = new About();
