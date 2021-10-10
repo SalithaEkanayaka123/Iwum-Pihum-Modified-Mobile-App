@@ -46,6 +46,8 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
         Uri myUri = null;
         try {
             myUri = Uri.parse(categoryItemList.get(position).getFireURL());
+            holder.titleTv.setText(categoryItemList.get(position).getName());
+            holder.descriptionTv.setText(categoryItemList.get(position).getSubName());
             Picasso.with(context).load(myUri).into(holder.bannerTv);
         } catch (Exception e){
             System.out.println("Exception | CategoryItemSearchAdapter | - " + e.getMessage());
