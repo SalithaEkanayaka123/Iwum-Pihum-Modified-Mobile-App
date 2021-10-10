@@ -28,13 +28,19 @@
         <activity android:name=".settings.Background_Settings" />
         <activity android:name=".settings.Notification_Settings" />
         <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings2" />
-        <activity android:name=".splash.OpeningSplashScreen" />
+        <activity android:name=".splash.OpeningSplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".notification.NotificationLayout" />
         <activity android:name=".settings.CustomButtonSettings.CustomButtonSettings" />
         <activity android:name=".home.Home" />
         <activity android:name=".bookmark.Bookmark" />
         <activity android:name=".settings.SettingPage" />
-        <activity android:name=".temporary.TemporaryIndexPage" >
+        <activity android:name=".temporary.TemporaryIndexPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
