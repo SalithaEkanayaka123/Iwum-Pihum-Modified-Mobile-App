@@ -73,29 +73,14 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginEnd="10dp"
                 android:background="#9F9F9F" />
-        </LinearLayout>
-    </LinearLayout>
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/add_item_header"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_marginStart="86dp"-->
-<!--        android:layout_marginLeft="100dp"-->
-<!--        android:layout_marginTop="253dp"-->
-<!--        android:fontFamily="@font/raleway"-->
-<!--        android:paddingLeft="10dp"-->
-<!--        android:text="Create something new"-->
-<!--        android:textColor="#686464"-->
-<!--        android:textSize="18sp"-->
-<!--        android:textStyle="italic"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/add_item_header"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.0" />-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_page_recycler_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_btn"

@@ -12,34 +12,50 @@ public class CategoryItem  implements Parcelable {
     private String description;
     private String fireURL;
     private String subName;
+    private String category;
 
-    public CategoryItem(String name, String fireURL, String description, String subName){
-        // Null Validation
-        if (name.trim().equals("")){
-            name = "No Name";
+    public CategoryItem(String name, String fireURL, String description, String subName, String category){
+
+        try{
+            // Null Validation
+            if (name.trim().equals("")){
+                name = "No Name";
+            }
+            // Null Validation
+            if (fireURL.trim().equals("")){
+                fireURL = "https://firebasestorage.googleapis.com/v0/b/uee-recipe-management.appspot.com/o/util%2Fnot_found_image.jpg?alt=media&token=cd8249f3-75c1-4a5a-976a-eb80206482ed";
+            }
+            // Null Validation
+            if (description.trim().equals("")){
+                description = "No Description";
+            }
+            // Null Validation
+            if (subName.trim().equals("")){
+                subName = "No SubName";
+            }
+            // Null Validation
+            if (category.trim().equals("")){
+                category = "No Category";
+            }
+        } catch (Exception e){
+            System.out.println("Exception | CategoryItems | " + e.getMessage());
         }
-        // Null Validation
-        if (fireURL.trim().equals("")){
-            fireURL = "https://firebasestorage.googleapis.com/v0/b/uee-recipe-management.appspot.com/o/util%2Fnot_found_image.jpg?alt=media&token=cd8249f3-75c1-4a5a-976a-eb80206482ed";
-        }
-        // Null Validation
-        if (description.trim().equals("")){
-            description = "No Description";
-        }
-        // Null Validation
-        if (subName.trim().equals("")){
-            subName = "No SubName";
-        }
+
         this.name = name;
         this.fireURL = fireURL;
         this.description = description;
         this.subName = subName;
+        this.category = category;
     }
 
     public CategoryItem(String name, int image, String description) {
         this.name = name;
         this.image = image;
         this.description = description;
+    }
+
+    public CategoryItem () {
+
     }
 
     protected CategoryItem(Parcel in) {
@@ -98,6 +114,14 @@ public class CategoryItem  implements Parcelable {
 
     public void setSubName(String subName) {
         this.subName = subName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @Override
