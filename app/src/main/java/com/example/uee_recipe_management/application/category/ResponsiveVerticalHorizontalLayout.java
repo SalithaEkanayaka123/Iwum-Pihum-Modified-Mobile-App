@@ -108,11 +108,11 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
 
         //Dummy data to the model class.
         allCategories  = new ArrayList<>();
-//        allCategories.add(new AllCategories("Cool Drinks", fireAllItemsCategories));
-//        allCategories.add(new AllCategories("Main courses",categoryItems));
-//        allCategories.add(new AllCategories("Short Eats",categoryItems));
-//        allCategories.add(new AllCategories("Candies",categoryItems));
-//        allCategories.add(new AllCategories("Steak",categoryItems));
+//      allCategories.add(new AllCategories("Cool Drinks", fireAllItemsCategories));
+//      allCategories.add(new AllCategories("Main courses",categoryItems));
+//      allCategories.add(new AllCategories("Short Eats",categoryItems));
+//      allCategories.add(new AllCategories("Candies",categoryItems));
+//      allCategories.add(new AllCategories("Steak",categoryItems));
 
 
         /**
