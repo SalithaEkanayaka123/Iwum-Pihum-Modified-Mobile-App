@@ -31,7 +31,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.recipie_card_item_new,parent,false);
+        View view = inflater.inflate(R.layout.recipie_carditem_new_2,parent,false);
         return new ViewHolder(view);
     }
 
