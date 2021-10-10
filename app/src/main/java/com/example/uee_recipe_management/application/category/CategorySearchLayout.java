@@ -49,24 +49,24 @@ public class CategorySearchLayout extends AppCompatActivity {
     DatabaseReference database;
     ImageView sorting;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_search_layout);
 
-        /** Parameters From the Responsive Layout - Make this fail safe **/
-        items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
-        header = this.getIntent().getExtras().getString("categoryName"); // header name use to filter the item list.
+        /** Parameters From the Responsive Layout - Made fail safe **/
+        try {
+            items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
+            header = this.getIntent().getExtras().getString("categoryName"); // header name use to filter the item list.
+        } catch (java.lang.Exception e){
+            System.out.println("Exception | CategorySearchLayout | " + e.getMessage());
+        }
+
         System.out.println(header);
 
         /** Database connection to the Schema **/
         database = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
 
-        // Testing.
-        for(CategoryItem item : items){
-            System.out.println(item.getName());
-        }
 
         /**
          * Search Bar Listener.

@@ -11,6 +11,7 @@ import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.AddItem;
 import com.example.uee_recipe_management.application.bookmark.Bookmark;
 import com.example.uee_recipe_management.application.bookmark.ItemTesting;
+import com.example.uee_recipe_management.application.category.CategorySearchLayout;
 import com.example.uee_recipe_management.application.category.ResponsiveVerticalHorizontalLayout;
 import com.example.uee_recipe_management.application.home.Home;
 import com.example.uee_recipe_management.application.item.Item;
@@ -29,7 +30,6 @@ public class TemporaryIndexPage extends AppCompatActivity {
     Button individualPage;
     Button bookmarkPage;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +41,8 @@ public class TemporaryIndexPage extends AppCompatActivity {
         responsivePage = findViewById(R.id.responsive_button);
         splashScreen = findViewById(R.id.splash_screen);
         notificationPage = findViewById(R.id.notification_screen);
-
         individualPage = findViewById(R.id.individual_item);
-
         bookmarkPage = findViewById(R.id.bookmark_screen);
-
-
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +50,6 @@ public class TemporaryIndexPage extends AppCompatActivity {
                 view.getContext().startActivity(intent);
             }
         });
-
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +57,6 @@ public class TemporaryIndexPage extends AppCompatActivity {
                 view.getContext().startActivity(intent);
             }
         });
-
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,15 +64,13 @@ public class TemporaryIndexPage extends AppCompatActivity {
                 view.getContext().startActivity(intent);
             }
         });
-
         responsivePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ResponsiveVerticalHorizontalLayout.class);
+                Intent intent = new Intent(view.getContext(), CategorySearchLayout.class);
                 view.getContext().startActivity(intent);
             }
         });
-
         splashScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,7 +78,6 @@ public class TemporaryIndexPage extends AppCompatActivity {
                 view.getContext().startActivity(intent);
             }
         });
-
         notificationPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,8 +85,6 @@ public class TemporaryIndexPage extends AppCompatActivity {
                 view.getContext().startActivity(intent);
             }
         });
-
-
         individualPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,7 +92,6 @@ public class TemporaryIndexPage extends AppCompatActivity {
                 view.getContext().startActivity(intent);
             }
         });
-
         bookmarkPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
