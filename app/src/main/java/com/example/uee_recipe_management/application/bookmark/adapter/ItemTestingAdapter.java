@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.bookmark.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +14,26 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.ItemTesting;
 import com.example.uee_recipe_management.application.bookmark.model.RecipieItem;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ItemTestingAdapter extends RecyclerView.Adapter<ItemTestingAdapter.ViewHolder> {
 
-    List<String> titles;
-    List<Integer> images;
+    ArrayList<RecipieItem> arrayList;
     LayoutInflater inflater;
-
-    public ItemTestingAdapter(Context ctx, List<String> titles, List<Integer> images) {
-        this.titles = titles;
-        this.images = images;
+    private Context context;
+    public ItemTestingAdapter(Context ctx, ArrayList<RecipieItem> arrayList) {
+        this.arrayList = arrayList;
         this.inflater = LayoutInflater.from(ctx);
+        this.context = ctx;
+    }
+
+    public ItemTestingAdapter() {
+
     }
 
     @NonNull
@@ -38,13 +45,24 @@ public class ItemTestingAdapter extends RecyclerView.Adapter<ItemTestingAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ItemTestingAdapter.ViewHolder holder, int position) {
-        holder.title.setText(titles.get(position));
-        holder.gridIcon.setImageResource(images.get(position));
+
+        Uri myUri = null;
+
+        try {
+            holder.title.setText(arrayList.get(position).getName());
+            holder.description.setText(arrayList.get(position).getDescription());
+            myUri = Uri.parse(arrayList.get(position).getFireURL());
+            Picasso.with(context).load(myUri).into(holder.gridIcon);
+        } catch (Exception e){
+            System.out.println("Exception | CategoryItemSearchAdapter | - " + e.getMessage());
+        }
+
+
     }
 
     @Override
     public int getItemCount() {
-        return titles.size();
+        return arrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -68,6 +86,8 @@ public class ItemTestingAdapter extends RecyclerView.Adapter<ItemTestingAdapter.
                     Toast.makeText(v.getContext(), "Clicked -> " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
                 }
             });
+
+            //call listner
         }
     }
 }
