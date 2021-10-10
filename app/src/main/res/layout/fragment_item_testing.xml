@@ -8,7 +8,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:tools="http://schemas.android.com/tools"
         android:background="#FFF"
         android:orientation="vertical"
         >
@@ -70,20 +69,16 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/search_page_recycler_new"
                 android:layout_width="match_parent"
-                android:layout_height="710dp"
-                />
+                android:layout_height="710dp" />
 
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_btn"
+            android:layout_marginTop="380dp"
+            android:layout_marginLeft="270dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/add_item_header"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="467dp"
-            android:layout_marginEnd="26dp"
-            android:layout_marginBottom="10dp"
             android:background="#FF9800"
             android:clickable="true"
             android:focusable="true"
