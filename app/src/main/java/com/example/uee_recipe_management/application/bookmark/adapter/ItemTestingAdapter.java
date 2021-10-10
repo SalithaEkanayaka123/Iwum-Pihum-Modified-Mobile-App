@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.ItemTesting;
 import com.example.uee_recipe_management.application.bookmark.model.RecipieItem;
+import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -63,6 +64,12 @@ public class ItemTestingAdapter extends RecyclerView.Adapter<ItemTestingAdapter.
     @Override
     public int getItemCount() {
         return arrayList.size();
+    }
+
+
+    public void filterList(ArrayList<RecipieItem> filteredList){
+        arrayList = filteredList;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

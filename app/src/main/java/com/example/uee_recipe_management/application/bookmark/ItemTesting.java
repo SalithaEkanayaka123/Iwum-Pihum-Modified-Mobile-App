@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -41,6 +43,7 @@ public class ItemTesting extends AppCompatActivity {
     ArrayList<RecipieItem> items;
     ArrayList<RecipieItem> fireArrayItems;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +52,6 @@ public class ItemTesting extends AppCompatActivity {
         fab =findViewById(R.id.add_btn);
         dataList = findViewById(R.id.search_page_recycler_new);
 
-//        items = this.getIntent().getExtras().getParcelableArrayList("TITELS");
         database = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,51 +63,23 @@ public class ItemTesting extends AppCompatActivity {
             }
         });
 
+        searchBar = findViewById(R.id.searchbar_responsive_layout_1);
+        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-//        titles = new ArrayList<>();
-//        images = new ArrayList<>();
-//
-//        titles.add("First Item");
-//        titles.add("Second Item");
-//        titles.add("Third Item");
-//        titles.add("Fourth Item");
-//        titles.add("Fifth Item");
-//        titles.add("Second Item");
-//        titles.add("Third Item");
-//        titles.add("Fourth Item");
-//        titles.add("First Item");
-//        titles.add("Second Item");
-//        titles.add("Third Item");
-//        titles.add("Fourth Item");
-//        titles.add("First Item");
-//        titles.add("Second Item");
-//        titles.add("Third Item");
-//        titles.add("Fourth Item");
-//
-//        images.add(R.drawable.image_1);
-//        images.add(R.drawable.image_2);
-//        images.add(R.drawable.image_3);
-//        images.add(R.drawable.image_4);
-//        images.add(R.drawable.image_5);
-//        images.add(R.drawable.image_2);
-//        images.add(R.drawable.image_3);
-//        images.add(R.drawable.image_4);
-//        images.add(R.drawable.image_1);
-//        images.add(R.drawable.image_2);
-//        images.add(R.drawable.image_3);
-//        images.add(R.drawable.image_4);
-//        images.add(R.drawable.image_1);
-//        images.add(R.drawable.image_2);
-//        images.add(R.drawable.image_3);
-//        images.add(R.drawable.image_4);
-//
-//
-//        itemTestingAdapter = new ItemTestingAdapter(this,titles,images);
-//
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2,GridLayoutManager.VERTICAL,false);
-//        dataList.setLayoutManager(gridLayoutManager);
-//        dataList.setAdapter((RecyclerView.Adapter) itemTestingAdapter);
+            }
 
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(editable.toString());
+            }
+        });
 
 
         database.addValueEventListener(new ValueEventListener() {
@@ -130,6 +104,19 @@ public class ItemTesting extends AppCompatActivity {
         fireArrayItems = new ArrayList<>();
         setRecyclerSearchCategory();
     }
+
+    /** Searching the ArrayList (Firebase) **/
+    private void filter(String text){
+        ArrayList<RecipieItem> filteredList = new ArrayList<>();
+        for (RecipieItem item : fireArrayItems){
+            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+
+        itemTestingAdapter.filterList(filteredList);
+    }
+
 
     private void setRecyclerSearchCategory(){
         dataList = findViewById(R.id.search_page_recycler_new);
