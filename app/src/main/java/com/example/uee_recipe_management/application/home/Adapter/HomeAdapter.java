@@ -86,7 +86,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.SearchViewHold
         holder.longCardSubHeading.setText(HomeItemList.get(position).getSubName());
         holder.longCardDescription.setText(HomeItemList.get(position).getDescription());
 
-        //////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////  getting the single item click event ///////////////////
         holder.longCardView.setOnClickListener(new View.OnClickListener() {
             CategoryItem cI = new CategoryItem(holder.longCardHeader.getText().toString(),
                     "",
@@ -131,6 +131,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.SearchViewHold
 
         }
     }
+
+
+    ////////////////////////////Firebase add method/////////////////////////////////
 
     public void addItemsToHistory (CategoryItem cI ) {
 
