@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.home.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.adapter.CategoryItemSearchAdapter;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.example.uee_recipe_management.application.home.model.HistoryItem;
+import com.example.uee_recipe_management.application.item.Item;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -98,6 +100,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.SearchViewHold
                 System.out.println(" || ++++++++++++++++++++++++ || " +cI);
 //                    String value = getRef(position).getKey();
                 addItemsToHistory(cI);
+
+                Intent intent = new Intent(view.getContext(), Item.class);
+                view.getContext().startActivity(intent);
             }
         });///
         /////////////////////////////////////////////////////////////

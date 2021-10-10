@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.userControlMenu.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.example.uee_recipe_management.application.home.model.HistoryItem;
+import com.example.uee_recipe_management.application.item.Item;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -75,6 +77,13 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.SearchVi
         holder.longCardHeader.setText(HomeItemList.get(position).getName());
         holder.longCardSubHeading.setText(HomeItemList.get(position).getSubName());
         holder.longCardDescription.setText(HomeItemList.get(position).getDescription());
+        holder.longCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Item.class);
+                view.getContext().startActivity(intent);
+            }
+        });///
 
         try {
             myUri = Uri.parse(HomeItemList.get(position).getFireURL());
