@@ -85,34 +85,14 @@ public class Bookmark extends AppCompatActivity {
         titles.add("Third Item");
         titles.add("Fourth Item");
         titles.add("Fifth Item");
-        titles.add("Second Item");
-        titles.add("Third Item");
-        titles.add("Fourth Item");
-        titles.add("First Item");
-        titles.add("Second Item");
-        titles.add("Third Item");
-        titles.add("Fourth Item");
-        titles.add("First Item");
-        titles.add("Second Item");
-        titles.add("Third Item");
-        titles.add("Fourth Item");
+
 
         images.add(R.drawable.image_1);
         images.add(R.drawable.image_2);
         images.add(R.drawable.image_3);
         images.add(R.drawable.image_4);
         images.add(R.drawable.image_5);
-        images.add(R.drawable.image_2);
-        images.add(R.drawable.image_3);
-        images.add(R.drawable.image_4);
-        images.add(R.drawable.image_1);
-        images.add(R.drawable.image_2);
-        images.add(R.drawable.image_3);
-        images.add(R.drawable.image_4);
-        images.add(R.drawable.image_1);
-        images.add(R.drawable.image_2);
-        images.add(R.drawable.image_3);
-        images.add(R.drawable.image_4);
+
 
 
         bookmarkAdapter = new BookmarkAdapter(this,titles,images);
@@ -123,7 +103,7 @@ public class Bookmark extends AppCompatActivity {
 
     }
 
-    private void filter(String text){
+//    private void filter(String text){
 //        ArrayList<RecipieItem> filteredList = new ArrayList<>();
 //        for (A item : items){
 //            if(item.getName().toLowerCase().contains(text.toLowerCase())){
@@ -132,7 +112,7 @@ public class Bookmark extends AppCompatActivity {
 //        }
 //
 //        bookmarkAdapter.filterList(filteredList);
-    }
+//    }
 
 
 }
