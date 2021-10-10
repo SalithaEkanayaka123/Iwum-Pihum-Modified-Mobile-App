@@ -32,9 +32,9 @@ public class PrivacyAndPolicy_Settings_Fragment extends Fragment {
         array = new ArrayList<>();
         array.add(new customButton1("Information Collection and Use", "Handles Background Settings", true));
         array.add(new customButton1("Log Data", "Handles Background Settings", true));
-        array.add(new customButton1("Cookies", "Handles Background Settings", true));
-        array.add(new customButton1("Service Providers", "Handles Background Settings", true));
-        array.add(new customButton1("Security", "Handles Background Settings", true));
+        array.add(new customButton1("Cookies", "Handles Cookies", true));
+        array.add(new customButton1("Service Providers", "Handles Services", true));
+        array.add(new customButton1("Security", "Handles Security", true));
 
         adapter2 = new CustomButtonSettings3(getActivity() , array);//
         //then set that adapter to the list
