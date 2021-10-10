@@ -67,7 +67,7 @@ public class TemporaryIndexPage extends AppCompatActivity {
         responsivePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), CategorySearchLayout.class);
+                Intent intent = new Intent(view.getContext(), ResponsiveVerticalHorizontalLayout.class);
                 view.getContext().startActivity(intent);
             }
         });
