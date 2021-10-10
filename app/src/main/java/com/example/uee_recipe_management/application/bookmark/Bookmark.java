@@ -49,15 +49,6 @@ public class Bookmark extends AppCompatActivity {
         dataList = findViewById(R.id.search_page_recycler_2);
         fvrt_btn = findViewById(R.id.fvrt_f2_item);
 
-//        DrawableHelper
-//                .withContext(this)
-////                .withColor(R.color.white)
-//                .withDrawable(R.drawable.ic_baseline_turned_in_24)
-//                .tint()
-//                .applyTo(settings_icon);
-
-
-
 
         /**
          * Search Bar Listener.
@@ -80,11 +71,11 @@ public class Bookmark extends AppCompatActivity {
             }
         });
 
-//        FirebaseUser user = CustomArrayList.getInstance().getCurrentUser();
-//        String currentUserId = user.getUid();
+//       FirebaseUser user = CustomArrayList.getInstance().getCurrentUser();
+//       String currentUserId = user.getUid();
 
-//        fvrtref = database.getReference("favourites");
-//        fvrt_listRef = database.getReference("favouriteList").child(currentUserid);
+//       fvrtref = database.getReference("favourites");
+//       fvrt_listRef = database.getReference("favouriteList").child(currentUserid);
 
         titles = new ArrayList<>();
         images = new ArrayList<>();

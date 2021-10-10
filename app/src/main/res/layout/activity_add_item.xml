@@ -88,22 +88,23 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:fontFamily="@font/raleway_italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:hint="@string/select"
         android:textColorHint="#9F897D"
+        android:hint="@string/select"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/attach_image_button"
         app:layout_constraintTop_toBottomOf="@+id/description"
         app:layout_constraintVertical_bias="0.142"
-        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
         android:background="@drawable/input_field_corner_radius"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        tools:layout_editor_absoluteX="16dp">
+        >
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_txt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/input_field_corner_radius"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            tools:layout_editor_absoluteX="16dp"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
