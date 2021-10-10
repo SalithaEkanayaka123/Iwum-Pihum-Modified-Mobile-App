@@ -5,6 +5,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -33,6 +34,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -121,8 +123,6 @@ public class AddItem extends AppCompatActivity {
             }
         });
 
-
-
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,6 +130,7 @@ public class AddItem extends AppCompatActivity {
                     /** Upload File When Press the Upload Button **/
                     if (mUploadTask != null && mUploadTask.isInProgress()) {
                         Toast.makeText(AddItem.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
+//                        Snackbar.make(coordinatorLayout,"Successfuly notification off...!!!",Snackbar.LENGTH_LONG).show();
                     } else {
                         uploadFile();
                     }

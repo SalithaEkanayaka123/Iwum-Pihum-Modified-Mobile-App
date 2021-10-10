@@ -1,4 +1,4 @@
-package com.example.uee_recipe_management.application.category.adapter;
+package com.example.uee_recipe_management.application.home.Adapter;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,27 +7,29 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.adapter.CategoryItemSearchAdapter;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItemSearchAdapter.SearchViewHolder> {
-    private Context context;
-    private List<CategoryItem> categorySearchItemList;
 
-    // Constructor
-    public CategoryItemSearchAdapter(Context context, List<CategoryItem> categorySearchItemList) {
+public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.SearchViewHolder> {
+
+    private Context context;
+    private List<CategoryItem> HomeItemList;
+
+    public HomeAdapter(Context context, List<CategoryItem> homeItemList) {
         this.context = context;
-        this.categorySearchItemList = categorySearchItemList;
+        HomeItemList = homeItemList;
     }
 
-    // Getters and Setters
     public Context getContext() {
         return context;
     }
@@ -36,43 +38,39 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
         this.context = context;
     }
 
-    public List<CategoryItem> getCategorySearchItemList() {
-        return categorySearchItemList;
+    public List<CategoryItem> getHomeItemList() {
+        return HomeItemList;
     }
 
-    public void setCategorySearchItemList(List<CategoryItem> categorySearchItemList) {
-        this.categorySearchItemList = categorySearchItemList;
+    public void setHomeItemList(List<CategoryItem> homeItemList) {
+        HomeItemList = homeItemList;
     }
+
 
     @NonNull
     @Override
-    public SearchViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-        return new SearchViewHolder(LayoutInflater.from(context).inflate(R.layout.long_card_layout, parent, false));
+    public SearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new HomeAdapter.SearchViewHolder(LayoutInflater.from(context).inflate(R.layout.long_card_layout, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
+
         Uri myUri = null;
-        holder.longCardHeader.setText(categorySearchItemList.get(position).getName());
-        holder.longCardSubHeading.setText(categorySearchItemList.get(position).getSubName());
-        holder.longCardDescription.setText(categorySearchItemList.get(position).getDescription());
+        holder.longCardHeader.setText(HomeItemList.get(position).getName());
+        holder.longCardSubHeading.setText(HomeItemList.get(position).getSubName());
+        holder.longCardDescription.setText(HomeItemList.get(position).getDescription());
         try {
-            myUri = Uri.parse(categorySearchItemList.get(position).getFireURL());
+            myUri = Uri.parse(HomeItemList.get(position).getFireURL());
             Picasso.with(getContext()).load(myUri).into(holder.longCardImageView);
         } catch (Exception e){
-            System.out.println("Exception | CategoryItemSearchAdapter | - " + e.getMessage());
+            System.out.println(" || Exception HomeItemAdapter || " + e.getMessage());
         }
-
     }
 
     @Override
     public int getItemCount() {
-        return categorySearchItemList.size();
-    }
-
-    public void filterList(ArrayList<CategoryItem> filteredList){
-        categorySearchItemList = filteredList;
-        notifyDataSetChanged();
+        return HomeItemList.size();
     }
 
     public static final class SearchViewHolder extends RecyclerView.ViewHolder {
@@ -95,9 +93,6 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
                 @Override
                 public void onClick(View view) {
                     System.out.println("Clicking on the "+ longCardHeader.getText().toString());
-
-                    ////////////////Need to create a intent///////////////////
-                    ///////////////Adding to history method///////////////////
                 }
             });
         }

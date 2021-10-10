@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.Home"
+    android:background="#fff">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/main_user_header"
+      android:background="#9F897D"
+      android:layout_alignParentTop="true">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/home_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_bold"
+        android:padding="5dp"
+        android:text="Welcome"
+        android:textSize="15dp"
+        android:elevation="8dp"
+        android:textStyle="bold" />
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/tab_nav_container"
+      android:background="#9F897D"
+      android:layout_below="@+id/main_user_header">
+          <com.google.android.material.appbar.AppBarLayout
+              android:layout_width="match_parent"
+              android:layout_height="25dp" >
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs_controller"
+                android:layout_width="match_parent"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                android:layout_height="wrap_content"
+                android:background="@drawable/topnavigation"
+                />
+          </com.google.android.material.appbar.AppBarLayout>
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/page_main_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@+id/tab_nav_container"
+      android:layout_above="@+id/bottom_nav_container"
+      >
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.viewpager.widget.ViewPager>
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/bottom_nav_container">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_nav"
+        android:layout_alignParentBottom="true"
+        android:background="#907D72"
+        app:menu="@menu/menu"/>
+  </RelativeLayout>
+</RelativeLayout>
