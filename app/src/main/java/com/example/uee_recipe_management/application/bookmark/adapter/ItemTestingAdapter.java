@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.bookmark.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +15,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.DrawableHelper;
 import com.example.uee_recipe_management.application.bookmark.ItemTesting;
 import com.example.uee_recipe_management.application.bookmark.model.RecipieItem;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
+import com.example.uee_recipe_management.application.item.Item;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -27,6 +30,8 @@ public class ItemTestingAdapter extends RecyclerView.Adapter<ItemTestingAdapter.
     ArrayList<RecipieItem> arrayList;
     LayoutInflater inflater;
     private Context context;
+    boolean state = false;
+
     public ItemTestingAdapter(Context ctx, ArrayList<RecipieItem> arrayList) {
         this.arrayList = arrayList;
         this.inflater = LayoutInflater.from(ctx);
@@ -72,6 +77,7 @@ public class ItemTestingAdapter extends RecyclerView.Adapter<ItemTestingAdapter.
         notifyDataSetChanged();
     }
 
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         TextView description;
@@ -91,10 +97,38 @@ public class ItemTestingAdapter extends RecyclerView.Adapter<ItemTestingAdapter.
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(), "Clicked -> " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(v.getContext(), Item.class);
+                    v.getContext().startActivity(intent);
+
                 }
             });
 
             //call listner
+            fvrt_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "Clicked favourite", Toast.LENGTH_SHORT).show();
+                    v.setSelected(true);
+
+
+
+//                        System.out.println("Calling bookmark");
+//                                DrawableHelper.withContext(context)
+////                            .withColor(R.color.white)
+//                            .withDrawable(R.drawable.ic_baseline_turned_in_24)
+//                            .tint()
+//                            .applyTo(fvrt_btn);
+//
+//                        DrawableHelper.withContext(context)
+////                            .withColor(R.color.white)
+//                                .withDrawable(R.drawable.ic_baseline_turned_in_not_24)
+//                                .tint()
+//                                .applyTo(fvrt_btn);
+
+                }
+            });
+
+
         }
     }
 }

@@ -54,13 +54,13 @@ public class DrawableHelper {
             throw new NullPointerException("É preciso informar o recurso drawable pelo método withDrawable()");
         }
 
-        if (mColor == 0) {
-            throw new IllegalStateException("É necessário informar a cor a ser definida pelo método withColor()");
-        }
+//        if (mColor == 0) {
+//            throw new IllegalStateException("É necessário informar a cor a ser definida pelo método withColor()");
+//        }
 
         mWrappedDrawable = mDrawable.mutate();
         mWrappedDrawable = DrawableCompat.wrap(mWrappedDrawable);
-        DrawableCompat.setTint(mWrappedDrawable, mColor);
+//        DrawableCompat.setTint(mWrappedDrawable, mColor);
         DrawableCompat.setTintMode(mWrappedDrawable, PorterDuff.Mode.SRC_IN);
 
         return this;

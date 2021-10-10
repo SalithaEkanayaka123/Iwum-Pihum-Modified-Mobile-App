@@ -61,8 +61,8 @@
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_turned_in_not_24"
-                        android:background="@android:color/transparent"
+                        android:src="@drawable/bookmark_selection"
+                        android:background="@drawable/ic_baseline_turned_in_not_24"
                         android:layout_marginLeft="120dp"
                         android:id="@+id/fvrt_f2_item"
                         />

@@ -13,6 +13,7 @@ public class RecipieItem implements Parcelable {
     private Integer image;
     private String description;
     private String fireURL;
+    private boolean state = false;
 
     public RecipieItem(String name, String fireURL, String description){
         // Null Validation
@@ -95,6 +96,14 @@ public class RecipieItem implements Parcelable {
     @Override
     public int describeContents() {
         return 0;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
     }
 
     @Override
