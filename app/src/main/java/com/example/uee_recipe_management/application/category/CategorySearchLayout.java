@@ -12,7 +12,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +33,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CategorySearchLayout extends AppCompatActivity {
@@ -42,6 +47,7 @@ public class CategorySearchLayout extends AppCompatActivity {
     TextView searchCategoryHeader;
     EditText searchBar;
     DatabaseReference database;
+    ImageView sorting;
 
 
     @Override
@@ -49,7 +55,7 @@ public class CategorySearchLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_search_layout);
 
-        /** Parameters From the Responsive Layout **/
+        /** Parameters From the Responsive Layout - Make this fail safe **/
         items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
         header = this.getIntent().getExtras().getString("categoryName"); // header name use to filter the item list.
         System.out.println(header);
@@ -66,6 +72,15 @@ public class CategorySearchLayout extends AppCompatActivity {
          * Search Bar Listener.
          * **/
         searchBar = findViewById(R.id.search_layout_search);
+        sorting = findViewById(R.id.sorting_item);
+        sorting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("This is sorting button");
+                sortArrayList();
+            }
+        });
+
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -117,6 +132,17 @@ public class CategorySearchLayout extends AppCompatActivity {
             }
         }
         categoryItemSearchAdapter.filterList(filteredList);
+    }
+
+    /** ArraySorting Method **/
+    public void sortArrayList() {
+        Collections.sort(fireArrayItems, new Comparator<CategoryItem>() {
+            @Override
+            public int compare(CategoryItem o1, CategoryItem o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        categoryItemSearchAdapter.notifyDataSetChanged();
     }
 
 
