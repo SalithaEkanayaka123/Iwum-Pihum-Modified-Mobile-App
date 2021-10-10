@@ -2,6 +2,7 @@ package com.example.uee_recipe_management.application.settings;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -23,6 +24,7 @@ public class Background_Settings_Fragment extends Fragment {
 
     ListView listView1, listView2;
     CustomButtonSettings adapter;
+
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
     ArrayList<customButton1> array, array2;
 
@@ -33,6 +35,13 @@ public class Background_Settings_Fragment extends Fragment {
         View v1 = inflater.inflate(R.layout.fragment_background__settings_, container, false);
         listView1 = (ListView) v1.findViewById(R.id.listSettings6);
         listView2 = (ListView) v1.findViewById(R.id.listSettings7);
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            getActivity().setTheme(R.style.DarkTheme);
+
+        }else{
+            getActivity().setTheme(R.style.AppTheme);
+        }
 
         array = new ArrayList<>();
         array.add(new customButton1(getString(R.string.DarkMode), getString(R.string.EnableDarkMode), true));
@@ -77,4 +86,5 @@ public class Background_Settings_Fragment extends Fragment {
 
         return v1;
     }
+
 }

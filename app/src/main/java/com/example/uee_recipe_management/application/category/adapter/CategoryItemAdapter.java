@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,14 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -33,7 +41,13 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
 
     @Override
     public void onBindViewHolder(@NonNull  CategoryItemViewHolder holder, int position) {
-        holder.bannerTv.setImageResource(categoryItemList.get(position).getImage());
+        Uri myUri = null;
+        try {
+            myUri = Uri.parse(categoryItemList.get(position).getFireURL());
+            Picasso.with(context).load(myUri).into(holder.bannerTv);
+        } catch (Exception e){
+            System.out.println("Exception | CategoryItemSearchAdapter | - " + e.getMessage());
+        }
     }
 
     @Override

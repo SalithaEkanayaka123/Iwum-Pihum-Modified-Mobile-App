@@ -95,6 +95,9 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
                 @Override
                 public void onClick(View view) {
                     System.out.println("Clicking on the "+ longCardHeader.getText().toString());
+
+                    ////////////////Need to create a intent///////////////////
+                    ///////////////Adding to history method///////////////////
                 }
             });
         }

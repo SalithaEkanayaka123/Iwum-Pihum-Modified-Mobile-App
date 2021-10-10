@@ -29,6 +29,7 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
     private Context context;
     private List<AllCategories> allCategoriesList;
     private static List<CategoryItem> categoryItems;
+    CategoryItemAdapter itemRecyclerAdapter;
 
 
     public CategoriesRecyclerAdapter(Context context, List<AllCategories> allCategories){
@@ -50,6 +51,8 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
         return new MainViewHolder(LayoutInflater.from(context).inflate(R.layout.category_section, parent, false));
     }
 
+    // Call the Firebase logic here.
+
     @Override
     public void onBindViewHolder(@NonNull  CategoriesRecyclerAdapter.MainViewHolder holder, int position) {
         holder.categoryName.setText(allCategoriesList.get(position).getCategoryName());
@@ -64,6 +67,7 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
     public void filterList(ArrayList<AllCategories> filteredArrayList){
         allCategoriesList = filteredArrayList;
         notifyDataSetChanged();
+        itemRecyclerAdapter.notifyDataSetChanged();
     }
 
     public static final class MainViewHolder extends RecyclerView.ViewHolder {
@@ -95,9 +99,13 @@ public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRe
         }
     }
 
+    public void trigger() {
+        itemRecyclerAdapter.notifyDataSetChanged();
+    }
+
     private void setCategoryItemRecycler(RecyclerView recyclerView, List<CategoryItem> categoryItems){
         this.categoryItems = categoryItems;
-        CategoryItemAdapter itemRecyclerAdapter = new CategoryItemAdapter(context, categoryItems);
+        itemRecyclerAdapter = new CategoryItemAdapter(context, categoryItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
         recyclerView.setAdapter(itemRecyclerAdapter);
     }

@@ -12,13 +12,16 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
+import com.example.uee_recipe_management.application.category.adapter.CategoryItemAdapter;
 import com.example.uee_recipe_management.application.category.adapter.CategoryItemSearchAdapter;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.example.uee_recipe_management.application.notification.NotificationLayout;
@@ -30,6 +33,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CategorySearchLayout extends AppCompatActivity {
@@ -41,19 +47,21 @@ public class CategorySearchLayout extends AppCompatActivity {
     TextView searchCategoryHeader;
     EditText searchBar;
     DatabaseReference database;
+    ImageView sorting;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_search_layout);
+
+        /** Parameters From the Responsive Layout - Make this fail safe **/
         items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
-        header = this.getIntent().getExtras().getString("categoryName");
+        header = this.getIntent().getExtras().getString("categoryName"); // header name use to filter the item list.
         System.out.println(header);
+
+        /** Database connection to the Schema **/
         database = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
-
-
-
 
         // Testing.
         for(CategoryItem item : items){
@@ -64,6 +72,15 @@ public class CategorySearchLayout extends AppCompatActivity {
          * Search Bar Listener.
          * **/
         searchBar = findViewById(R.id.search_layout_search);
+        sorting = findViewById(R.id.sorting_item);
+        sorting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("This is sorting button");
+                sortArrayList();
+            }
+        });
+
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -81,7 +98,8 @@ public class CategorySearchLayout extends AppCompatActivity {
             }
         });
 
-
+        // Calling the layout setting method.
+        fireArrayItems = new ArrayList<>();
 
         database.addValueEventListener(new ValueEventListener() {
             @Override
@@ -89,7 +107,8 @@ public class CategorySearchLayout extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Upload upload = dataSnapshot.getValue(Upload.class);
                     // Transfer the objects into CategoryItems.
-                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName());
+                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName(), upload.getCategory());
+                    /** Conditionally Adding the Items to the Array Respect to the Category name **/
                     fireArrayItems.add(categoryItem);
                 }
                 categoryItemSearchAdapter.notifyDataSetChanged();
@@ -100,9 +119,6 @@ public class CategorySearchLayout extends AppCompatActivity {
 
             }
         });
-
-        // Calling the layout setting method.
-        fireArrayItems = new ArrayList<>();
         setRecyclerSearchCategory();
 
     }
@@ -115,8 +131,18 @@ public class CategorySearchLayout extends AppCompatActivity {
                 filteredList.add(item);
             }
         }
-
         categoryItemSearchAdapter.filterList(filteredList);
+    }
+
+    /** ArraySorting Method **/
+    public void sortArrayList() {
+        Collections.sort(fireArrayItems, new Comparator<CategoryItem>() {
+            @Override
+            public int compare(CategoryItem o1, CategoryItem o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        categoryItemSearchAdapter.notifyDataSetChanged();
     }
 
 

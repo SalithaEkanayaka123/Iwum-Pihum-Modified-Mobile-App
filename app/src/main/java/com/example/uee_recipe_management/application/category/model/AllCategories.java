@@ -15,6 +15,14 @@ public class AllCategories {
 
     }
 
+    public AllCategories(String categoryName){
+        // Null Validation
+        if (categoryName.trim().equals("")){
+            categoryName = "No CategoryName";
+        }
+        this.categoryName = categoryName;
+    }
+
     public String getCategoryName() {
         return categoryName;
     }
