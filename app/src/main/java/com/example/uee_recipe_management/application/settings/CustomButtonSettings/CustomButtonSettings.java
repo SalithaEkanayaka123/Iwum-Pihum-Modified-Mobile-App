@@ -128,6 +128,8 @@ public class CustomButtonSettings extends BaseAdapter {
                        }
                    }else if (name1.contentEquals("Dark Mode")){
                        System.out.println("Dark Mode");
+
+
                        if (b == true){
                            Snackbar.make(finalView,"Dark mode on",Snackbar.LENGTH_LONG).show();
                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);

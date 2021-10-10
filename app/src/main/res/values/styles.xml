@@ -5,7 +5,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorPrimaryAccent</item>
-        <item name="android:forceDarkAllowed" tools:ignore="NewApi">true</item>
+        <item name="bgc">#ffffff</item>
+        <item name="tC">#000000</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryAccent</item>
+        <item name="bgc">#000000</item>
+        <item name="tC">#ffffff</item>
     </style>
 
 
