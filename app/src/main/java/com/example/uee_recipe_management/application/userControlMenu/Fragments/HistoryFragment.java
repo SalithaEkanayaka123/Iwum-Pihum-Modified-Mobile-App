@@ -2,10 +2,12 @@ package com.example.uee_recipe_management.application.userControlMenu.Fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,9 @@ import android.view.ViewGroup;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.example.uee_recipe_management.application.home.Adapter.HomeAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -42,6 +47,21 @@ public class HistoryFragment extends Fragment {
         setRecyclerHistory(categoryItems , view);
 
         mDatabaseRef = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("history");
+
+        mDatabaseRef.child("history").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+                    Log.d("firebase", String.valueOf(task));
+                }
+            }
+        });
+
+
+
 
         return view;
     }
