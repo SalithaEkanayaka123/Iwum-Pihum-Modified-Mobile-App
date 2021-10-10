@@ -1,7 +1,9 @@
 package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.category.CategorySearchLayout;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
+import com.example.uee_recipe_management.application.item.Item;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -95,9 +99,8 @@ public class CategoryItemSearchAdapter extends RecyclerView.Adapter<CategoryItem
                 @Override
                 public void onClick(View view) {
                     System.out.println("Clicking on the "+ longCardHeader.getText().toString());
-
-                    ////////////////Need to create a intent///////////////////
-                    ///////////////Adding to history method///////////////////
+                    Intent intent = new Intent(view.getContext(), Item.class);
+                    view.getContext().startActivity(intent);
                 }
             });
         }

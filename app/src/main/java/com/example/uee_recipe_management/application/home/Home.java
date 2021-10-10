@@ -46,11 +46,9 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         BottomNavigationView bottomNavView = findViewById(R.id.bottom_nav);
         bottomNavView.setOnNavigationItemSelectedListener(navListener);
-
         Menu menu = bottomNavView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
-
         mDatabaseRef = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
 
 
@@ -84,6 +82,7 @@ public class Home extends AppCompatActivity {
         // Calling the layout setting method.
         fireArrayItems = new ArrayList<>();
         setRecyclerHome(fireArrayItems);
+
     }
 
     private  BottomNavigationView.OnNavigationItemSelectedListener navListener = new
