@@ -23,6 +23,7 @@ public class Background_Settings_Fragment extends Fragment {
 
     ListView listView1, listView2;
     CustomButtonSettings adapter;
+
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
     ArrayList<customButton1> array, array2;
 

@@ -14,6 +14,8 @@ import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings;
 import com.example.uee_recipe_management.application.settings.CustomButtonSettings.CustomButtonSettings2;
 import com.example.uee_recipe_management.application.settings.model.customButton1;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -23,6 +25,7 @@ public class Notification_Settings_Fragment extends Fragment {
     CustomButtonSettings adapter, adapter3;
     CustomButtonSettings2 adapter2;//declaring the Custom adapter
     ArrayList<customButton1> array, array2, array3;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,14 +37,16 @@ public class Notification_Settings_Fragment extends Fragment {
         listView2 = (ListView) v1.findViewById(R.id.listSettings4);
         listView3 = (ListView) v1.findViewById(R.id.listSettings5);
 
+
+
         array = new ArrayList<>();
-        array.add(new customButton1("Notification", "Enable notification alerts for notifications", true));
+        array.add(new customButton1(getString(R.string.Notification), getString(R.string.Enablenotificationalertsfornotifications), true));
 
         array2 = new ArrayList<>();
-        array2.add(new customButton1("Ringing Tones", "Ringing Tones List", true));
+        array2.add(new customButton1(getString(R.string.RingingTones), getString(R.string.RingingTonesList), true));
 
         array3 = new ArrayList<>();
-        array3.add(new customButton1("Vibration", "Enable Vibration alerts for notifications", true));
+        array3.add(new customButton1(getString(R.string.Vibration), getString(R.string.EnableVibration), true));
 
 
         adapter = new CustomButtonSettings(getActivity() , array);//this is called in customMusicAdapter
