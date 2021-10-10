@@ -16,30 +16,31 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="DarkMode">Dark Mode</string>
     <string name="EnableDarkMode">Enable Dark Mode</string>
-    <string name="DisplayLanguage" translatable="false">Display Language</string>
-    <string name="Choosealanguage" translatable="false">Choose a language</string>
-    <string name="SwitchLayout" translatable="false">Switch Layout</string>
-    <string name="Changethelayoutsofinterface" translatable="false">Change the layouts of interface</string>
+    <string name="Settings" translatable="true">Settings</string>
+    <string name="DisplayLanguage">Display Language</string>
+    <string name="Choosealanguage">Choose a language</string>
+    <string name="SwitchLayout">Switch Layout</string>
+    <string name="Changethelayoutsofinterface">Change the layouts of interface</string>
     <string name="Sinhala">Sinhala</string>
     <string name="English">English</string>
-    <string name="SortBy" translatable="false">Sort By</string>
+    <string name="SortBy">Sort By</string>
     <string name="Background">Background</string>
     <string name="Notification">Notification</string>
     <string name="Synchronization">Synchronization</string>
-    <string name="HandlesBackgroundSettings" translatable="false">Handles Background Settings</string>
-    <string name="HandlesNotificationSettings" translatable="false">Handles Notification Settings</string>
-    <string name="HandlesSynchronizationSettings" translatable="false">Handles Synchronization Settings</string>
+    <string name="HandlesBackgroundSettings">Handles Background Settings</string>
+    <string name="HandlesNotificationSettings">Handles Notification Settings</string>
+    <string name="HandlesSynchronizationSettings">Handles Synchronization Settings</string>
     <string name="PrivacyandPolicy">Privacy and Policy</string>
-    <string name="about" translatable="false">About</string>
-    <string name="Enablenotificationalertsfornotifications" translatable="false">Enable notification alerts for notifications</string>
-    <string name="RingingTones" translatable="false">Ringing Tones</string>
-    <string name="RingingTonesList" translatable="false">Ringing Tones List</string>
-    <string name="Vibration" translatable="false">Vibration</string>
-    <string name="EnableVibration" translatable="false">Enable Vibration alerts for notifications</string>
+    <string name="about">About</string>
+    <string name="Enablenotificationalertsfornotifications">Enable notification alerts for notifications</string>
+    <string name="RingingTones">Ringing Tones</string>
+    <string name="RingingTonesList">Ringing Tones List</string>
+    <string name="Vibration">Vibration</string>
+    <string name="EnableVibration">Enable Vibration alerts for notifications</string>
 
 
 
-    <string name="version" translatable="false">Version: xxxxxxx</string>
+    <string name="version">Version: xxxxxxx</string>
 
     <string name="dummy_text" translatable="false">
         no,
@@ -55,7 +56,7 @@
         branch was an unknown unknown.
     </string>
 
-    <string name="search_recipies" translatable="false">Search Recipies</string>
+    <string name="search_recipies">Search Recipies</string>
     <string name="select">Select Category</string>
     <string name="invalid_name">Please enter name</string>
     <string name="invalid_sub">Please enter ingredients</string>
