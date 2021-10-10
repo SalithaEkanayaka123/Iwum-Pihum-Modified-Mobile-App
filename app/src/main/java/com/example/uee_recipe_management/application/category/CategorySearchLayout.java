@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
+import com.example.uee_recipe_management.application.category.adapter.CategoryItemAdapter;
 import com.example.uee_recipe_management.application.category.adapter.CategoryItemSearchAdapter;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.example.uee_recipe_management.application.notification.NotificationLayout;
@@ -84,7 +85,6 @@ public class CategorySearchLayout extends AppCompatActivity {
 
         // Calling the layout setting method.
         fireArrayItems = new ArrayList<>();
-
 
         database.addValueEventListener(new ValueEventListener() {
             @Override

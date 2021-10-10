@@ -19,6 +19,7 @@ import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
 import com.example.uee_recipe_management.application.category.adapter.CategoriesRecyclerAdapter;
+import com.example.uee_recipe_management.application.category.adapter.CategoryItemAdapter;
 import com.example.uee_recipe_management.application.category.model.AllCategories;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -39,6 +40,7 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
 
     RecyclerView mainCategoryRecycler;
     CategoriesRecyclerAdapter mainRecyclerAdapter;
+    CategoryItemAdapter categoryItemAdapter;
     EditText searchBar;
     ArrayList<AllCategories> allCategories;
     ArrayList<AllCategories> fireAllCategories;
@@ -59,12 +61,38 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
         /** Firebase Database Connection **/
         database = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
 
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Upload upload = dataSnapshot.getValue(Upload.class);
+                    // Transfer the objects into CategoryItems.
+                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName(), upload.getCategory());
+                    /** Conditionally Adding the Items to the Array Respect to the Category name **/
+                    fireAllItemsCategories.add(categoryItem);
+                }
+                for(String item : items){
+                    allCategories.add(new AllCategories(item, fireAllItemsCategories));
+                }
+                mainRecyclerAdapter.notifyDataSetChanged();
+                CategoryItemAdapter itemAdapter = new CategoryItemAdapter(getApplicationContext(), fireAllItemsCategories);
+                itemAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
         //Bottom Nav Configs
         BottomNavigationView bottomNavView  = findViewById(R.id.bottom_nav);
         bottomNavView.setOnNavigationItemSelectedListener( navListener);
         Menu menu = bottomNavView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
+
+        fireAllItemsCategories = new ArrayList<>();
 
         /**
          * Following section should be automated.
@@ -80,11 +108,11 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
 
         //Dummy data to the model class.
         allCategories  = new ArrayList<>();
-        allCategories.add(new AllCategories("Cool Drinks", categoryItems));
-        allCategories.add(new AllCategories("Main courses",categoryItems));
-        allCategories.add(new AllCategories("Short Eats",categoryItems));
-        allCategories.add(new AllCategories("Candies",categoryItems));
-        allCategories.add(new AllCategories("Steak",categoryItems));
+//        allCategories.add(new AllCategories("Cool Drinks", fireAllItemsCategories));
+//        allCategories.add(new AllCategories("Main courses",categoryItems));
+//        allCategories.add(new AllCategories("Short Eats",categoryItems));
+//        allCategories.add(new AllCategories("Candies",categoryItems));
+//        allCategories.add(new AllCategories("Steak",categoryItems));
 
 
         /**
@@ -111,30 +139,10 @@ public class ResponsiveVerticalHorizontalLayout extends AppCompatActivity {
         // Calling the layout setting method.
         fireAllCategories = new ArrayList<>();
         fireAllItemsCategories = new ArrayList<>();
-        setMainCategoryRecycler(allCategories);
-
-
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    Upload upload = dataSnapshot.getValue(Upload.class);
-                    // Transfer the objects into CategoryItems.
-                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName(), upload.getCategory());
-                    /** Conditionally Adding the Items to the Array Respect to the Category name **/
-                }
-                mainRecyclerAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-
-            }
-        });
 
         /** Call Util Methods **/
+        setMainCategoryRecycler(allCategories);
     }
-
     public void filter(String searchKey){
         ArrayList<AllCategories> filteredAllCategories = new ArrayList<>();
         for(AllCategories categoryItem : allCategories){ // Switched to the Firebase Datastore.
