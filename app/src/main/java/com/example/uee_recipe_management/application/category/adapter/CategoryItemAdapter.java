@@ -1,6 +1,7 @@
 package com.example.uee_recipe_management.application.category.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
+import com.example.uee_recipe_management.application.item.Item;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -75,6 +77,8 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
                 @Override
                 public void onClick(View view) {
                     System.out.println("Click on the " + titleTv.getText().toString());
+                    Intent intent = new Intent(view.getContext(), Item.class);
+                    view.getContext().startActivity(intent);
                 }
             });
         }

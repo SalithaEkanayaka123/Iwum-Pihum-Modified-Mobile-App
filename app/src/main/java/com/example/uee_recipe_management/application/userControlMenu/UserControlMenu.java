@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
+import com.example.uee_recipe_management.application.bookmark.ItemTestingFragment;
 import com.example.uee_recipe_management.application.userControlMenu.Fragments.*;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -56,7 +57,7 @@ public class UserControlMenu extends AppCompatActivity {
     private void setUpViewPager(ViewPager viewPager) {
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addtoFragment( new HistoryFragment());
-        adapter.addtoFragment( new AddFragment());
+        adapter.addtoFragment( new ItemTestingFragment());
         adapter.addtoFragment( new BookmarkFragment());
         viewPager.setAdapter(adapter);
 

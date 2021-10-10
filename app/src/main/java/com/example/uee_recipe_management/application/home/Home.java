@@ -38,11 +38,9 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         BottomNavigationView bottomNavView  = findViewById(R.id.bottom_nav);
         bottomNavView.setOnNavigationItemSelectedListener( navListener);
-
         Menu menu = bottomNavView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
-
         mDatabaseRef = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("history");
 
 
@@ -53,9 +51,6 @@ public class Home extends AppCompatActivity {
         categoryItems.add(new CategoryItem("Soup", R.drawable.image_3, "This is sample description"));
         categoryItems.add(new CategoryItem("Coca Cola", R.drawable.image_4, "This is sample description"));
         setRecyclerHome(categoryItems);
-
-
-
     }
 
     private  BottomNavigationView.OnNavigationItemSelectedListener navListener = new
