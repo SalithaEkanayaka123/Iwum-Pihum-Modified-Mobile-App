@@ -12,6 +12,26 @@ public class RecipieItem implements Parcelable {
     private String name;
     private Integer image;
     private String description;
+    private String fireURL;
+    private boolean state = false;
+
+    public RecipieItem(String name, String fireURL, String description){
+        // Null Validation
+        if (name.trim().equals("")){
+            name = "No Name";
+        }
+        // Null Validation
+        if (fireURL.trim().equals("")){
+            fireURL = "https://firebasestorage.googleapis.com/v0/b/uee-recipe-management.appspot.com/o/util%2Fnot_found_image.jpg?alt=media&token=cd8249f3-75c1-4a5a-976a-eb80206482ed";
+        }
+        // Null Validation
+        if (description.trim().equals("")){
+            description = "No Description";
+        }
+        this.name = name;
+        this.fireURL = fireURL;
+        this.description = description;
+    }
 
     public RecipieItem(String name, int image, String description) {
         this.name = name;
@@ -65,9 +85,25 @@ public class RecipieItem implements Parcelable {
         this.description = description;
     }
 
+    public String getFireURL() {
+        return fireURL;
+    }
+
+    public void setFireURL(String fireURL) {
+        this.fireURL = fireURL;
+    }
+
     @Override
     public int describeContents() {
         return 0;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
     }
 
     @Override
