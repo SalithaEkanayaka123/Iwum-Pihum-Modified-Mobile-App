@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.example.uee_recipe_management.application.NavgationController;
 import com.example.uee_recipe_management.application.R;
 import com.example.uee_recipe_management.application.bookmark.firebaseImageUploading.Upload;
+import com.example.uee_recipe_management.application.category.adapter.CategoryItemAdapter;
 import com.example.uee_recipe_management.application.category.adapter.CategoryItemSearchAdapter;
 import com.example.uee_recipe_management.application.category.model.CategoryItem;
 import com.example.uee_recipe_management.application.notification.NotificationLayout;
@@ -47,13 +48,14 @@ public class CategorySearchLayout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_search_layout);
+
+        /** Parameters From the Responsive Layout **/
         items = this.getIntent().getExtras().getParcelableArrayList("ARRAYLIST");
-        header = this.getIntent().getExtras().getString("categoryName");
+        header = this.getIntent().getExtras().getString("categoryName"); // header name use to filter the item list.
         System.out.println(header);
+
+        /** Database connection to the Schema **/
         database = FirebaseDatabase.getInstance("https://uee-recipe-management-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("uploads");
-
-
-
 
         // Testing.
         for(CategoryItem item : items){
@@ -81,7 +83,8 @@ public class CategorySearchLayout extends AppCompatActivity {
             }
         });
 
-
+        // Calling the layout setting method.
+        fireArrayItems = new ArrayList<>();
 
         database.addValueEventListener(new ValueEventListener() {
             @Override
@@ -89,7 +92,8 @@ public class CategorySearchLayout extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Upload upload = dataSnapshot.getValue(Upload.class);
                     // Transfer the objects into CategoryItems.
-                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName());
+                    CategoryItem categoryItem = new CategoryItem(upload.getName(), upload.getImageUrl(), upload.getDescription(), upload.getSubName(), upload.getCategory());
+                    /** Conditionally Adding the Items to the Array Respect to the Category name **/
                     fireArrayItems.add(categoryItem);
                 }
                 categoryItemSearchAdapter.notifyDataSetChanged();
@@ -100,9 +104,6 @@ public class CategorySearchLayout extends AppCompatActivity {
 
             }
         });
-
-        // Calling the layout setting method.
-        fireArrayItems = new ArrayList<>();
         setRecyclerSearchCategory();
 
     }
@@ -115,7 +116,6 @@ public class CategorySearchLayout extends AppCompatActivity {
                 filteredList.add(item);
             }
         }
-
         categoryItemSearchAdapter.filterList(filteredList);
     }
 
