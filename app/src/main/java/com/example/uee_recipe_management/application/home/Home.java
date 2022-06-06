@@ -38,6 +38,7 @@ public class Home extends AppCompatActivity {
     ArrayList<CategoryItem> fireArrayItems;
 
 
+
     NavgationController Nav = new NavgationController();
 
     @Override
